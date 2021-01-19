@@ -1,2 +1,1 @@
-parakalw kurie nektarie
 GEIAAAAAA
