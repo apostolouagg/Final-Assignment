@@ -70,9 +70,10 @@ namespace ergasia1
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            Game form2 = new Game();
+            Game game = new Game();
+
             this.Hide();
-            form2.ShowDialog();
+            game.ShowDialog();
             this.Show();
         }
     }
