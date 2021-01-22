@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ergasia1
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
         {
             timerWelcome.Start();
             buttonBack.Hide();
@@ -70,7 +70,7 @@ namespace ergasia1
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Game form2 = new Game();
             this.Hide();
             form2.ShowDialog();
             this.Show();

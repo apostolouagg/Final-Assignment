@@ -1,7 +1,7 @@
 ﻿
 namespace ergasia1
 {
-    partial class Form1
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -36,9 +36,9 @@ namespace ergasia1
             this.timerGame = new System.Windows.Forms.Timer(this.components);
             this.timerWelcome = new System.Windows.Forms.Timer(this.components);
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
             this.SuspendLayout();
@@ -100,20 +100,6 @@ namespace ergasia1
             this.panelWelcome.Size = new System.Drawing.Size(627, 468);
             this.panelWelcome.TabIndex = 3;
             // 
-            // buttonBack
-            // 
-            this.buttonBack.BackColor = System.Drawing.Color.LightGray;
-            this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBack.Location = new System.Drawing.Point(713, 431);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(119, 38);
-            this.buttonBack.TabIndex = 4;
-            this.buttonBack.Text = "BACK";
-            this.buttonBack.UseVisualStyleBackColor = false;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,7 +121,21 @@ namespace ergasia1
             this.pictureBoxSettings.TabStop = false;
             this.pictureBoxSettings.Click += new System.EventHandler(this.pictureBoxSettings_Click);
             // 
-            // Form1
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.Color.LightGray;
+            this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Location = new System.Drawing.Point(713, 431);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(119, 38);
+            this.buttonBack.TabIndex = 4;
+            this.buttonBack.Text = "BACK";
+            this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,10 +145,10 @@ namespace ergasia1
             this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.buttonExit);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();

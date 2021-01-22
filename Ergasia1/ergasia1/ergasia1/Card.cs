@@ -9,11 +9,10 @@ namespace ergasia1
 {
     public class Card : PictureBox
     {
-        int used;
 
         public Card()
         {
-            used = 0;
+
         }
 
         public void flip()
