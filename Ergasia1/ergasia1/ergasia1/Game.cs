@@ -25,8 +25,8 @@ namespace ergasia1
             random = new Random((int)DateTime.Now.Ticks);
             cards = new List<Card>();
 
-            int x = 10;
-            int y = 10;
+            //int x = 10;
+            //int y = 10;
 
             // Create cards
             for (int i = 0; i<4; i++)
@@ -36,15 +36,20 @@ namespace ergasia1
                     var temp = new Card()
                     {
                         Size = new Size(100, 100),
-                        Location = new Point(x, y),
+                        //Location = new Point(x, y),
+                        Margin = new Padding(5), // To keno metaksi kathe eikonas
+                        BorderStyle = BorderStyle.FixedSingle, // na exoun border oi kartes
                     };
 
-                    this.Controls.Add(temp);
+                    temp.BackColor = Color.Red;
+
+                    // Prosthetoume thn karta sto panel
+                    flowLayoutPanelCards.Controls.Add(temp);
                     cards.Append(temp);
-                    x += 100;
+                    //x += 100;
                 }
-                y += 100;
-                x = 10;
+                //y += 100;
+                //x = 10;
             }
         }
     }

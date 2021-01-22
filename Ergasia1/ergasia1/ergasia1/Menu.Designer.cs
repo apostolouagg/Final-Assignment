@@ -144,6 +144,7 @@ namespace ergasia1
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.buttonExit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
