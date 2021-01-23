@@ -12,13 +12,13 @@ namespace ergasia1
     public class Card : PictureBox
     {
         private Image Img { get;}  // Edo tha apothikevoume thn eikona tou meso tou constractora.
-        public string ImgLocation { get; set; }
+        public string ImagePathLocation { get; set; }
         private bool Hidden { get; set; } // Flag gia na kseroume an einai flipped h oxi
 
-        public Card(string img)
+        public Card(string imagePath)
         {
-            Img = Image.FromFile(img);
-            ImgLocation = img;
+            Img = Image.FromFile(imagePath);
+            ImagePathLocation = imagePath;
 
             // flip it
             Hidden = true;

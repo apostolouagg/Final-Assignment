@@ -20,7 +20,6 @@ namespace ergasia1
         private Card first;
         private Card second;
 
-
         // na tou valoume na dexete:
         // 1. Onoma pexth
         // 2. Ton fakelo apo ton opoio tha parei tis eikones( giati ta settings vriskonte sto menu)
@@ -29,32 +28,33 @@ namespace ergasia1
             InitializeComponent();
         }
 
-        
-        // kanei th list random
+        // kanei th images random
         // afto einai poli paromio me kati pou vrika sto google elpizo min theorithei antigrafh :(((((
-        private List<string> Randomize(List<string> list)
+        private List<string> Randomize(List<string> images)
         {
-            List<string> randomized = new List<string>();
-            while (list.Count > 0)
+            var randomizedImages = new List<string>();
+            while (images.Count > 0)
             {
-                var index = random.Next(0, list.Count);
-                randomized.Add(list[index]);
-                list.RemoveAt(index);
+                int index = random.Next(0, images.Count);
+                randomizedImages.Add(images[index]);
+                images.RemoveAt(index);
             }
-            return randomized;
+            return randomizedImages;
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
             // Initialize Random
             random = new Random((int)DateTime.Now.Ticks);
-            cards = new List<Card>();
 
             // Get images from a folder
             // logika tha prepei na metakinisoume afto to komati sto menu oste na boroume na tou emfanizoume minima an den exei valei eikones sto fakelo
-            var images = Directory.GetFiles($@"Cards/Default").ToList(); // prepei na tsekaroume pio meta na ontos evale eikones
+            var images = Directory.GetFiles($@"Cards/Default","*jpg").ToList(); // prepei na tsekaroume pio meta na ontos evale eikones
+            images.AddRange(Directory.GetFiles($@"Cards/Default","*png").ToList()); // prepei na tsekaroume pio meta na ontos evale eikones
+            images.AddRange(Directory.GetFiles($@"Cards/Default","*bmp").ToList()); // prepei na tsekaroume pio meta na ontos evale eikones
+
             images.AddRange(images); // add the same images. so 12 + 12
-            var randomizedImages = Randomize(images); // randomize it
+            images = Randomize(images); // randomize it
 
             // Create 24 cards | 6 X 4 
             // to aplopiisa poli
@@ -62,7 +62,7 @@ namespace ergasia1
             int name = 0;
             for (int i = 0; i < 24; i++)
             {
-                var card = new Card(randomizedImages[i])
+                var card = new Card(images[i])
                 {
                     Size = new Size(100, 100),
                     Margin = new Padding(4), // To keno metaksi kathe eikonas einai 4 pixels
@@ -70,13 +70,12 @@ namespace ergasia1
                     Cursor = Cursors.Hand, // Add hand cursor when hovering over it
                     Name = name++.ToString(), // give it a name
                 };
-                
+
                 // tou dinoume ena event handel gia otan pataei o xrhsths click pano tou
                 card.MouseClick += Card_Click;
-
+                 
                 // Prosthetoume thn karta sto panel
                 flowLayoutPanelCards.Controls.Add(card);
-                cards.Add(card);
             }
         }
 
@@ -88,12 +87,12 @@ namespace ergasia1
         private void Card_Click(object sender, EventArgs e)
         {
             // Etsi prosdiourizoume pia karta patithike
-            Card clicked = (Card) sender;
+            Card clicked = (Card)sender;
 
             // Emfanizoume to onoma ths kartas pou patithike
             Console.WriteLine($"Clicked card '{clicked.Name}'");
-
             clicked.Flip();
+
             if (first == null)
             {
                 first = clicked;
@@ -103,7 +102,7 @@ namespace ergasia1
                 if (clicked != first) // an ksanapatisei to idio apo epilekse to
                 {
                     second = clicked;
-                    if (first.ImgLocation == second.ImgLocation) 
+                    if (first.ImagePathLocation == second.ImagePathLocation) 
                     {
                         // an einai sosta ta kanoume disable oste na min mporei na ta patisei pali
                         Console.WriteLine($"CORRECT {first.Name} the same as {second.Name}");
@@ -117,12 +116,22 @@ namespace ergasia1
                     else
                     {
                         // hide them again if wrong
-                        first.Flip();
-                        second.Flip();
+                        Task.Run(() =>
+                        {
+                            Invoke(new Action(() => { flowLayoutPanelCards.Enabled = false; }));
+
+                            Thread.Sleep(750); // 750ms pause
+
+                            Invoke(new Action(() =>
+                            {
+                                first.Flip();
+                                second.Flip();
+                                first = null;
+                                second = null;
+                                flowLayoutPanelCards.Enabled = true;
+                            }));
+                        });
                         Console.WriteLine($"WRONG {first.Name} not the same as {second.Name}");
-                        // reset clicked
-                        first = null;
-                        second = null;
                     }
                 }
                 else
