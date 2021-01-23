@@ -15,17 +15,18 @@ namespace ergasia1
     public partial class Game : Form
     {
         private Random random;
-        private List<Card> cards;
 
         private Card first;
         private Card second;
 
+        private List<string> images;
+
         // na tou valoume na dexete:
         // 1. Onoma pexth
-        // 2. Ton fakelo apo ton opoio tha parei tis eikones( giati ta settings vriskonte sto menu)
-        public Game()
+        public Game(List<string> imageList)
         {
             InitializeComponent();
+            images = imageList;
         }
 
         // kanei th images random
@@ -47,12 +48,6 @@ namespace ergasia1
             // Initialize Random
             random = new Random((int)DateTime.Now.Ticks);
 
-            // Get images from a folder
-            // logika tha prepei na metakinisoume afto to komati sto menu oste na boroume na tou emfanizoume minima an den exei valei eikones sto fakelo
-            var images = Directory.GetFiles($@"Cards/Default","*jpg").ToList(); // prepei na tsekaroume pio meta na ontos evale eikones
-            images.AddRange(Directory.GetFiles($@"Cards/Default","*png").ToList()); // prepei na tsekaroume pio meta na ontos evale eikones
-            images.AddRange(Directory.GetFiles($@"Cards/Default","*bmp").ToList()); // prepei na tsekaroume pio meta na ontos evale eikones
-
             images.AddRange(images); // add the same images. so 12 + 12
             images = Randomize(images); // randomize it
 
@@ -69,6 +64,7 @@ namespace ergasia1
                     BorderStyle = BorderStyle.FixedSingle, // na exoun border oi kartes
                     Cursor = Cursors.Hand, // Add hand cursor when hovering over it
                     Name = name++.ToString(), // give it a name
+                    SizeMode = PictureBoxSizeMode.StretchImage
                 };
 
                 // tou dinoume ena event handel gia otan pataei o xrhsths click pano tou

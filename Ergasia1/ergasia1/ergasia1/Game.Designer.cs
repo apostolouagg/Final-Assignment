@@ -36,20 +36,21 @@ namespace ergasia1
             // 
             this.flowLayoutPanelCards.BackColor = System.Drawing.Color.Gainsboro;
             this.flowLayoutPanelCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanelCards.Location = new System.Drawing.Point(285, 238);
+            this.flowLayoutPanelCards.Location = new System.Drawing.Point(349, 153);
             this.flowLayoutPanelCards.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelCards.Name = "flowLayoutPanelCards";
-            this.flowLayoutPanelCards.Size = new System.Drawing.Size(650, 434);
+            this.flowLayoutPanelCards.Size = new System.Drawing.Size(866, 534);
             this.flowLayoutPanelCards.TabIndex = 0;
             // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.flowLayoutPanelCards);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";

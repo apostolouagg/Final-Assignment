@@ -10,14 +10,12 @@ C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\bin\Debug\System.Data.SQLite.xml
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.csprojAssemblyReference.cache
-C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.Form1.resources
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.Properties.Resources.resources
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.csproj.GenerateResource.cache
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.csproj.CoreCompileInputs.cache
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.csproj.CopyComplete
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.exe
 C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.pdb
-C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.Form2.resources
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\bin\Debug\ergasia1.exe.config
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\bin\Debug\ergasia1.exe
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\bin\Debug\ergasia1.pdb
@@ -38,3 +36,5 @@ C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\D
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.csproj.CopyComplete
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.exe
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.pdb
+C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.Menu.resources
+C:\Users\aapos\OneDrive\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.Game.resources
