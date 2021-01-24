@@ -111,12 +111,12 @@ namespace ergasia1
                     }
                     else
                     {
-                        // hide them again if wrong
+                        // hide them again if wrong but after 500ms
                         Task.Run(() =>
                         {
-                            Invoke(new Action(() => { flowLayoutPanelCards.Enabled = false; }));
+                            Invoke(new Action(() => { flowLayoutPanelCards.Enabled = false; })); // gia na peirakso ena control ths formas prepei na to kano me invoke
 
-                            Thread.Sleep(750); // 750ms pause
+                            Thread.Sleep(500); // 500ms pause
 
                             Invoke(new Action(() =>
                             {
@@ -127,6 +127,7 @@ namespace ergasia1
                                 flowLayoutPanelCards.Enabled = true;
                             }));
                         });
+
                         Console.WriteLine($"WRONG {first.Name} not the same as {second.Name}");
                     }
                 }
