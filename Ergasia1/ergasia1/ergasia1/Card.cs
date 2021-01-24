@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 namespace ergasia1
 {
-    public class Card : PictureBox
+    public class Card : PictureBox //klironomei apo to PictureBox
     {
         private Image Img { get;}  // Edo tha apothikevoume thn eikona tou meso tou constractora.
+
         public string ImagePathLocation { get; set; }
+
         private bool Hidden { get; set; } // Flag gia na kseroume an einai flipped h oxi
 
         public Card(string imagePath)
@@ -25,7 +27,9 @@ namespace ergasia1
             this.Image = Properties.Resources.back;
         }
 
-        // afth h sinartish einai upefthinh sto na emfanizei / krivh thn eikona ths kartas
+        /// <summary>
+        /// Flips the card.
+        /// </summary>
         public void Flip()
         {
             if (Hidden) // an h karta dixnei thn krimenh plevra
