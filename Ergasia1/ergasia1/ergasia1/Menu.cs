@@ -24,6 +24,8 @@ namespace ergasia1
         {
             timerWelcome.Start();
             buttonBack.Hide();
+            buttonOpenFolder.Hide();
+            label1Settings.Hide();
 
             // Get images from a folder
             // logika tha prepei na metakinisoume afto to komati sto menu oste na boroume na tou emfanizoume minima an den exei valei eikones sto fakelo
@@ -54,15 +56,25 @@ namespace ergasia1
         private void pictureBoxSettings_Click(object sender, EventArgs e)
         {
             panelWelcome.Hide();
-            buttonBack.Show();
             buttonExit.Hide();
+            
+            buttonBack.Show();
+            buttonOpenFolder.Show();
+            buttonOpenFolder.Location = new Point(362, 107);
+
+            label1Settings.Show();
+            label1Settings.Location = new Point(340, 4);
+            
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             panelWelcome.Show();
-            buttonBack.Hide();
             buttonExit.Show();
+
+            buttonBack.Hide();
+            buttonOpenFolder.Hide();
+            label1Settings.Hide();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -79,7 +91,7 @@ namespace ergasia1
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            Game game = new Game(images);
+            Game game = new Game(new List<string>(images), textBoxName.Text);
 
             this.Hide();
             game.ShowDialog();

@@ -21,12 +21,16 @@ namespace ergasia1
 
         private List<string> images;
 
+        string username;
+        int time = 0;
+
         // na tou valoume na dexete:
         // 1. Onoma pexth
-        public Game(List<string> imageList)
+        public Game(List<string> imageList, string user)
         {
             InitializeComponent();
             images = imageList;
+            username = user;
         }
 
         // kanei th images random
@@ -45,6 +49,9 @@ namespace ergasia1
 
         private void Game_Load(object sender, EventArgs e)
         {
+            labelUsername.Text = username;
+            labelTime.Text = time.ToString();
+
             // Initialize Random
             random = new Random((int)DateTime.Now.Ticks);
 
@@ -82,6 +89,11 @@ namespace ergasia1
         // gia na dei o xrhshts ti ekane lathos
         private void Card_Click(object sender, EventArgs e)
         {
+            if (time == 0)
+            {
+                timerGameDuration.Start();
+            }
+
             // Etsi prosdiourizoume pia karta patithike
             Card clicked = (Card)sender;
 
@@ -95,7 +107,7 @@ namespace ergasia1
             }
             else
             {
-                if (clicked != first) // an ksanapatisei to idio apo epilekse to
+                if (clicked != first) // an ksanapatisei to idio kse-epilekse to
                 {
                     second = clicked;
                     if (first.ImagePathLocation == second.ImagePathLocation) 
@@ -116,7 +128,7 @@ namespace ergasia1
                         {
                             Invoke(new Action(() => { flowLayoutPanelCards.Enabled = false; }));
 
-                            Thread.Sleep(750); // 750ms pause
+                            Thread.Sleep(500); // 750ms pause
 
                             Invoke(new Action(() =>
                             {
@@ -135,6 +147,12 @@ namespace ergasia1
                     first = null;
                 }
             }
+        }
+
+        private void timerGameDuration_Tick(object sender, EventArgs e)
+        {
+            time++;
+            labelTime.Text = time.ToString();
         }
     }
 }

@@ -41,6 +41,7 @@ namespace ergasia1
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonOpenFolder = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.label1Settings = new System.Windows.Forms.Label();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
             this.SuspendLayout();
@@ -52,10 +53,9 @@ namespace ergasia1
             this.buttonPlay.Enabled = false;
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPlay.Location = new System.Drawing.Point(485, 354);
-            this.buttonPlay.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonPlay.Location = new System.Drawing.Point(364, 288);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(159, 47);
+            this.buttonPlay.Size = new System.Drawing.Size(119, 38);
             this.buttonPlay.TabIndex = 0;
             this.buttonPlay.Text = "PLAY";
             this.buttonPlay.UseVisualStyleBackColor = false;
@@ -67,10 +67,9 @@ namespace ergasia1
             this.labelWelcome.BackColor = System.Drawing.Color.DodgerBlue;
             this.labelWelcome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelWelcome.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.Location = new System.Drawing.Point(303, 21);
-            this.labelWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelWelcome.Location = new System.Drawing.Point(227, 17);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(470, 108);
+            this.labelWelcome.Size = new System.Drawing.Size(378, 88);
             this.labelWelcome.TabIndex = 1;
             this.labelWelcome.Text = "WELCOME";
             // 
@@ -80,10 +79,9 @@ namespace ergasia1
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(951, 530);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonExit.Location = new System.Drawing.Point(713, 431);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(159, 47);
+            this.buttonExit.Size = new System.Drawing.Size(119, 38);
             this.buttonExit.TabIndex = 2;
             this.buttonExit.Text = "EXIT";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -100,19 +98,17 @@ namespace ergasia1
             this.panelWelcome.Controls.Add(this.pictureBoxSettings);
             this.panelWelcome.Controls.Add(this.labelWelcome);
             this.panelWelcome.Controls.Add(this.buttonPlay);
-            this.panelWelcome.Location = new System.Drawing.Point(7, 15);
-            this.panelWelcome.Margin = new System.Windows.Forms.Padding(4);
+            this.panelWelcome.Location = new System.Drawing.Point(5, 12);
             this.panelWelcome.Name = "panelWelcome";
-            this.panelWelcome.Size = new System.Drawing.Size(836, 576);
+            this.panelWelcome.Size = new System.Drawing.Size(627, 468);
             this.panelWelcome.TabIndex = 3;
             // 
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(396, 239);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxName.Location = new System.Drawing.Point(297, 194);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(324, 30);
+            this.textBoxName.Size = new System.Drawing.Size(244, 26);
             this.textBoxName.TabIndex = 4;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -120,10 +116,9 @@ namespace ergasia1
             // 
             this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSettings.Image = global::ergasia1.Properties.Resources.Settings_icon;
-            this.pictureBoxSettings.Location = new System.Drawing.Point(0, 491);
-            this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxSettings.Location = new System.Drawing.Point(0, 399);
             this.pictureBoxSettings.Name = "pictureBoxSettings";
-            this.pictureBoxSettings.Size = new System.Drawing.Size(92, 85);
+            this.pictureBoxSettings.Size = new System.Drawing.Size(69, 69);
             this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxSettings.TabIndex = 3;
             this.pictureBoxSettings.TabStop = false;
@@ -135,10 +130,9 @@ namespace ergasia1
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBack.Location = new System.Drawing.Point(951, 530);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBack.Location = new System.Drawing.Point(713, 431);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(159, 47);
+            this.buttonBack.Size = new System.Drawing.Size(119, 38);
             this.buttonBack.TabIndex = 4;
             this.buttonBack.Text = "BACK";
             this.buttonBack.UseVisualStyleBackColor = false;
@@ -146,26 +140,38 @@ namespace ergasia1
             // 
             // buttonOpenFolder
             // 
-            this.buttonOpenFolder.Location = new System.Drawing.Point(915, 203);
+            this.buttonOpenFolder.Location = new System.Drawing.Point(693, 206);
+            this.buttonOpenFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonOpenFolder.Name = "buttonOpenFolder";
-            this.buttonOpenFolder.Size = new System.Drawing.Size(75, 23);
+            this.buttonOpenFolder.Size = new System.Drawing.Size(123, 23);
             this.buttonOpenFolder.TabIndex = 5;
-            this.buttonOpenFolder.Text = "button1";
+            this.buttonOpenFolder.Text = "Select Pictures\' Folder";
             this.buttonOpenFolder.UseVisualStyleBackColor = true;
             this.buttonOpenFolder.Click += new System.EventHandler(this.buttonOpenFolder_Click);
             // 
+            // label1Settings
+            // 
+            this.label1Settings.AutoSize = true;
+            this.label1Settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1Settings.Location = new System.Drawing.Point(664, 61);
+            this.label1Settings.Name = "label1Settings";
+            this.label1Settings.Size = new System.Drawing.Size(168, 33);
+            this.label1Settings.TabIndex = 6;
+            this.label1Settings.Text = "SETTINGS";
+            // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1125, 592);
+            this.ClientSize = new System.Drawing.Size(844, 481);
+            this.Controls.Add(this.label1Settings);
             this.Controls.Add(this.buttonOpenFolder);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.buttonExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -175,6 +181,7 @@ namespace ergasia1
             this.panelWelcome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -191,6 +198,7 @@ namespace ergasia1
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Button buttonOpenFolder;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label label1Settings;
     }
 }
 
