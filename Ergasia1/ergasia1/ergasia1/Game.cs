@@ -14,7 +14,7 @@ namespace ergasia1
 {
     public partial class Game : Form
     {
-        private Random random;
+        private static Random random;
 
         private Card first;
         private Card second;
@@ -30,8 +30,7 @@ namespace ergasia1
         }
 
         // kanei th images random
-        // afto einai poli paromio me kati pou vrika sto google elpizo min theorithei antigrafh :(((((
-        private List<string> Randomize(List<string> images)
+        public static List<string> Randomize(List<string> images)
         {
             var randomizedImages = new List<string>();
             while (images.Count > 0)
@@ -77,16 +76,11 @@ namespace ergasia1
 
         // Trexei kathe fora pou o xrisths pataei mia apo tis kartes
         // Tsekarei an oi 2 eikones pou patise einai idies( vash to path )
-        // prepei na valoume ena timer sto deftero click giati: otan patame to deftero an einai lathos o sindiasmos den tha to diksei kan giati to 
-        // girnaei kai to ksanagirnaei poli grigora. ara prepei na valoume ena timer otan to girnaei na perimenei 500ms kai meta na to ksanagirnaei
-        // gia na dei o xrhshts ti ekane lathos
         private void Card_Click(object sender, EventArgs e)
         {
-            // Etsi prosdiourizoume pia karta patithike
             Card clicked = (Card)sender;
-
-            // Emfanizoume to onoma ths kartas pou patithike
             Console.WriteLine($"Clicked card '{clicked.Name}'");
+
             clicked.Flip();
 
             if (first == null)

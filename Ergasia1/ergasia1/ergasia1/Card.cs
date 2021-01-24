@@ -27,7 +27,9 @@ namespace ergasia1
             this.Image = Properties.Resources.back;
         }
 
-        // afth h sinartish einai upefthinh sto na emfanizei / krivh thn eikona ths kartas
+        /// <summary>
+        /// Flips the card.
+        /// </summary>
         public void Flip()
         {
             if (Hidden) // an h karta dixnei thn krimenh plevra
