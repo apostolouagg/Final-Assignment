@@ -52,20 +52,20 @@ namespace ergasia1
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(353, 12);
+            this.labelUsername.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.Location = new System.Drawing.Point(364, 12);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(51, 20);
+            this.labelUsername.Size = new System.Drawing.Size(56, 23);
             this.labelUsername.TabIndex = 2;
             this.labelUsername.Text = "label2";
             // 
             // labelAttemps
             // 
             this.labelAttemps.AutoSize = true;
-            this.labelAttemps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAttemps.Location = new System.Drawing.Point(392, 53);
+            this.labelAttemps.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttemps.Location = new System.Drawing.Point(403, 60);
             this.labelAttemps.Name = "labelAttemps";
-            this.labelAttemps.Size = new System.Drawing.Size(51, 20);
+            this.labelAttemps.Size = new System.Drawing.Size(56, 23);
             this.labelAttemps.TabIndex = 4;
             this.labelAttemps.Text = "label3";
             // 
@@ -77,20 +77,20 @@ namespace ergasia1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(258, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 100);
+            this.label2.Size = new System.Drawing.Size(139, 115);
             this.label2.TabIndex = 5;
             this.label2.Text = "Username:\r\n\r\nUser\'s attemps:\r\n\r\nTime in seconds:";
             // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.Location = new System.Drawing.Point(399, 92);
+            this.labelTime.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.Location = new System.Drawing.Point(403, 104);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(51, 20);
+            this.labelTime.Size = new System.Drawing.Size(56, 23);
             this.labelTime.TabIndex = 6;
             this.labelTime.Text = "label4";
             // 

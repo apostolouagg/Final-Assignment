@@ -144,6 +144,7 @@ namespace ergasia1
                     tempImages.RemoveRange(11, tempImages.Count - 12);
                     images = tempImages;
                     Console.WriteLine(tempImages.Count);
+                    MessageBox.Show("Images selected succsessfully!");
                 }
                 else
                 {

@@ -30,10 +30,9 @@ namespace ergasia1
 
         String connectionString = "Data Source=c:DB1.db;Version=3;";
 
+        //To timer ksekinaei oti pataei click
+
         // To do list:
-        // 1. Na kanei flip tis eikones otan pataei restart (kai ustera na tis anoigei ksana gia na ginei to 2)
-        // 2. sthn arxh na anoigei tis kartes gia 5 deuterolepta gia na tis blepei o paikths kai meta na tis kleinei  <- to 2
-        // 3. o timer na ksekinaei thn wra pou oi kartes kleinoun (afou ginei to 2)
         // 4. na prosthetei grammes sthn SQLite me to idio onoma alla diaforetika time kai attempt (giati NOMIZW pws telika den to katafera)
         public Game(List<string> imageList, string user)
         {
