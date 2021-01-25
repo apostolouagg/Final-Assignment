@@ -59,3 +59,4 @@ C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\
 C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.exe
 C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.pdb
 C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.TopPlayers.resources
+C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.TopPlayers.resources

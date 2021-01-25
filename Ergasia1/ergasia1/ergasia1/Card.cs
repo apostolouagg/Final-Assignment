@@ -11,7 +11,7 @@ namespace ergasia1
 {
     public class Card : PictureBox //klironomei apo to PictureBox
     {
-        private Image Img { get;}  // Edo tha apothikevoume thn eikona tou meso tou constractora.
+        private Image Img { set; get;}  // Edo tha apothikevoume thn eikona tou meso tou constractora.
 
         public string ImagePathLocation { get; set; }
 
@@ -42,6 +42,12 @@ namespace ergasia1
                 this.Image = Properties.Resources.back; // Hide image
                 Hidden = true;
             }
+        }
+
+        public void ChangeImage(string imagePath)
+        {
+            Img = Image.FromFile(imagePath);
+            ImagePathLocation = imagePath;
         }
     }
 }
