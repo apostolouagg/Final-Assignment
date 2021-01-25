@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace ergasia1
     {
         private List<string> images;
 
+        String connectionString = "Data Source=c:DB1.db;Version=3;";
+        SQLiteConnection conn;
+
         public Menu()
         {
             InitializeComponent();
@@ -25,7 +29,10 @@ namespace ergasia1
             timerWelcome.Start();
             buttonBack.Hide();
             buttonOpenFolder.Hide();
+            buttonShowAttemps.Hide();
             label1Settings.Hide();
+
+            conn = new SQLiteConnection(connectionString);
 
             // Get images from a folder
             // logika tha prepei na metakinisoume afto to komati sto menu oste na boroume na tou emfanizoume minima an den exei valei eikones sto fakelo
@@ -61,7 +68,8 @@ namespace ergasia1
             buttonBack.Show();
             buttonOpenFolder.Show();
             buttonOpenFolder.Location = new Point(362, 107);
-
+            buttonShowAttemps.Show();
+            buttonShowAttemps.Location = new Point(362, 157);
             label1Settings.Show();
             label1Settings.Location = new Point(340, 4);
             
@@ -74,6 +82,7 @@ namespace ergasia1
 
             buttonBack.Hide();
             buttonOpenFolder.Hide();
+            buttonShowAttemps.Hide();
             label1Settings.Hide();
         }
 
@@ -91,11 +100,38 @@ namespace ergasia1
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            Game game = new Game(new List<string>(images), textBoxName.Text);
+            string name = textBoxName.Text;
 
-            this.Hide();
-            game.ShowDialog();
-            this.Show();
+            conn.Open();
+            try
+            {
+                // elegxei mesa sthn DB an to onoma pou ebale o xrhsths sto textbox uparxei hdh
+                /* to ekana etsi giati ta onomata sthn database den einai tikarismena ws monadika dioti o kathe paikths exei polles
+                   prospatheies, dld to idio name exei polla times kai attemps. Kai auto sumbainei dioti sto telos ths askhshs leei
+                   na deixnoume tis 10 kaluteres prospatheies twn paiktwn, ara oi prospatheies sto idio name einai parapanw apo 1. */
+                string selectQuery = "Select Name from Users";
+                SQLiteCommand cmd1 = new SQLiteCommand(selectQuery, conn);
+                SQLiteDataReader reader = cmd1.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (name.Equals(reader.GetValue(0).ToString()))
+                    {
+                        throw new Exception();
+                    }
+                }
+
+                Game game = new Game(new List<string>(images), textBoxName.Text);
+
+                this.Hide();
+                game.ShowDialog();
+                this.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("This username already exists!");
+            }
+            conn.Close();
         }
 
         private void buttonOpenFolder_Click(object sender, EventArgs e)
@@ -121,6 +157,16 @@ namespace ergasia1
                 }
             }
 
+        }
+
+        // Show Attemps
+        private void buttonShowLeaderboard_Click(object sender, EventArgs e)
+        {
+            TopPlayers topPlayers = new TopPlayers();
+
+            this.Hide();
+            topPlayers.ShowDialog();
+            this.Show();
         }
     }
 }

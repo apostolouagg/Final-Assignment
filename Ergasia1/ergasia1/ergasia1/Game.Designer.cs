@@ -36,6 +36,7 @@ namespace ergasia1
             this.timerGameDuration = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
+            this.buttonRestart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanelCards
@@ -93,12 +94,24 @@ namespace ergasia1
             this.labelTime.TabIndex = 6;
             this.labelTime.Text = "label4";
             // 
+            // buttonRestart
+            // 
+            this.buttonRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestart.Location = new System.Drawing.Point(515, 605);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(202, 40);
+            this.buttonRestart.TabIndex = 7;
+            this.buttonRestart.Text = "RESTART";
+            this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1155, 681);
+            this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.labelAttemps);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.labelTime);
@@ -122,5 +135,6 @@ namespace ergasia1
         private System.Windows.Forms.Timer timerGameDuration;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Button buttonRestart;
     }
 }

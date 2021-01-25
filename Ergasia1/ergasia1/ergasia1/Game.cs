@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,9 +24,17 @@ namespace ergasia1
 
         string username;
         int time = 0;
+        int sameCards = 0;
+        int attemps = 0;
 
-        // na tou valoume na dexete:
-        // 1. Onoma pexth
+        String connectionString = "Data Source=c:DB1.db;Version=3;";
+        SQLiteConnection conn;
+
+        // To do list:
+        // 1. Na kanei flip tis eikones otan pataei restart (kai ustera na tis anoigei ksana gia na ginei to 2)
+        // 2. sthn arxh na anoigei tis kartes gia 5 deuterolepta gia na tis blepei o paikths kai meta na tis kleinei  <- to 2
+        // 3. o timer na ksekinaei thn wra pou oi kartes kleinoun (afou ginei to 2)
+        // 4. na prosthetei grammes sthn SQLite me to idio onoma alla diaforetika time kai attempt (giati NOMIZW pws telika den to katafera)
         public Game(List<string> imageList, string user)
         {
             InitializeComponent();
@@ -49,8 +58,11 @@ namespace ergasia1
 
         private void Game_Load(object sender, EventArgs e)
         {
-            labelUsername.Text = username;
-            labelTime.Text = time.ToString();
+            conn = new SQLiteConnection(connectionString);
+
+            labelUsername.Text = username; // deixnei to username
+            labelTime.Text = time.ToString(); // deixnei to xrono se deuterolepta
+            buttonRestart.Enabled = false; // to koubi restart einai disabled
 
             // Initialize Random
             random = new Random((int)DateTime.Now.Ticks);
@@ -83,15 +95,14 @@ namespace ergasia1
         }
 
         // Trexei kathe fora pou o xrisths pataei mia apo tis kartes
-        // Tsekarei an oi 2 eikones pou patise einai idies( vash to path )
-        // prepei na valoume ena timer sto deftero click giati: otan patame to deftero an einai lathos o sindiasmos den tha to diksei kan giati to 
-        // girnaei kai to ksanagirnaei poli grigora. ara prepei na valoume ena timer otan to girnaei na perimenei 500ms kai meta na to ksanagirnaei
-        // gia na dei o xrhshts ti ekane lathos
         private void Card_Click(object sender, EventArgs e)
         {
+            // Otan ksekinaei to paixnidi
             if (time == 0)
             {
-                timerGameDuration.Start();
+                timerGameDuration.Start(); // ksekinaei na metraei o xronos
+                labelAttemps.Text = attemps++.ToString(); // metraei thn prospatheia kai thn emfanizei
+                buttonRestart.Enabled = false; // kanei disable to restart button
             }
 
             // Etsi prosdiourizoume pia karta patithike
@@ -120,6 +131,9 @@ namespace ergasia1
                         // reset clicked
                         first = null;
                         second = null;
+
+                        // adding number of same cards
+                        sameCards++;
                     }
                     else
                     {
@@ -128,7 +142,7 @@ namespace ergasia1
                         {
                             Invoke(new Action(() => { flowLayoutPanelCards.Enabled = false; }));
 
-                            Thread.Sleep(500); // 750ms pause
+                            Thread.Sleep(500); // 500ms pause
 
                             Invoke(new Action(() =>
                             {
@@ -147,12 +161,46 @@ namespace ergasia1
                     first = null;
                 }
             }
+
+            // an oles oi kartes exoun gurisei dld o xrhsths kerdise
+            if (sameCards == 12)
+            {
+                timerGameDuration.Stop(); // stamataei to timer efoson teleiwse to paixnidi
+                buttonRestart.Enabled = true; // mporei na kanei restart efoson teleiwse to paixnidi
+
+                // updates the DB / gia kapoio logo de ftiaxnei kainourgia grammh me to idio onoma xrhsth
+                conn.Open();
+                string insertQuery = $"Insert into Users(Name, Time, Attemps) values('{username}', '{time}', '{attemps}')";
+                SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
+                int count = cmd.ExecuteNonQuery();
+                conn.Close();
+            }
         }
 
         private void timerGameDuration_Tick(object sender, EventArgs e)
         {
-            time++;
-            labelTime.Text = time.ToString();
+            labelTime.Text = time++.ToString(); // deixnei ton xrono ston paikth thn wra pou paizei
+        }
+
+        private void buttonRestart_Click(object sender, EventArgs e)
+        {
+            time = 0;
+            buttonRestart.Enabled = false;
+
+            // den kserw pws na kanw flip tis eikones gia na ksekinisei pali to paixnidi
+            /*flowLayoutPanelCards.Enabled = true;
+            
+            Task.Run(() =>
+            {
+                Invoke(new Action(() =>
+                {
+                    flowLayoutPanelCards.Enabled = true;
+                    first = null;
+                    second = null;
+                }));
+
+
+            });*/
         }
     }
 }

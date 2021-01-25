@@ -42,6 +42,7 @@ namespace ergasia1
             this.buttonOpenFolder = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label1Settings = new System.Windows.Forms.Label();
+            this.buttonShowAttemps = new System.Windows.Forms.Button();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +142,7 @@ namespace ergasia1
             // buttonOpenFolder
             // 
             this.buttonOpenFolder.Location = new System.Drawing.Point(693, 206);
-            this.buttonOpenFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonOpenFolder.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOpenFolder.Name = "buttonOpenFolder";
             this.buttonOpenFolder.Size = new System.Drawing.Size(123, 23);
             this.buttonOpenFolder.TabIndex = 5;
@@ -159,19 +160,31 @@ namespace ergasia1
             this.label1Settings.TabIndex = 6;
             this.label1Settings.Text = "SETTINGS";
             // 
+            // buttonShowAttemps
+            // 
+            this.buttonShowAttemps.Location = new System.Drawing.Point(693, 258);
+            this.buttonShowAttemps.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonShowAttemps.Name = "buttonShowAttemps";
+            this.buttonShowAttemps.Size = new System.Drawing.Size(123, 23);
+            this.buttonShowAttemps.TabIndex = 7;
+            this.buttonShowAttemps.Text = "Show Top 10 Attemps";
+            this.buttonShowAttemps.UseVisualStyleBackColor = true;
+            this.buttonShowAttemps.Click += new System.EventHandler(this.buttonShowLeaderboard_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(844, 481);
+            this.Controls.Add(this.buttonShowAttemps);
             this.Controls.Add(this.label1Settings);
             this.Controls.Add(this.buttonOpenFolder);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.buttonExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -199,6 +212,7 @@ namespace ergasia1
         private System.Windows.Forms.Button buttonOpenFolder;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label1Settings;
+        private System.Windows.Forms.Button buttonShowAttemps;
     }
 }
 
