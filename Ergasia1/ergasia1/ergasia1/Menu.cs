@@ -112,14 +112,6 @@ namespace ergasia1
                     return;
                 }
 
-                /*while (reader.Read())
-                {
-                    if (name.Equals(reader.GetValue(0).ToString()))
-                    {
-                        throw new Exception();
-                    }
-                }*/
-
                 Game game = new Game(new List<string>(images), textBoxName.Text);
 
                 this.Hide();
