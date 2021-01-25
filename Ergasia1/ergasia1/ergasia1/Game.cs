@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Timer = System.Threading.Timer;
 
 namespace ergasia1
 {
@@ -140,18 +139,26 @@ namespace ergasia1
                         // hide them again if wrong
                         Task.Run(() =>
                         {
-                            Invoke(new Action(() => { flowLayoutPanelCards.Enabled = false; }));
-
-                            Thread.Sleep(500); // 500ms pause
-
-                            Invoke(new Action(() =>
+                            try
                             {
-                                first.Flip();
-                                second.Flip();
-                                first = null;
-                                second = null;
-                                flowLayoutPanelCards.Enabled = true;
-                            }));
+                                Invoke(new Action(() => { flowLayoutPanelCards.Enabled = false; }));
+
+                                Thread.Sleep(500); // 500ms pause
+
+                                Invoke(new Action(() =>
+                                {
+                                    first.Flip();
+                                    second.Flip();
+                                    first = null;
+                                    second = null;
+                                    flowLayoutPanelCards.Enabled = true;
+                                }));
+                            }
+                            catch (Exception exception)
+                            {
+                                //
+                            }
+                           
                         });
                     }
                 }
@@ -173,7 +180,7 @@ namespace ergasia1
                     conn.Open();
                     string insertQuery = $"Insert into Users(Name, Time, Attemps) values('{username}', '{time}', '{attemps}')";
                     SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
-                    int count = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
@@ -201,6 +208,7 @@ namespace ergasia1
                 card.ChangeImage(images[i++]);
             }
 
+            Task.Run(() => { Invoke(new Action(() => { Thread.Sleep(1000); })); });
             ShowAllCards();
         }
 
@@ -209,31 +217,39 @@ namespace ergasia1
         {
             // Disable panel
             flowLayoutPanelCards.Enabled = false;
+
             Task.Run(() =>
             {
-                Thread.Sleep(2000);
-
-                Invoke(new Action(() =>
+                try
                 {
-                    foreach (var card in flowLayoutPanelCards.Controls.OfType<Card>())
+                    Invoke(new Action(() =>
                     {
-                        card.Flip();
-                    }
-                }));
-                
-                Thread.Sleep(4000);
+                        foreach (var card in flowLayoutPanelCards.Controls.OfType<Card>())
+                        {
+                            card.Flip();
+                        }
+                    }));
 
-                Invoke(new Action(() =>
+                    Thread.Sleep(4000);
+
+                    Invoke(new Action(() =>
+                    {
+                        foreach (var card in flowLayoutPanelCards.Controls.OfType<Card>())
+                        {
+                            card.Flip();
+                        }
+                    }));
+
+                    // Enable panel
+                    Invoke(new Action(() => { flowLayoutPanelCards.Enabled = true; }));
+                }
+                catch (Exception exception)
                 {
-                    foreach (var card in flowLayoutPanelCards.Controls.OfType<Card>())
-                    {
-                        card.Flip();
-                    }
-                }));
+                    // An klisoume to game eno trexei to ShowAllCards petaei exception
+                }
 
-                // Enable panel
-                Invoke(new Action(() => { flowLayoutPanelCards.Enabled = true; }));
             });
+            
         }
     }
 }
