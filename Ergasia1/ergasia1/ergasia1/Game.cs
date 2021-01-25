@@ -175,7 +175,7 @@ namespace ergasia1
 
                 using (SQLiteConnection conn = new SQLiteConnection(connectionString))
                 {
-                    // updates the DB / gia kapoio logo de ftiaxnei kainourgia grammh me to idio onoma xrhsth
+                    // updates the DB / ftiaxnei kainourgia grammh me to idio onoma xrhsth
                     conn.Open();
                     string insertQuery = $"Insert into Users(Name, Time, Attemps) values('{username}', '{time}', '{attemps}')";
                     SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
