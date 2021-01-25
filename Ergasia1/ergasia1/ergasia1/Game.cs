@@ -33,7 +33,7 @@ namespace ergasia1
         //To timer ksekinaei oti pataei click
 
         // To do list:
-        // 4. na prosthetei grammes sthn SQLite me to idio onoma alla diaforetika time kai attempt (giati NOMIZW pws telika den to katafera)
+        // 1. Na emfanizei ta apotelesmata tou paixnidiou se kainourgia forma gia na einai omorfo
         public Game(List<string> imageList, string user)
         {
             InitializeComponent();

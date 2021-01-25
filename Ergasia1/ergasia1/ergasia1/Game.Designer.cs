@@ -52,6 +52,7 @@ namespace ergasia1
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
+            this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.Location = new System.Drawing.Point(364, 12);
             this.labelUsername.Name = "labelUsername";
@@ -62,6 +63,7 @@ namespace ergasia1
             // labelAttemps
             // 
             this.labelAttemps.AutoSize = true;
+            this.labelAttemps.BackColor = System.Drawing.Color.Transparent;
             this.labelAttemps.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAttemps.Location = new System.Drawing.Point(403, 60);
             this.labelAttemps.Name = "labelAttemps";
@@ -77,6 +79,7 @@ namespace ergasia1
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(258, 12);
             this.label2.Name = "label2";
@@ -87,6 +90,7 @@ namespace ergasia1
             // labelTime
             // 
             this.labelTime.AutoSize = true;
+            this.labelTime.BackColor = System.Drawing.Color.Transparent;
             this.labelTime.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.Location = new System.Drawing.Point(403, 104);
             this.labelTime.Name = "labelTime";
@@ -110,6 +114,7 @@ namespace ergasia1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.BackgroundImage = global::ergasia1.Properties.Resources.Screenshot_2;
             this.ClientSize = new System.Drawing.Size(1155, 681);
             this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.labelAttemps);
