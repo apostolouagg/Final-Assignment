@@ -13,59 +13,53 @@ namespace ergasia1
 {
     public partial class TopPlayers : Form
     {
-        /* sto design exw balei 2 listboxes. To 1o listbox tha einai gia na deixnei ta onomata twn paiktwn kai o xrhsths na mporei na 
-           ta epilegei. Otan epilegei 1 onoma paikth, tote sto 2o listbox tha emfanizontai o xronos kai o arithmos ths prospatheias tou
-           paikth apo thn kaluterh pros th xeiroterh. */
-
-        // To do list
-        // 1. sto kommati me to sxolio "//NEEDS WORK" uparxei ekshghsh
-
-        string name;
-        List<string> playerInfo;
         private string connectionstring = "Data Source=c:DB1.db;Version=3;";
-        SQLiteConnection conn;
+        private List<Player> playerList;
 
-        public TopPlayers(List<string> playersName) // lista me ta onomata
+        public TopPlayers()
         {
             InitializeComponent();
-            playerInfo = playersName;
         }
 
         private void TopPlayers_Load(object sender, EventArgs e)
         {
-            conn = new SQLiteConnection(connectionstring);
-
-            listBox1.DataSource = playerInfo; // Auth h entolh dinei oloklhrh lista sto listbox
-        }
-
-        // NEEDS WORK
-        /* Theloume na briskei to onoma apo to listbox1, na to sugkrinei me thn database kai sto listbox2 na emfanizei ta 10 kalutera time
-           kai attemp tou paikth pou epilexthhke */
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*using (SQLiteConnection conn = new SQLiteConnection(connectionstring)) //(automatically closes the connection)
+            playerList = new List<Player>();
+            using (SQLiteConnection conn = new SQLiteConnection(connectionstring)) //(automatically closes the connection)
             {
                 conn.Open();
-                string selectQuery = "Select Name FROM Users";
-                SQLiteCommand cmd1 = new SQLiteCommand(selectQuery, conn);
-                SQLiteDataReader reader1 = cmd1.ExecuteReader();
+                string selectQuery = "SELECT Name, Time, Attemps FROM Users;";
+                SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn);
+                SQLiteDataReader reader = cmd.ExecuteReader();
 
-                if (reader1.Read())
+                while (reader.Read()) // episis aggeliki edo vazeis While oxi If
                 {
-                    if (listBox1.SelectedIndex.ToString().Equals(reader1.GetValue(0).ToString()))
+                    if (playerList.Any(x=>x.Name == reader.GetString(0))) // if user exist in the list then we just add its attempt
                     {
-                        MessageBox.Show("dfsh");
-                        string select2Query = "Select Time, Attemps from Users Order by Time ASC";
-                        SQLiteCommand cmd2 = new SQLiteCommand(select2Query, conn);
-                        SQLiteDataReader reader2 = cmd2.ExecuteReader();
-
-                        if (reader2.Read())
+                        playerList.Find(x=>x.Name == reader.GetString(0)).Attempts.Add(new Attempt(reader.GetInt16(1), reader.GetInt16(2)));
+                        Console.WriteLine(playerList.Find(x => x.Name == reader.GetString(0)).Name);
+                    }
+                    else // if user doesn't exist we add him to the list with its attempt
+                    {
+                        playerList.Add(new Player(reader.GetString(0), new List<Attempt>
                         {
-                            listBox2.Items.Add(reader2.GetValue(0).ToString() + "  " + reader2.GetValue(1).ToString());
-                        }
+                            new Attempt(reader.GetInt16(1), reader.GetInt16(2))
+                        }));
                     }
                 }
-            }*/
+
+                // We add only the names of the player list
+                listBox1.DataSource = playerList.Select(x => x.Name).ToList();
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            var selected = playerList.Find(x => x.Name == listBox1.SelectedItem.ToString());
+            foreach (var selectedAttempt in selected.Attempts)
+            {
+                listBox2.Items.Add($"Attempt:{selectedAttempt.AttemptNumber} | Time:{selectedAttempt.Time}");
+            }
         }
     }
 }

@@ -15,7 +15,6 @@ namespace ergasia1
     public partial class Menu : Form
     {
         private List<string> images;
-        List<string> playersName = new List<string>();
         private String connectionString = "Data Source=c:DB1.db;Version=3;";
 
         public Menu()
@@ -34,22 +33,6 @@ namespace ergasia1
             images = Directory.GetFiles(@"Cards\Default", "*jpg").ToList(); 
             images.AddRange(Directory.GetFiles(@"Cards\Default", "*png").ToList()); 
             images.AddRange(Directory.GetFiles(@"Cards\Default", "*bmp").ToList());
-
-            // Otan ksekinaei to programma o xrhsths mporei na dei to leaderboard me tous prohgoumenous paiktes
-            using (SQLiteConnection conn = new SQLiteConnection(connectionString)) //(automatically closes the connection)
-            {
-                conn.Open();
-                string selectQuery = "Select Name FROM Users";
-                SQLiteCommand cmd1 = new SQLiteCommand(selectQuery, conn);
-                SQLiteDataReader reader = cmd1.ExecuteReader();
-
-                // Vazei tou paiktes pou einai sthn DM sth lista player h opoia meta fortwnetai kai emfanizetai sto listbox1 (=Leaderboard)
-                if (reader.Read())
-                {
-                    Players player = new Players(reader.GetValue(0).ToString());
-                    playersName.Add(player.name);
-                }
-            }
         }
 
         private void timerWelcome_Tick(object sender, EventArgs e)
@@ -107,7 +90,7 @@ namespace ergasia1
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             string name2 = textBoxName.Text;
-            Players player = new Players(name2);
+            //Player player = new Player(name2); // TI to kanoume afto?
 
             using (SQLiteConnection conn = new SQLiteConnection(connectionString)) //(automatically closes the connection)
             {
@@ -127,19 +110,13 @@ namespace ergasia1
                     MessageBox.Show("This username already exists!");
                     return;
                 }
-                else
-                {
-                    playersName.Add(player.name); // kanei add to name sth lista pou xrhsimopoieitai gia to leaderboard
-                }
 
                 Game game = new Game(new List<string>(images), textBoxName.Text);
 
                 this.Hide();
                 game.ShowDialog();
                 this.Show();
-
             }
-
         }
 
         private void buttonOpenFolder_Click(object sender, EventArgs e)
@@ -169,7 +146,7 @@ namespace ergasia1
         // Show Attemps
         private void buttonShowLeaderboard_Click(object sender, EventArgs e)
         {
-            TopPlayers topPlayers = new TopPlayers(playersName); // stelnoume th lista me ta onomata meso constractora
+            TopPlayers topPlayers = new TopPlayers();
 
             this.Hide();
             topPlayers.ShowDialog();
