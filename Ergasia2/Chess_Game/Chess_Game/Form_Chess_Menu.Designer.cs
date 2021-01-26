@@ -51,12 +51,14 @@ namespace Chess_Game
             // label_chess
             // 
             this.label_chess.AutoSize = true;
-            this.label_chess.BackColor = System.Drawing.SystemColors.MenuText;
+            this.label_chess.BackColor = System.Drawing.Color.Peru;
             this.label_chess.Font = new System.Drawing.Font("Palatino Linotype", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_chess.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label_chess.Image = global::Chess_Game.Properties.Resources.chess_menu2;
+            this.label_chess.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label_chess.Location = new System.Drawing.Point(454, 34);
             this.label_chess.Name = "label_chess";
-            this.label_chess.Size = new System.Drawing.Size(141, 59);
+            this.label_chess.Size = new System.Drawing.Size(138, 58);
             this.label_chess.TabIndex = 2;
             this.label_chess.Text = "Chess";
             // 
@@ -76,6 +78,7 @@ namespace Chess_Game
             this.label_Player1.BackColor = System.Drawing.SystemColors.ControlText;
             this.label_Player1.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_Player1.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label_Player1.Image = global::Chess_Game.Properties.Resources.chess_menu2;
             this.label_Player1.Location = new System.Drawing.Point(469, 125);
             this.label_Player1.Name = "label_Player1";
             this.label_Player1.Size = new System.Drawing.Size(116, 37);
@@ -88,6 +91,7 @@ namespace Chess_Game
             this.label_Player2.BackColor = System.Drawing.SystemColors.ControlText;
             this.label_Player2.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_Player2.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label_Player2.Image = global::Chess_Game.Properties.Resources.chess_menu2;
             this.label_Player2.Location = new System.Drawing.Point(469, 233);
             this.label_Player2.Name = "label_Player2";
             this.label_Player2.Size = new System.Drawing.Size(116, 37);

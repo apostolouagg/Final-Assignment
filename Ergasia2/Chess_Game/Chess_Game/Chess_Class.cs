@@ -8,6 +8,6 @@ namespace Chess_Game
 {
     class Chess_Class 
     {
-
+        
     }
 }
