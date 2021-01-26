@@ -26,9 +26,15 @@ namespace Chess_Game
             else
             {
                 this.Hide();
-                Form_Chess_Game game = new Form_Chess_Game();
-                game.Show();
+                Form_Chess_Game game = new Form_Chess_Game(textBox_Player1.Text, textBox_Player2.Text);
+                game.ShowDialog();
+                this.Show();
             }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
