@@ -27,7 +27,7 @@ namespace ergasia1
             using (SQLiteConnection conn = new SQLiteConnection(connectionstring)) //(automatically closes the connection)
             {
                 conn.Open();
-                string selectQuery = "SELECT Name, Time, Attemps FROM Users;";
+                string selectQuery = "SELECT Name, Time, Attemps FROM Users ORDER BY Time ASC;";
                 SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn);
                 SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -58,8 +58,14 @@ namespace ergasia1
             var selected = playerList.Find(x => x.Name == listBox1.SelectedItem.ToString());
             foreach (var selectedAttempt in selected.Attempts)
             {
-                listBox2.Items.Add($"Attempt:{selectedAttempt.AttemptNumber} | Time:{selectedAttempt.Time}");
+                // bazei sto listbox2 ta stoixeia tou paikth pou epilexthhke sto listbox1
+                listBox2.Items.Add($"     {selectedAttempt.AttemptNumber}               {selectedAttempt.Time}");
             }
+        }
+
+        private void buttonBackToMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

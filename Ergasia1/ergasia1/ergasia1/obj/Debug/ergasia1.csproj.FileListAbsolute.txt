@@ -82,3 +82,4 @@ C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\De
 C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.exe
 C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.pdb
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.Results.resources
+C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia1\ergasia1\ergasia1\obj\Debug\ergasia1.Results.resources

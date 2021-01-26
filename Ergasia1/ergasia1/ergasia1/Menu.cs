@@ -24,7 +24,7 @@ namespace ergasia1
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            timerWelcome.Start();
+            timerWelcome.Start(); // xrhsimopoieitai gia ta labels pou allazoun xrwmata
             buttonBack.Hide();
 
             panelSettings.Hide();
@@ -35,6 +35,7 @@ namespace ergasia1
             images.AddRange(Directory.GetFiles(@"Cards\Default", "*bmp").ToList());
         }
 
+        // Allazei xrwmata sta labels
         private void timerWelcome_Tick(object sender, EventArgs e)
         {
             if (labelWelcome.BackColor == Color.DodgerBlue)
@@ -54,6 +55,7 @@ namespace ergasia1
             Application.Exit();
         }
 
+        // Otan o xrhsths epilegei tis ruthmiseis
         private void pictureBoxSettings_Click(object sender, EventArgs e)
         {
             panelWelcome.Hide();

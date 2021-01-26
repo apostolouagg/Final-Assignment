@@ -34,6 +34,7 @@ namespace ergasia1
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1ShowTime = new System.Windows.Forms.Label();
             this.label2ShowAttemp = new System.Windows.Forms.Label();
+            this.buttonBackToMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelLeaderboard
@@ -76,7 +77,7 @@ namespace ergasia1
             // 
             this.label1ShowTime.AutoSize = true;
             this.label1ShowTime.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1ShowTime.Location = new System.Drawing.Point(332, 57);
+            this.label1ShowTime.Location = new System.Drawing.Point(330, 57);
             this.label1ShowTime.Name = "label1ShowTime";
             this.label1ShowTime.Size = new System.Drawing.Size(44, 21);
             this.label1ShowTime.TabIndex = 3;
@@ -92,12 +93,23 @@ namespace ergasia1
             this.label2ShowAttemp.TabIndex = 4;
             this.label2ShowAttemp.Text = "Attemp";
             // 
+            // buttonBackToMenu
+            // 
+            this.buttonBackToMenu.Location = new System.Drawing.Point(320, 423);
+            this.buttonBackToMenu.Name = "buttonBackToMenu";
+            this.buttonBackToMenu.Size = new System.Drawing.Size(85, 23);
+            this.buttonBackToMenu.TabIndex = 5;
+            this.buttonBackToMenu.Text = "Back to Menu";
+            this.buttonBackToMenu.UseVisualStyleBackColor = true;
+            this.buttonBackToMenu.Click += new System.EventHandler(this.buttonBackToMenu_Click);
+            // 
             // TopPlayers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(417, 450);
+            this.ClientSize = new System.Drawing.Size(417, 454);
+            this.Controls.Add(this.buttonBackToMenu);
             this.Controls.Add(this.label2ShowAttemp);
             this.Controls.Add(this.label1ShowTime);
             this.Controls.Add(this.listBox2);
@@ -121,5 +133,6 @@ namespace ergasia1
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label1ShowTime;
         private System.Windows.Forms.Label label2ShowAttemp;
+        private System.Windows.Forms.Button buttonBackToMenu;
     }
 }

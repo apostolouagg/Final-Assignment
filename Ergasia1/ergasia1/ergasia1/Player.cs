@@ -6,9 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ergasia1
-{
-    /* IT IS WHAT IT IS */
-    
+{   
     public class Player
     {
         public string Name { get; set; }

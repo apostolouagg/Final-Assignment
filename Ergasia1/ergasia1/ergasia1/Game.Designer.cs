@@ -37,6 +37,7 @@ namespace ergasia1
             this.label2 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.buttonRestart = new System.Windows.Forms.Button();
+            this.buttonQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanelCards
@@ -101,13 +102,24 @@ namespace ergasia1
             // buttonRestart
             // 
             this.buttonRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRestart.Location = new System.Drawing.Point(515, 605);
+            this.buttonRestart.Location = new System.Drawing.Point(262, 601);
             this.buttonRestart.Name = "buttonRestart";
             this.buttonRestart.Size = new System.Drawing.Size(202, 40);
             this.buttonRestart.TabIndex = 7;
             this.buttonRestart.Text = "RESTART";
             this.buttonRestart.UseVisualStyleBackColor = true;
             this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
+            // 
+            // buttonQuit
+            // 
+            this.buttonQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuit.Location = new System.Drawing.Point(710, 601);
+            this.buttonQuit.Name = "buttonQuit";
+            this.buttonQuit.Size = new System.Drawing.Size(202, 40);
+            this.buttonQuit.TabIndex = 8;
+            this.buttonQuit.Text = "QUIT";
+            this.buttonQuit.UseVisualStyleBackColor = true;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuti_Click);
             // 
             // Game
             // 
@@ -116,6 +128,7 @@ namespace ergasia1
             this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImage = global::ergasia1.Properties.Resources.Screenshot_2;
             this.ClientSize = new System.Drawing.Size(1155, 681);
+            this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.labelAttemps);
             this.Controls.Add(this.labelUsername);
@@ -141,5 +154,6 @@ namespace ergasia1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Button buttonRestart;
+        private System.Windows.Forms.Button buttonQuit;
     }
 }

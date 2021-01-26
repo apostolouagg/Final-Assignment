@@ -31,9 +31,6 @@ namespace ergasia1
         String connectionString = "Data Source=c:DB1.db;Version=3;";
 
         //To timer ksekinaei oti pataei click
-
-        // To do list:
-        // 1. Na emfanizei ta apotelesmata tou paixnidiou se kainourgia forma gia na einai omorfo
         public Game(List<string> imageList, string user)
         {
             InitializeComponent();
@@ -98,7 +95,7 @@ namespace ergasia1
         private void Card_Click(object sender, EventArgs e)
         {
             // Otan ksekinaei to paixnidi
-            if (!started) // to allaksa apo time giati o xrhsths an patisei pola click mesa sto proto defterolepto afksanete
+            if (!started)
             {
                 timerGameDuration.Start(); // ksekinaei na metraei o xronos
                 labelAttemps.Text = (++attemps).ToString(); // metraei thn prospatheia kai thn emfanizei
@@ -181,6 +178,11 @@ namespace ergasia1
                     SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
                     cmd.ExecuteNonQuery();
                 }
+
+                Results results = new Results(username);
+                this.Hide();
+                results.ShowDialog();
+                this.Show();
             }
         }
 
@@ -249,6 +251,21 @@ namespace ergasia1
 
             });
             
+        }
+
+        //Quit button
+        private void buttonQuti_Click(object sender, EventArgs e)
+        {
+            timerGameDuration.Stop(); // otan petagetai to messageBox o xronos stamataei
+            var answer = MessageBox.Show("Are you sure you want to quit?", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (answer == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                timerGameDuration.Start(); // an o xrhsths den kanei quit o xronos sunexizetai
+            }
         }
     }
 }
