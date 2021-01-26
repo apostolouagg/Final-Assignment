@@ -89,9 +89,7 @@ namespace ergasia1
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            string name2 = textBoxName.Text;
-            //Player player = new Player(name2); // TI to kanoume afto?
-
+            var playerName = textBoxName.Text;
             using (SQLiteConnection conn = new SQLiteConnection(connectionString)) //(automatically closes the connection)
             {
                 conn.Open();
@@ -100,10 +98,10 @@ namespace ergasia1
                    prospatheies, dld to idio name exei polla times kai attemps. Kai auto sumbainei dioti sto telos ths askhshs leei
                    na deixnoume tis 10 kaluteres prospatheies twn paiktwn, ara oi prospatheies sto idio name einai parapanw apo 1. */
                 string selectQuery = "Select Name FROM Users WHERE Name = @name;";
-                SQLiteCommand cmd1 = new SQLiteCommand(selectQuery, conn);
-                cmd1.Parameters.AddWithValue("@name", name2); // safe way
+                SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn);
+                cmd.Parameters.AddWithValue("@name", playerName); // safe way
 
-                SQLiteDataReader reader = cmd1.ExecuteReader();
+                SQLiteDataReader reader = cmd.ExecuteReader();
 
                 if (reader.HasRows)
                 {
