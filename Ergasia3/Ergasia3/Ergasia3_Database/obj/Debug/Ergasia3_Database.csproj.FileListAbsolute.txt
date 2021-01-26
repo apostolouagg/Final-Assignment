@@ -1,0 +1,16 @@
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\Ergasia3_Database.dll.config
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\Ergasia3_Database.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\Ergasia3_Database.pdb
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\EntityFramework.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\System.Data.SQLite.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\EntityFramework.xml
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\bin\Debug\System.Data.SQLite.xml
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\obj\Debug\Ergasia3_Database.csprojAssemblyReference.cache
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\obj\Debug\Ergasia3_Database.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\obj\Debug\Ergasia3_Database.csproj.CopyComplete
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\obj\Debug\Ergasia3_Database.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_Database\obj\Debug\Ergasia3_Database.pdb

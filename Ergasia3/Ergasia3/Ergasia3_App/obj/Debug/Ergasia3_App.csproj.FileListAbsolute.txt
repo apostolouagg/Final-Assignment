@@ -1,0 +1,16 @@
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\Ergasia3_App.exe.config
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\Ergasia3_App.exe
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\Ergasia3_App.pdb
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\Ergasia3_Database.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\System.Data.SQLite.dll
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\Ergasia3_Database.pdb
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\Ergasia3_Database.dll.config
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\bin\Debug\System.Data.SQLite.xml
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.csprojAssemblyReference.cache
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.Main.resources
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.Properties.Resources.resources
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.csproj.GenerateResource.cache
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.csproj.CopyComplete
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.exe
+C:\Users\anton\Desktop\TelikhErgasiaAlephs\Ergasia3\Ergasia3_App\obj\Debug\Ergasia3_App.pdb
