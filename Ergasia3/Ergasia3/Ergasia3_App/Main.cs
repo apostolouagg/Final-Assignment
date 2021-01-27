@@ -113,13 +113,6 @@ namespace Ergasia3_App
             List<Case> searchTime = new List<Case>();
             List<Case> searchName = new List<Case>();
             listBoxResult.Items.Clear();
-            Console.WriteLine("test");
-            foreach (var contextCase in Context.Cases)
-            {
-                Console.WriteLine("test2");
-
-                Console.WriteLine(contextCase.FullName);
-            }
 
             if (string.IsNullOrWhiteSpace(textBoxNameSearch.Text) && !maskedTextBoxDateSearch.MaskCompleted)
             {
@@ -185,7 +178,7 @@ namespace Ergasia3_App
             buttonDelete.Enabled = true;
             buttonEdit.Enabled = true;
 
-
+            // Show selected user's info
             textBoxEditName.Text = selectedCase.FullName;
             textBoxEditEmail.Text = selectedCase.Email;
             textBoxEditNumber.Text = selectedCase.PhoneNumber;
@@ -193,6 +186,16 @@ namespace Ergasia3_App
             maskedTextBoxEditBirth.Text = selectedCase.BirthDay;
             textBoxEditHome.Text = selectedCase.Address;
             maskedTextBoxEditTime.Text = selectedCase.TimeOfCase;
+
+            // Show underlying diseases
+            listBoxEditUD.Items.Clear();
+            foreach (var selectedCaseUnderlyingDisease in selectedCase.UnderlyingDiseases)
+            {
+                listBoxEditUD.Items.Add(selectedCaseUnderlyingDisease.Disease);
+            }
+
+            // Disable UD save changes button
+            buttonChangeUD.Enabled = false;
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -272,12 +275,12 @@ namespace Ergasia3_App
 
                 Context.UpdateCase(selectedCase);
 
+
                 MessageBox.Show("Edit successfull!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Search(false);
                 if (listBoxResult.Items.Count == 0)
                 {
                     DisableInfo();
-
                 }
             }
         }
@@ -302,7 +305,27 @@ namespace Ergasia3_App
                 panelEdit.Enabled = false;
             }
         }
-        private void buttonAddD_Click(object sender, EventArgs e)
+
+        // Edit disease button
+        private void buttonChangeUD_Click(object sender, EventArgs e)
+        {
+            var newDiseases = new List<UnderlyingDisease>();
+            foreach (var disease in listBoxEditUD.Items)
+            {
+                newDiseases.Add(new UnderlyingDisease(){Disease = disease.ToString()});
+            }
+
+            // Give the selected case the edited disease list and update the database
+            selectedCase.UnderlyingDiseases = newDiseases;
+            Context.UpdateUnderlyingDiseases(selectedCase);
+            buttonChangeUD.Enabled = false;
+        }
+
+        /*
+         * If disease already in listBox then show message.
+         * If NOT already in listBox then add it to that listBox.
+         */
+        private void buttonAddD_Click(object sender, EventArgs e) // ADD
         {
             if (listBoxUD.Items.Contains(textBoxUD.Text))
             {
@@ -314,25 +337,73 @@ namespace Ergasia3_App
                 textBoxUD.Clear();
             }
         }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buttonAddNewUD_Click(object sender, EventArgs e) // EDIT
         {
-            listBoxUD.Items.Remove(listBoxUD.SelectedItem);
-        }
-
-
-        private void listBoxUD_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (listBoxUD.SelectedItem == null)
+            if (listBoxEditUD.Items.Contains(textBoxEditUD.Text))
             {
-                listBoxUD.ContextMenuStrip = null;
+                MessageBox.Show($"Disease '{textBoxEditUD.Text}' Already Added!");
             }
             else
             {
-                listBoxUD.ContextMenuStrip = contextMenuStrip1;
+                buttonChangeUD.Enabled = true;
+                listBoxEditUD.Items.Add(textBoxEditUD.Text);
+                textBoxEditUD.Clear();
             }
         }
 
+        /*
+         * If textBox is empty then disable button.
+         */
+        private void textBox_TextChanged(object sender, EventArgs e) // ADD & EDIT
+        {
+            var textbox = (TextBox) sender;
+            if (textbox.Name == "textBoxUD")
+            {
+                if (!String.IsNullOrWhiteSpace(textBoxUD.Text)) buttonAddD.Enabled = true;
+                else buttonAddD.Enabled = false;
+            }
+            else
+            {
+                if (!String.IsNullOrWhiteSpace(textBoxEditUD.Text)) buttonAddNewUD.Enabled = true;
+                else buttonAddNewUD.Enabled = false;
+            }
+        }
+
+        // DISEASE SELECTION
+        /*
+         * If a case isn't selected then remove ContextMenuStrip to that ListBox.
+         * If a case IS selected then add a ContextMenuStrip to that ListBox.
+         */
+        private void listBox_SelectedValueChanged(object sender, EventArgs e) // EDIT & ADD
+        {
+            var listBox = (ListBox)sender;
+            if (listBox.Name == "listBoxUD")
+            {
+                if (listBoxUD.SelectedItem == null) listBoxUD.ContextMenuStrip = null;
+                else listBoxUD.ContextMenuStrip = contextMenuStripAdd;
+            }
+            else
+            {
+                if (listBoxEditUD.SelectedItem == null) listBoxEditUD.ContextMenuStrip = null;
+                else listBoxEditUD.ContextMenuStrip = contextMenuStripEdit;
+            }
+        }
+
+        // RIGHT CLICKS
+        /*
+         * Remove Selected Item.
+         */
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e) // ADD
+        {
+            listBoxUD.Items.Remove(listBoxUD.SelectedItem);
+        }
+        private void toolStripMenuItemEDITdelete_Click(object sender, EventArgs e) // EDIT
+        {
+            listBoxEditUD.Items.Remove(listBoxEditUD.SelectedItem);
+            buttonChangeUD.Enabled = true;
+        }
+        
+        // Change Tabs (ADD NEW / SEARCH-EDIT-DELETE)
         private void searchCaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelAddNew.Enabled = false;
@@ -351,18 +422,6 @@ namespace Ergasia3_App
             panelAddNew.Enabled = true;
             panelAddNew.Visible = true;
             panelAddNew.BringToFront();
-        }
-
-        private void textBoxUD_TextChanged(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrWhiteSpace(textBoxUD.Text))
-            {
-                buttonAddD.Enabled = true;
-            }
-            else
-            {
-                buttonAddD.Enabled = false;
-            }
         }
     }
 }

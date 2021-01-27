@@ -32,14 +32,13 @@ namespace Ergasia3_App
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelAddNew = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
             this.labelError = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxUD = new System.Windows.Forms.TextBox();
             this.listBoxUD = new System.Windows.Forms.ListBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelTitle = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,15 +57,20 @@ namespace Ergasia3_App
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.contextMenuStripAdd = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.searchCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonChangeUD = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBoxEditUD = new System.Windows.Forms.TextBox();
+            this.buttonAddNewUD = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxEditUD = new System.Windows.Forms.ListBox();
             this.label24 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
@@ -94,14 +98,17 @@ namespace Ergasia3_App
             this.label14 = new System.Windows.Forms.Label();
             this.maskedTextBoxDateSearch = new System.Windows.Forms.MaskedTextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.contextMenuStripEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemEDITdelete = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAddNew.SuspendLayout();
             this.panelForm.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStripAdd.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelEdit.SuspendLayout();
+            this.contextMenuStripEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddNew
@@ -114,6 +121,16 @@ namespace Ergasia3_App
             this.panelAddNew.Name = "panelAddNew";
             this.panelAddNew.Size = new System.Drawing.Size(1273, 640);
             this.panelAddNew.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(422, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(364, 34);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Add a new Covid-19 Case";
             // 
             // panelForm
             // 
@@ -185,12 +202,11 @@ namespace Ergasia3_App
             this.textBoxUD.Name = "textBoxUD";
             this.textBoxUD.Size = new System.Drawing.Size(152, 27);
             this.textBoxUD.TabIndex = 7;
-            this.textBoxUD.TextChanged += new System.EventHandler(this.textBoxUD_TextChanged);
+            this.textBoxUD.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // listBoxUD
             // 
             this.listBoxUD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxUD.ContextMenuStrip = this.contextMenuStrip1;
             this.listBoxUD.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxUD.FormattingEnabled = true;
             this.listBoxUD.ItemHeight = 20;
@@ -200,21 +216,7 @@ namespace Ergasia3_App
             this.listBoxUD.TabIndex = 18;
             this.listBoxUD.TabStop = false;
             this.listBoxUD.UseTabStops = false;
-            this.listBoxUD.SelectedValueChanged += new System.EventHandler(this.listBoxUD_SelectedValueChanged);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 26);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.deleteToolStripMenuItem.Text = "DeleteSelectedDiseace";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            this.listBoxUD.SelectedValueChanged += new System.EventHandler(this.listBox_SelectedValueChanged);
             // 
             // labelTitle
             // 
@@ -398,15 +400,19 @@ namespace Ergasia3_App
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
-            // label11
+            // contextMenuStripAdd
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(422, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(364, 34);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Add a new Covid-19 Case";
+            this.contextMenuStripAdd.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStripAdd.Name = "contextMenuStrip1";
+            this.contextMenuStripAdd.Size = new System.Drawing.Size(192, 26);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.deleteToolStripMenuItem.Text = "DeleteSelectedDiseace";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -462,8 +468,12 @@ namespace Ergasia3_App
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonChangeUD);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.textBoxEditUD);
+            this.panel1.Controls.Add(this.buttonAddNewUD);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.listBoxEditUD);
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.listBoxResult);
@@ -474,40 +484,87 @@ namespace Ergasia3_App
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.maskedTextBoxDateSearch);
             this.panel1.Controls.Add(this.buttonSearch);
-            this.panel1.Location = new System.Drawing.Point(106, 66);
+            this.panel1.Location = new System.Drawing.Point(102, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1036, 547);
+            this.panel1.Size = new System.Drawing.Size(1044, 547);
             this.panel1.TabIndex = 1;
+            // 
+            // buttonChangeUD
+            // 
+            this.buttonChangeUD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonChangeUD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChangeUD.Enabled = false;
+            this.buttonChangeUD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChangeUD.Location = new System.Drawing.Point(351, 492);
+            this.buttonChangeUD.Name = "buttonChangeUD";
+            this.buttonChangeUD.Size = new System.Drawing.Size(128, 36);
+            this.buttonChangeUD.TabIndex = 36;
+            this.buttonChangeUD.Text = "Save Changes";
+            this.buttonChangeUD.UseVisualStyleBackColor = true;
+            this.buttonChangeUD.Click += new System.EventHandler(this.buttonChangeUD_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(15, 459);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(170, 13);
+            this.label26.TabIndex = 35;
+            this.label26.Text = "*Select a case to view information.";
+            // 
+            // textBoxEditUD
+            // 
+            this.textBoxEditUD.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEditUD.Location = new System.Drawing.Point(295, 459);
+            this.textBoxEditUD.Name = "textBoxEditUD";
+            this.textBoxEditUD.Size = new System.Drawing.Size(152, 27);
+            this.textBoxEditUD.TabIndex = 33;
+            this.textBoxEditUD.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            // 
+            // buttonAddNewUD
+            // 
+            this.buttonAddNewUD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAddNewUD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddNewUD.Enabled = false;
+            this.buttonAddNewUD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddNewUD.Location = new System.Drawing.Point(453, 459);
+            this.buttonAddNewUD.Name = "buttonAddNewUD";
+            this.buttonAddNewUD.Size = new System.Drawing.Size(86, 27);
+            this.buttonAddNewUD.TabIndex = 34;
+            this.buttonAddNewUD.Text = "Add New";
+            this.buttonAddNewUD.UseVisualStyleBackColor = true;
+            this.buttonAddNewUD.Click += new System.EventHandler(this.buttonAddNewUD_Click);
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(298, 212);
+            this.label25.Location = new System.Drawing.Point(300, 211);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(221, 34);
+            this.label25.Size = new System.Drawing.Size(239, 34);
             this.label25.TabIndex = 32;
-            this.label25.Text = "Medical History";
+            this.label25.Text = "Edit Med History";
             // 
-            // listBox1
+            // listBoxEditUD
             // 
-            this.listBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(295, 249);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(224, 204);
-            this.listBox1.TabIndex = 31;
+            this.listBoxEditUD.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxEditUD.FormattingEnabled = true;
+            this.listBoxEditUD.ItemHeight = 20;
+            this.listBoxEditUD.Location = new System.Drawing.Point(295, 249);
+            this.listBoxEditUD.Name = "listBoxEditUD";
+            this.listBoxEditUD.Size = new System.Drawing.Size(244, 204);
+            this.listBoxEditUD.TabIndex = 31;
+            this.listBoxEditUD.SelectedValueChanged += new System.EventHandler(this.listBox_SelectedValueChanged);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(732, 9);
+            this.label24.Location = new System.Drawing.Point(667, 9);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 34);
+            this.label24.Size = new System.Drawing.Size(236, 34);
             this.label24.TabIndex = 30;
-            this.label24.Text = "Edit";
+            this.label24.Text = "Edit Information";
             // 
             // panel2
             // 
@@ -523,7 +580,7 @@ namespace Ergasia3_App
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.buttonEdit);
             this.panel2.Controls.Add(this.buttonDelete);
-            this.panel2.Location = new System.Drawing.Point(535, 46);
+            this.panel2.Location = new System.Drawing.Point(554, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 486);
             this.panel2.TabIndex = 29;
@@ -532,7 +589,7 @@ namespace Ergasia3_App
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(21, 331);
+            this.label16.Location = new System.Drawing.Point(29, 342);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(207, 20);
             this.label16.TabIndex = 30;
@@ -549,7 +606,7 @@ namespace Ergasia3_App
             this.panelEdit.Controls.Add(this.comboBoxEditGender);
             this.panelEdit.Controls.Add(this.maskedTextBoxEditBirth);
             this.panelEdit.Enabled = false;
-            this.panelEdit.Location = new System.Drawing.Point(183, 13);
+            this.panelEdit.Location = new System.Drawing.Point(191, 24);
             this.panelEdit.Name = "panelEdit";
             this.panelEdit.Size = new System.Drawing.Size(264, 356);
             this.panelEdit.TabIndex = 30;
@@ -625,7 +682,7 @@ namespace Ergasia3_App
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(22, 277);
+            this.label17.Location = new System.Drawing.Point(30, 288);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(124, 20);
             this.label17.TabIndex = 29;
@@ -635,7 +692,7 @@ namespace Ergasia3_App
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(21, 224);
+            this.label19.Location = new System.Drawing.Point(29, 235);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(125, 20);
             this.label19.TabIndex = 28;
@@ -645,7 +702,7 @@ namespace Ergasia3_App
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(22, 176);
+            this.label20.Location = new System.Drawing.Point(30, 187);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(74, 20);
             this.label20.TabIndex = 27;
@@ -655,7 +712,7 @@ namespace Ergasia3_App
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(21, 126);
+            this.label21.Location = new System.Drawing.Point(29, 137);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(135, 20);
             this.label21.TabIndex = 26;
@@ -665,7 +722,7 @@ namespace Ergasia3_App
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(21, 73);
+            this.label22.Location = new System.Drawing.Point(29, 84);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(132, 20);
             this.label22.TabIndex = 25;
@@ -675,7 +732,7 @@ namespace Ergasia3_App
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(21, 20);
+            this.label23.Location = new System.Drawing.Point(29, 31);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(98, 20);
             this.label23.TabIndex = 24;
@@ -686,7 +743,7 @@ namespace Ergasia3_App
             this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEdit.Enabled = false;
             this.buttonEdit.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEdit.Location = new System.Drawing.Point(183, 385);
+            this.buttonEdit.Location = new System.Drawing.Point(183, 394);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(104, 49);
             this.buttonEdit.TabIndex = 11;
@@ -714,7 +771,7 @@ namespace Ergasia3_App
             this.listBoxResult.ItemHeight = 20;
             this.listBoxResult.Location = new System.Drawing.Point(18, 249);
             this.listBoxResult.Name = "listBoxResult";
-            this.listBoxResult.Size = new System.Drawing.Size(224, 204);
+            this.listBoxResult.Size = new System.Drawing.Size(243, 204);
             this.listBoxResult.TabIndex = 28;
             this.listBoxResult.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -722,7 +779,7 @@ namespace Ergasia3_App
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(72, 212);
+            this.label15.Location = new System.Drawing.Point(82, 212);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(113, 34);
             this.label15.TabIndex = 27;
@@ -732,7 +789,7 @@ namespace Ergasia3_App
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(204, 20);
+            this.label9.Location = new System.Drawing.Point(213, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 34);
             this.label9.TabIndex = 26;
@@ -742,7 +799,7 @@ namespace Ergasia3_App
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(101, 128);
+            this.label18.Location = new System.Drawing.Point(110, 128);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(138, 20);
             this.label18.TabIndex = 25;
@@ -751,7 +808,7 @@ namespace Ergasia3_App
             // textBoxNameSearch
             // 
             this.textBoxNameSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameSearch.Location = new System.Drawing.Point(253, 71);
+            this.textBoxNameSearch.Location = new System.Drawing.Point(262, 71);
             this.textBoxNameSearch.Name = "textBoxNameSearch";
             this.textBoxNameSearch.Size = new System.Drawing.Size(222, 27);
             this.textBoxNameSearch.TabIndex = 24;
@@ -760,7 +817,7 @@ namespace Ergasia3_App
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(101, 74);
+            this.label14.Location = new System.Drawing.Point(110, 74);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(146, 20);
             this.label14.TabIndex = 23;
@@ -770,7 +827,7 @@ namespace Ergasia3_App
             // 
             this.maskedTextBoxDateSearch.BeepOnError = true;
             this.maskedTextBoxDateSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxDateSearch.Location = new System.Drawing.Point(253, 125);
+            this.maskedTextBoxDateSearch.Location = new System.Drawing.Point(262, 125);
             this.maskedTextBoxDateSearch.Mask = "00/00/0000";
             this.maskedTextBoxDateSearch.Name = "maskedTextBoxDateSearch";
             this.maskedTextBoxDateSearch.Size = new System.Drawing.Size(100, 27);
@@ -781,13 +838,27 @@ namespace Ergasia3_App
             // 
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(210, 172);
+            this.buttonSearch.Location = new System.Drawing.Point(219, 172);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(85, 34);
             this.buttonSearch.TabIndex = 9;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // contextMenuStripEdit
+            // 
+            this.contextMenuStripEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemEDITdelete});
+            this.contextMenuStripEdit.Name = "contextMenuStrip1";
+            this.contextMenuStripEdit.Size = new System.Drawing.Size(192, 26);
+            // 
+            // toolStripMenuItemEDITdelete
+            // 
+            this.toolStripMenuItemEDITdelete.Name = "toolStripMenuItemEDITdelete";
+            this.toolStripMenuItemEDITdelete.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItemEDITdelete.Text = "DeleteSelectedDiseace";
+            this.toolStripMenuItemEDITdelete.Click += new System.EventHandler(this.toolStripMenuItemEDITdelete_Click);
             // 
             // Main
             // 
@@ -811,7 +882,7 @@ namespace Ergasia3_App
             this.panelAddNew.PerformLayout();
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStripAdd.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelSearch.ResumeLayout(false);
@@ -822,6 +893,7 @@ namespace Ergasia3_App
             this.panel2.PerformLayout();
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
+            this.contextMenuStripEdit.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -852,7 +924,7 @@ namespace Ergasia3_App
         private System.Windows.Forms.TextBox textBoxUD;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripAdd;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -889,8 +961,14 @@ namespace Ergasia3_App
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxEditUD;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBoxEditUD;
+        private System.Windows.Forms.Button buttonAddNewUD;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripEdit;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEDITdelete;
+        private System.Windows.Forms.Button buttonChangeUD;
+        private System.Windows.Forms.Label label26;
     }
 }
 

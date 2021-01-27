@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 
 namespace Ergasia3_Database
 {
@@ -18,7 +20,6 @@ namespace Ergasia3_Database
         /// <summary>
         /// Add a new case to the database.
         /// </summary>
-        /// <param name="newCase"> case to be added</param>
         public void AddCase(Case newCase)
         {
             using (var conn = new SQLiteConnection(ConnectionString))
@@ -45,9 +46,8 @@ namespace Ergasia3_Database
         }
 
         /// <summary>
-        /// saves the updated case provided to the old ones place(based on ID)
+        /// Saves any changes that happened to the given case.
         /// </summary>
-        /// <param name="newCase"></param>
         public void UpdateCase(Case newCase)
         {
             using (var conn = new SQLiteConnection(ConnectionString))
@@ -56,17 +56,40 @@ namespace Ergasia3_Database
                 var query = $@"UPDATE Cases SET FullName = '{newCase.FullName}', Email = '{newCase.Email}', PhoneNumber = '{newCase.PhoneNumber}', Gender = '{newCase.Gender.ToString()}', BirthDay = '{newCase.BirthDay}', Address = '{newCase.Address}', TimeOfCase = '{newCase.TimeOfCase}' WHERE ID = {newCase.ID};";
                 var cmd = new SQLiteCommand(query, conn);
                 cmd.ExecuteNonQuery();
-
-                //TODO <------------ ADD DISEASE SUPPORT
             }
 
+            UpdateCases();
+        }
+        /// <summary>
+        /// Saves any changes that happened to the given case's underlying diseases.
+        /// </summary>
+        public void UpdateUnderlyingDiseases(Case newCase)
+        {
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+                /*
+                 * First check if there is a difference between the new list and the old list
+                 * If there is then we delete all the case's diseases and then we insert the new ones.
+                 */
+                // Remove old diseases
+                var query = $@"DELETE FROM UnderlyingDiseases WHERE CaseID = {newCase.ID};";
+                var cmd = new SQLiteCommand(query, conn);
+                cmd.ExecuteNonQuery();
+
+                foreach (var newCaseUnderlyingDisease in newCase.UnderlyingDiseases) // Insert new diseases
+                {
+                    query = $@"INSERT INTO UnderlyingDiseases(Disease, CaseID) VALUES('{newCaseUnderlyingDisease.Disease}', '{newCase.ID}');";
+                    cmd = new SQLiteCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
             UpdateCases();
         }
 
         /// <summary>
         /// Deletes the case provided.
         /// </summary>
-        /// <param name="deleteCase"></param>
         public void DeleteCase(Case deleteCase)
         {
             using (var conn = new SQLiteConnection(ConnectionString))
@@ -95,7 +118,6 @@ namespace Ergasia3_Database
         /// <summary>
         /// Returns a list with all cases
         /// </summary>
-        /// <returns></returns>
         public List<Case> GetAllCases()
         {
             List<Case> cases = new List<Case>();
