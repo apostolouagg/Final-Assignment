@@ -87,6 +87,7 @@ namespace ergasia1
                 flowLayoutPanelCards.Controls.Add(card);
             }
 
+            flowLayoutPanelCards.Enabled = false; // Disable panel first so the user cant click any card while showing
             ShowAllCards();
         }
 
@@ -195,7 +196,7 @@ namespace ergasia1
             // Flip all cards and randomize them again
             var i = 0;
             images = Randomize(images);
-
+            flowLayoutPanelCards.Enabled = false;
             // Makes Restart appear smoother to the user
             Task.Run(() =>
             {
@@ -215,10 +216,10 @@ namespace ergasia1
                 }
                 catch (Exception)
                 {
-
+                    //
                 }
                 Thread.Sleep(500);
-                Invoke(new Action(ShowAllCards));
+                ShowAllCards();
             });
 
         }
@@ -226,9 +227,6 @@ namespace ergasia1
         // Shows all cards for 4s
         private void ShowAllCards()
         {
-            // Disable panel
-            flowLayoutPanelCards.Enabled = false;
-
             // Create a thread so the main thread doesn't freeze (faster than creating a timer)
             Task.Run(() =>
             {
@@ -255,9 +253,9 @@ namespace ergasia1
                     // Enable panel
                     Invoke(new Action(() => { flowLayoutPanelCards.Enabled = true; }));
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
-                    // An klisoume to game eno trexei to ShowAllCards petaei exception
+                    //
                 }
 
             });
