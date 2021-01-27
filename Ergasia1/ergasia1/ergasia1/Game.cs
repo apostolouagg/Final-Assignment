@@ -180,9 +180,7 @@ namespace ergasia1
                 }
 
                 Results results = new Results(username);
-                this.Hide();
                 results.ShowDialog();
-                this.Show();
             }
         }
 

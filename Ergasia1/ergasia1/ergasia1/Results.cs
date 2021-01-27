@@ -5,21 +5,18 @@ using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ergasia1
 {
-    /// <summary>
-    /// Emfanish results otan teleiwnei to paixnidi
-    /// </summary>
-
+    // Emfanish results otan teleiwnei to paixnidi
     public partial class Results : Form
     {
         string username;
         private String connectionString = "Data Source=c:DB1.db;Version=3;";
-        SQLiteConnection conn;
 
         public Results(string username)
         {
@@ -29,25 +26,24 @@ namespace ergasia1
 
         private void Results_Load(object sender, EventArgs e)
         {
-            conn = new SQLiteConnection(connectionString);
             labelUsername.Text = username;
             timer1ForAppearance.Start(); // timer gia ta labels me xrwma
-
             listBox1.Items.Clear();
 
             /* pairnei apo thn DB ta stoixeia tou paikth xrhsimopoiontas to onoma tou kai ta bazei sto listbox1 me seira apo megalutero sto
-               mikrotero me bash to Attemps */
-            conn.Open();
-            string selectQuery = "Select Attemps, Time from Users where Name='"+username+"' order by Attemps DESC";
-            SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn);
-            SQLiteDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            mikrotero me bash to Attemps */
+            using (var conn = new SQLiteConnection(connectionString))
             {
-                listBox1.Items.Add("           "+ reader.GetValue(0).ToString() + "                                " + reader.GetValue(1).ToString());
-            }
-            conn.Close();
+                conn.Open();
+                string selectQuery = $"SELECT Attemps, Time FROM Users WHERE Name='{username}' ORDER BY Attemps DESC";
+                SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    listBox1.Items.Add($"           " + reader.GetValue(0).ToString() + "                                " + reader.GetValue(1).ToString());
+                }
 
+            }
         }
 
         // Gia na allazoun xrwma ta labels

@@ -45,10 +45,9 @@ namespace ergasia1
             this.label1GoodJob.BackColor = System.Drawing.Color.LightBlue;
             this.label1GoodJob.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1GoodJob.ForeColor = System.Drawing.Color.Black;
-            this.label1GoodJob.Location = new System.Drawing.Point(64, -5);
-            this.label1GoodJob.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1GoodJob.Location = new System.Drawing.Point(48, -4);
             this.label1GoodJob.Name = "label1GoodJob";
-            this.label1GoodJob.Size = new System.Drawing.Size(307, 69);
+            this.label1GoodJob.Size = new System.Drawing.Size(230, 56);
             this.label1GoodJob.TabIndex = 0;
             this.label1GoodJob.Text = "GOOD JOB !!!";
             this.label1GoodJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,31 +63,28 @@ namespace ergasia1
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 26;
-            this.listBox1.Location = new System.Drawing.Point(64, 180);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(48, 146);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(306, 236);
+            this.listBox1.Size = new System.Drawing.Size(230, 182);
             this.listBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 113);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(45, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 19);
+            this.label1.Size = new System.Drawing.Size(233, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Info: First on the list is your current attemp.";
             // 
             // buttonBackToGame
             // 
             this.buttonBackToGame.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBackToGame.Location = new System.Drawing.Point(287, 450);
-            this.buttonBackToGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBackToGame.Location = new System.Drawing.Point(215, 366);
             this.buttonBackToGame.Name = "buttonBackToGame";
-            this.buttonBackToGame.Size = new System.Drawing.Size(139, 28);
+            this.buttonBackToGame.Size = new System.Drawing.Size(104, 23);
             this.buttonBackToGame.TabIndex = 3;
             this.buttonBackToGame.Text = "Back To Game";
             this.buttonBackToGame.UseVisualStyleBackColor = true;
@@ -98,10 +94,9 @@ namespace ergasia1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 148);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(60, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 29);
+            this.label2.Size = new System.Drawing.Size(76, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Attemps";
             // 
@@ -109,10 +104,9 @@ namespace ergasia1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(289, 148);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(217, 120);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 29);
+            this.label3.Size = new System.Drawing.Size(46, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Time";
             // 
@@ -121,20 +115,19 @@ namespace ergasia1
             this.labelUsername.BackColor = System.Drawing.Color.LightBlue;
             this.labelUsername.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.Black;
-            this.labelUsername.Location = new System.Drawing.Point(-8, 49);
-            this.labelUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUsername.Location = new System.Drawing.Point(-6, 40);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(455, 42);
+            this.labelUsername.Size = new System.Drawing.Size(341, 34);
             this.labelUsername.TabIndex = 6;
             this.labelUsername.Text = "label2";
             this.labelUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Results
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(441, 494);
+            this.ClientSize = new System.Drawing.Size(331, 401);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.label1GoodJob);
             this.Controls.Add(this.label3);
@@ -142,7 +135,8 @@ namespace ergasia1
             this.Controls.Add(this.buttonBackToGame);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Results";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Results";
