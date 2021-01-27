@@ -34,6 +34,7 @@ namespace Ergasia3_App
             this.panelAddNew = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -100,6 +101,8 @@ namespace Ergasia3_App
             this.buttonSearch = new System.Windows.Forms.Button();
             this.contextMenuStripEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemEDITdelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonShowAll = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelAddNew.SuspendLayout();
             this.panelForm.SuspendLayout();
             this.contextMenuStripAdd.SuspendLayout();
@@ -109,6 +112,7 @@ namespace Ergasia3_App
             this.panel2.SuspendLayout();
             this.panelEdit.SuspendLayout();
             this.contextMenuStripEdit.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddNew
@@ -136,6 +140,7 @@ namespace Ergasia3_App
             // 
             this.panelForm.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelForm.Controls.Add(this.label27);
             this.panelForm.Controls.Add(this.labelError);
             this.panelForm.Controls.Add(this.label13);
             this.panelForm.Controls.Add(this.label12);
@@ -163,6 +168,15 @@ namespace Ergasia3_App
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(1044, 547);
             this.panelForm.TabIndex = 0;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(539, 473);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(236, 13);
+            this.label27.TabIndex = 36;
+            this.label27.Text = "*Right click on an underlying disease to delete it.";
             // 
             // labelError
             // 
@@ -312,6 +326,7 @@ namespace Ergasia3_App
             // 
             this.buttonAddD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAddD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddD.Enabled = false;
             this.buttonAddD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddD.Location = new System.Drawing.Point(921, 94);
             this.buttonAddD.Name = "buttonAddD";
@@ -468,22 +483,17 @@ namespace Ergasia3_App
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.buttonChangeUD);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.textBoxEditUD);
             this.panel1.Controls.Add(this.buttonAddNewUD);
-            this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.listBoxEditUD);
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.listBoxResult);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.textBoxNameSearch);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.maskedTextBoxDateSearch);
-            this.panel1.Controls.Add(this.buttonSearch);
             this.panel1.Location = new System.Drawing.Point(102, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1044, 547);
@@ -539,7 +549,7 @@ namespace Ergasia3_App
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(300, 211);
+            this.label25.Location = new System.Drawing.Point(155, 205);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(239, 34);
             this.label25.TabIndex = 32;
@@ -773,7 +783,7 @@ namespace Ergasia3_App
             this.listBoxResult.Name = "listBoxResult";
             this.listBoxResult.Size = new System.Drawing.Size(243, 204);
             this.listBoxResult.TabIndex = 28;
-            this.listBoxResult.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBoxResult.SelectedIndexChanged += new System.EventHandler(this.listBoxResult_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -789,7 +799,7 @@ namespace Ergasia3_App
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(213, 20);
+            this.label9.Location = new System.Drawing.Point(225, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 34);
             this.label9.TabIndex = 26;
@@ -799,7 +809,7 @@ namespace Ergasia3_App
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(110, 128);
+            this.label18.Location = new System.Drawing.Point(9, 77);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(138, 20);
             this.label18.TabIndex = 25;
@@ -808,7 +818,7 @@ namespace Ergasia3_App
             // textBoxNameSearch
             // 
             this.textBoxNameSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameSearch.Location = new System.Drawing.Point(262, 71);
+            this.textBoxNameSearch.Location = new System.Drawing.Point(160, 17);
             this.textBoxNameSearch.Name = "textBoxNameSearch";
             this.textBoxNameSearch.Size = new System.Drawing.Size(222, 27);
             this.textBoxNameSearch.TabIndex = 24;
@@ -817,7 +827,7 @@ namespace Ergasia3_App
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(110, 74);
+            this.label14.Location = new System.Drawing.Point(8, 20);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(146, 20);
             this.label14.TabIndex = 23;
@@ -827,7 +837,7 @@ namespace Ergasia3_App
             // 
             this.maskedTextBoxDateSearch.BeepOnError = true;
             this.maskedTextBoxDateSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxDateSearch.Location = new System.Drawing.Point(262, 125);
+            this.maskedTextBoxDateSearch.Location = new System.Drawing.Point(160, 71);
             this.maskedTextBoxDateSearch.Mask = "00/00/0000";
             this.maskedTextBoxDateSearch.Name = "maskedTextBoxDateSearch";
             this.maskedTextBoxDateSearch.Size = new System.Drawing.Size(100, 27);
@@ -838,7 +848,7 @@ namespace Ergasia3_App
             // 
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(219, 172);
+            this.buttonSearch.Location = new System.Drawing.Point(150, 123);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(85, 34);
             this.buttonSearch.TabIndex = 9;
@@ -859,6 +869,34 @@ namespace Ergasia3_App
             this.toolStripMenuItemEDITdelete.Size = new System.Drawing.Size(191, 22);
             this.toolStripMenuItemEDITdelete.Text = "DeleteSelectedDiseace";
             this.toolStripMenuItemEDITdelete.Click += new System.EventHandler(this.toolStripMenuItemEDITdelete_Click);
+            // 
+            // buttonShowAll
+            // 
+            this.buttonShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowAll.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowAll.Location = new System.Drawing.Point(312, 134);
+            this.buttonShowAll.Name = "buttonShowAll";
+            this.buttonShowAll.Size = new System.Drawing.Size(76, 24);
+            this.buttonShowAll.TabIndex = 37;
+            this.buttonShowAll.Text = "Show All";
+            this.buttonShowAll.UseVisualStyleBackColor = true;
+            this.buttonShowAll.Click += new System.EventHandler(this.buttonShowAll_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.buttonShowAll);
+            this.panel3.Controls.Add(this.buttonSearch);
+            this.panel3.Controls.Add(this.maskedTextBoxDateSearch);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.textBoxNameSearch);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Location = new System.Drawing.Point(83, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(393, 163);
+            this.panel3.TabIndex = 38;
             // 
             // Main
             // 
@@ -894,6 +932,8 @@ namespace Ergasia3_App
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
             this.contextMenuStripEdit.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -969,6 +1009,9 @@ namespace Ergasia3_App
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEDITdelete;
         private System.Windows.Forms.Button buttonChangeUD;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button buttonShowAll;
     }
 }
 
