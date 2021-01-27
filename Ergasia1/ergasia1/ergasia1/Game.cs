@@ -30,7 +30,6 @@ namespace ergasia1
 
         String connectionString = "Data Source=c:DB1.db;Version=3;";
 
-        //To timer ksekinaei oti pataei click
         public Game(List<string> imageList, string user)
         {
             InitializeComponent();
@@ -38,7 +37,7 @@ namespace ergasia1
             username = user;
         }
 
-        // kanei th images random
+        // Randomizes a list
         private List<string> Randomize(List<string> images)
         {
             var randomizedImages = new List<string>();
@@ -66,7 +65,7 @@ namespace ergasia1
             // Initialize Random
             random = new Random((int)DateTime.Now.Ticks);
 
-            images.AddRange(images); // add the same images. so 12 + 12
+            images.AddRange(images); // add the same images to the image list so its 12 + 12
             images = Randomize(images); // randomize it
 
             // Create 24 cards | 6 X 4 
@@ -76,36 +75,33 @@ namespace ergasia1
                 {
                     Size = new Size(100, 100),
                     Margin = new Padding(4), // To keno metaksi kathe eikonas einai 4 pixels
-                    BorderStyle = BorderStyle.FixedSingle, // na exoun border oi kartes
+                    BorderStyle = BorderStyle.FixedSingle, // Border around the card
                     Cursor = Cursors.Hand, // Add hand cursor when hovering over it
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };
 
-                // tou dinoume ena event handel gia otan pataei o xrhsths click pano tou
+                // Add an event handler for mouseClick to the card
                 card.MouseClick += Card_Click;
                  
-                // Prosthetoume thn karta sto panel
+                // Add card to panel
                 flowLayoutPanelCards.Controls.Add(card);
             }
 
             ShowAllCards();
         }
 
-        // Trexei kathe fora pou o xrisths pataei mia apo tis kartes
         private void Card_Click(object sender, EventArgs e)
         {
-            // Otan ksekinaei to paixnidi
+            // On first card clicked
             if (!started)
             {
-                timerGameDuration.Start(); // ksekinaei na metraei o xronos
-                labelAttemps.Text = (++attemps).ToString(); // metraei thn prospatheia kai thn emfanizei
+                timerGameDuration.Start();
+                labelAttemps.Text = (++attemps).ToString();
                 started = true;
             }
 
-            // Etsi prosdiourizoume pia karta patithike
+            // Card pressed
             Card clicked = (Card)sender;
-
-            // Emfanizoume to onoma ths kartas pou patithike
             clicked.Flip();
 
             if (first == null)
@@ -114,12 +110,11 @@ namespace ergasia1
             }
             else
             {
-                if (clicked != first) // an ksanapatisei to idio kse-epilekse to
+                if (clicked != first) // Checks if the second card pressed is the same as the first 
                 {
                     second = clicked;
-                    if (first.ImagePathLocation == second.ImagePathLocation) 
+                    if (first.ImagePathLocation == second.ImagePathLocation) // If same picture disable the cards
                     {
-                        // an einai sosta ta kanoume disable oste na min mporei na ta patisei pali
                         first.Enabled = false;
                         second.Enabled = false;
 
@@ -130,9 +125,8 @@ namespace ergasia1
                         // adding number of same cards
                         sameCards++;
                     }
-                    else
+                    else // If wrong stop the user from choosing another one for 500ms
                     {
-                        // hide them again if wrong
                         Task.Run(() =>
                         {
                             try
@@ -150,7 +144,7 @@ namespace ergasia1
                                     flowLayoutPanelCards.Enabled = true;
                                 }));
                             }
-                            catch (Exception exception)
+                            catch (Exception)
                             {
                                 //
                             }
@@ -167,18 +161,19 @@ namespace ergasia1
             // an oles oi kartes exoun gurisei dld o xrhsths kerdise
             if (sameCards == 12)
             {
-                timerGameDuration.Stop(); // stamataei to timer efoson teleiwse to paixnidi
-                buttonRestart.Enabled = true; // mporei na kanei restart efoson teleiwse to paixnidi
+                timerGameDuration.Stop(); // Stop Timer
+                buttonRestart.Enabled = true; // Enable Restart button
 
                 using (SQLiteConnection conn = new SQLiteConnection(connectionString))
                 {
-                    // updates the DB / ftiaxnei kainourgia grammh me to idio onoma xrhsth
+                    // Add the the game played to the Database
                     conn.Open();
                     string insertQuery = $"Insert into Users(Name, Time, Attemps) values('{username}', '{time}', '{attemps}')";
                     SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
                     cmd.ExecuteNonQuery();
                 }
 
+                // Open result form
                 Results results = new Results(username);
                 results.ShowDialog();
             }
@@ -186,7 +181,7 @@ namespace ergasia1
 
         private void timerGameDuration_Tick(object sender, EventArgs e)
         {
-            labelTime.Text = (++time).ToString(); // deixnei ton xrono ston paikth thn wra pou paizei
+            labelTime.Text = (++time).ToString(); // Show user the time
         }
 
         private void buttonRestart_Click(object sender, EventArgs e)
@@ -200,15 +195,32 @@ namespace ergasia1
             // Flip all cards and randomize them again
             var i = 0;
             images = Randomize(images);
-            foreach (var card in flowLayoutPanelCards.Controls.OfType<Card>())
-            {
-                card.Flip();
-                card.Enabled = true;
-                card.ChangeImage(images[i++]);
-            }
 
-            Task.Run(() => { Invoke(new Action(() => { Thread.Sleep(1000); })); });
-            ShowAllCards();
+            // Makes Restart appear smoother to the user
+            Task.Run(() =>
+            {
+                try
+                {
+                    foreach (var card in flowLayoutPanelCards.Controls.OfType<Card>())
+                    {
+                        Invoke(new Action(() =>
+                        {
+                            card.Flip();
+                            card.Enabled = true;
+                            card.ChangeImage(images[i++]);
+                        }));
+                        Thread.Sleep(100);
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                }
+                Thread.Sleep(500);
+                Invoke(new Action(ShowAllCards));
+            });
+
         }
 
         // Shows all cards for 4s
@@ -217,6 +229,7 @@ namespace ergasia1
             // Disable panel
             flowLayoutPanelCards.Enabled = false;
 
+            // Create a thread so the main thread doesn't freeze (faster than creating a timer)
             Task.Run(() =>
             {
                 try
@@ -229,7 +242,7 @@ namespace ergasia1
                         }
                     }));
 
-                    Thread.Sleep(4000);
+                    Thread.Sleep(4000); // Wait 4 Seconds for the user to memorize the cards.
 
                     Invoke(new Action(() =>
                     {
@@ -251,7 +264,7 @@ namespace ergasia1
             
         }
 
-        //Quit button
+        // Quit button
         private void buttonQuti_Click(object sender, EventArgs e)
         {
             timerGameDuration.Stop(); // otan petagetai to messageBox o xronos stamataei
