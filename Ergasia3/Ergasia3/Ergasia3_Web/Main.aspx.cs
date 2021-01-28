@@ -12,11 +12,11 @@ namespace Ergasia3_Web
 {
     public partial class Main : System.Web.UI.Page
     {
-        private DbManager Context { get; set; } 
+        private DbManager ContextDb { get; set; } 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Context = new DbManager(@"Data Source=|DataDirectory|\Database.db;Version=3;");
+            ContextDb = new DbManager(@"Data Source=|DataDirectory|\Database.db;Version=3;");
         }
     }
 }
