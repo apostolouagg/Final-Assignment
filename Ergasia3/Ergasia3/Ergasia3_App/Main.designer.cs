@@ -33,7 +33,7 @@ namespace Ergasia3_App
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelAddNew = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.panelForm = new System.Windows.Forms.Panel();
+            this.panelAddNew2 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,11 +66,19 @@ namespace Ergasia3_App
             this.panelSearch = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonShowAll = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.maskedTextBoxDateSearch = new System.Windows.Forms.MaskedTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxNameSearch = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.buttonChangeUD = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.textBoxEditUD = new System.Windows.Forms.TextBox();
             this.buttonAddNewUD = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
             this.listBoxEditUD = new System.Windows.Forms.ListBox();
             this.label24 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -93,26 +101,22 @@ namespace Ergasia3_App
             this.buttonDelete = new System.Windows.Forms.Button();
             this.listBoxResult = new System.Windows.Forms.ListBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBoxNameSearch = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.maskedTextBoxDateSearch = new System.Windows.Forms.MaskedTextBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.contextMenuStripEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemEDITdelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonShowAll = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelForm = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panelAddNew.SuspendLayout();
-            this.panelForm.SuspendLayout();
+            this.panelAddNew2.SuspendLayout();
             this.contextMenuStripAdd.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelEdit.SuspendLayout();
             this.contextMenuStripEdit.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelForm.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddNew
@@ -120,7 +124,7 @@ namespace Ergasia3_App
             this.panelAddNew.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panelAddNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAddNew.Controls.Add(this.label11);
-            this.panelAddNew.Controls.Add(this.panelForm);
+            this.panelAddNew.Controls.Add(this.panelAddNew2);
             this.panelAddNew.Location = new System.Drawing.Point(-1, 45);
             this.panelAddNew.Name = "panelAddNew";
             this.panelAddNew.Size = new System.Drawing.Size(1273, 640);
@@ -136,43 +140,25 @@ namespace Ergasia3_App
             this.label11.TabIndex = 19;
             this.label11.Text = "Add a new Covid-19 Case";
             // 
-            // panelForm
+            // panelAddNew2
             // 
-            this.panelForm.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelForm.Controls.Add(this.label27);
-            this.panelForm.Controls.Add(this.labelError);
-            this.panelForm.Controls.Add(this.label13);
-            this.panelForm.Controls.Add(this.label12);
-            this.panelForm.Controls.Add(this.textBoxUD);
-            this.panelForm.Controls.Add(this.listBoxUD);
-            this.panelForm.Controls.Add(this.labelTitle);
-            this.panelForm.Controls.Add(this.label8);
-            this.panelForm.Controls.Add(this.label7);
-            this.panelForm.Controls.Add(this.label6);
-            this.panelForm.Controls.Add(this.label5);
-            this.panelForm.Controls.Add(this.label4);
-            this.panelForm.Controls.Add(this.label3);
-            this.panelForm.Controls.Add(this.label2);
-            this.panelForm.Controls.Add(this.label1);
-            this.panelForm.Controls.Add(this.buttonAddD);
-            this.panelForm.Controls.Add(this.maskedTextBoxCaseTime);
-            this.panelForm.Controls.Add(this.comboBoxGender);
-            this.panelForm.Controls.Add(this.textBoxPhone);
-            this.panelForm.Controls.Add(this.maskedTextBoxBirthday);
-            this.panelForm.Controls.Add(this.textBoxAddress);
-            this.panelForm.Controls.Add(this.textBoxEmail);
-            this.panelForm.Controls.Add(this.textBoxName);
-            this.panelForm.Controls.Add(this.buttonSubmit);
-            this.panelForm.Location = new System.Drawing.Point(103, 66);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(1044, 547);
-            this.panelForm.TabIndex = 0;
+            this.panelAddNew2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelAddNew2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAddNew2.Controls.Add(this.panel5);
+            this.panelAddNew2.Controls.Add(this.labelTitle);
+            this.panelAddNew2.Controls.Add(this.panelForm);
+            this.panelAddNew2.Controls.Add(this.labelError);
+            this.panelAddNew2.Controls.Add(this.label12);
+            this.panelAddNew2.Controls.Add(this.buttonSubmit);
+            this.panelAddNew2.Location = new System.Drawing.Point(103, 66);
+            this.panelAddNew2.Name = "panelAddNew2";
+            this.panelAddNew2.Size = new System.Drawing.Size(1044, 547);
+            this.panelAddNew2.TabIndex = 0;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(539, 473);
+            this.label27.Location = new System.Drawing.Point(25, 366);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(236, 13);
             this.label27.TabIndex = 36;
@@ -183,17 +169,17 @@ namespace Ergasia3_App
             this.labelError.AutoSize = true;
             this.labelError.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(27, 517);
+            this.labelError.Location = new System.Drawing.Point(34, 492);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(162, 15);
+            this.labelError.Size = new System.Drawing.Size(178, 15);
             this.labelError.TabIndex = 22;
-            this.labelError.Text = "Fields with * must be filled.";
+            this.labelError.Text = "All fields with * must be filled.";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(650, 159);
+            this.label13.Location = new System.Drawing.Point(139, 50);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(176, 20);
             this.label13.TabIndex = 21;
@@ -203,7 +189,7 @@ namespace Ergasia3_App
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(644, 32);
+            this.label12.Location = new System.Drawing.Point(651, 32);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(221, 34);
             this.label12.TabIndex = 20;
@@ -212,7 +198,7 @@ namespace Ergasia3_App
             // textBoxUD
             // 
             this.textBoxUD.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUD.Location = new System.Drawing.Point(763, 94);
+            this.textBoxUD.Location = new System.Drawing.Point(241, 14);
             this.textBoxUD.Name = "textBoxUD";
             this.textBoxUD.Size = new System.Drawing.Size(152, 27);
             this.textBoxUD.TabIndex = 7;
@@ -220,11 +206,12 @@ namespace Ergasia3_App
             // 
             // listBoxUD
             // 
+            this.listBoxUD.BackColor = System.Drawing.SystemColors.Window;
             this.listBoxUD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBoxUD.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxUD.FormattingEnabled = true;
             this.listBoxUD.ItemHeight = 20;
-            this.listBoxUD.Location = new System.Drawing.Point(539, 182);
+            this.listBoxUD.Location = new System.Drawing.Point(28, 73);
             this.listBoxUD.Name = "listBoxUD";
             this.listBoxUD.Size = new System.Drawing.Size(411, 282);
             this.listBoxUD.TabIndex = 18;
@@ -236,7 +223,7 @@ namespace Ergasia3_App
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(77, 32);
+            this.labelTitle.Location = new System.Drawing.Point(100, 32);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(268, 34);
             this.labelTitle.TabIndex = 1;
@@ -246,7 +233,7 @@ namespace Ergasia3_App
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(26, 408);
+            this.label8.Location = new System.Drawing.Point(12, 335);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(217, 20);
             this.label8.TabIndex = 16;
@@ -256,7 +243,7 @@ namespace Ergasia3_App
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 354);
+            this.label7.Location = new System.Drawing.Point(13, 282);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 20);
             this.label7.TabIndex = 15;
@@ -266,7 +253,7 @@ namespace Ergasia3_App
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(535, 97);
+            this.label6.Location = new System.Drawing.Point(13, 17);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(220, 20);
             this.label6.TabIndex = 14;
@@ -276,7 +263,7 @@ namespace Ergasia3_App
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 301);
+            this.label5.Location = new System.Drawing.Point(12, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 20);
             this.label5.TabIndex = 13;
@@ -286,7 +273,7 @@ namespace Ergasia3_App
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 250);
+            this.label4.Location = new System.Drawing.Point(13, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 12;
@@ -296,7 +283,7 @@ namespace Ergasia3_App
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 203);
+            this.label3.Location = new System.Drawing.Point(12, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 20);
             this.label3.TabIndex = 11;
@@ -306,7 +293,7 @@ namespace Ergasia3_App
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 150);
+            this.label2.Location = new System.Drawing.Point(12, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 20);
             this.label2.TabIndex = 10;
@@ -316,7 +303,7 @@ namespace Ergasia3_App
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 97);
+            this.label1.Location = new System.Drawing.Point(13, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 9;
@@ -328,7 +315,7 @@ namespace Ergasia3_App
             this.buttonAddD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddD.Enabled = false;
             this.buttonAddD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddD.Location = new System.Drawing.Point(921, 94);
+            this.buttonAddD.Location = new System.Drawing.Point(399, 14);
             this.buttonAddD.Name = "buttonAddD";
             this.buttonAddD.Size = new System.Drawing.Size(51, 27);
             this.buttonAddD.TabIndex = 8;
@@ -340,7 +327,7 @@ namespace Ergasia3_App
             // 
             this.maskedTextBoxCaseTime.BeepOnError = true;
             this.maskedTextBoxCaseTime.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxCaseTime.Location = new System.Drawing.Point(246, 401);
+            this.maskedTextBoxCaseTime.Location = new System.Drawing.Point(232, 328);
             this.maskedTextBoxCaseTime.Mask = "00/00/0000 90:00";
             this.maskedTextBoxCaseTime.Name = "maskedTextBoxCaseTime";
             this.maskedTextBoxCaseTime.Size = new System.Drawing.Size(158, 27);
@@ -354,7 +341,7 @@ namespace Ergasia3_App
             this.comboBoxGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBoxGender.Location = new System.Drawing.Point(183, 249);
+            this.comboBoxGender.Location = new System.Drawing.Point(169, 176);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(70, 21);
             this.comboBoxGender.TabIndex = 3;
@@ -362,7 +349,7 @@ namespace Ergasia3_App
             // textBoxPhone
             // 
             this.textBoxPhone.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(182, 196);
+            this.textBoxPhone.Location = new System.Drawing.Point(168, 121);
             this.textBoxPhone.MaxLength = 10;
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(222, 27);
@@ -372,7 +359,7 @@ namespace Ergasia3_App
             // 
             this.maskedTextBoxBirthday.BeepOnError = true;
             this.maskedTextBoxBirthday.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxBirthday.Location = new System.Drawing.Point(182, 294);
+            this.maskedTextBoxBirthday.Location = new System.Drawing.Point(168, 221);
             this.maskedTextBoxBirthday.Mask = "00/00/0000";
             this.maskedTextBoxBirthday.Name = "maskedTextBoxBirthday";
             this.maskedTextBoxBirthday.Size = new System.Drawing.Size(100, 27);
@@ -382,7 +369,7 @@ namespace Ergasia3_App
             // textBoxAddress
             // 
             this.textBoxAddress.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(183, 347);
+            this.textBoxAddress.Location = new System.Drawing.Point(169, 275);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(222, 27);
             this.textBoxAddress.TabIndex = 5;
@@ -390,7 +377,7 @@ namespace Ergasia3_App
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(182, 143);
+            this.textBoxEmail.Location = new System.Drawing.Point(168, 68);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(222, 27);
             this.textBoxEmail.TabIndex = 1;
@@ -398,7 +385,7 @@ namespace Ergasia3_App
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(182, 90);
+            this.textBoxName.Location = new System.Drawing.Point(168, 14);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(222, 27);
             this.textBoxName.TabIndex = 0;
@@ -407,7 +394,7 @@ namespace Ergasia3_App
             // 
             this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSubmit.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSubmit.Location = new System.Drawing.Point(954, 508);
+            this.buttonSubmit.Location = new System.Drawing.Point(949, 504);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(85, 34);
             this.buttonSubmit.TabIndex = 9;
@@ -499,6 +486,105 @@ namespace Ergasia3_App
             this.panel1.Size = new System.Drawing.Size(1044, 547);
             this.panel1.TabIndex = 1;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(225, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 34);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Search";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.buttonShowAll);
+            this.panel3.Controls.Add(this.buttonSearch);
+            this.panel3.Controls.Add(this.maskedTextBoxDateSearch);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.textBoxNameSearch);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Location = new System.Drawing.Point(83, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(393, 163);
+            this.panel3.TabIndex = 38;
+            // 
+            // buttonShowAll
+            // 
+            this.buttonShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowAll.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowAll.Location = new System.Drawing.Point(312, 134);
+            this.buttonShowAll.Name = "buttonShowAll";
+            this.buttonShowAll.Size = new System.Drawing.Size(76, 24);
+            this.buttonShowAll.TabIndex = 13;
+            this.buttonShowAll.Text = "Show All";
+            this.buttonShowAll.UseVisualStyleBackColor = true;
+            this.buttonShowAll.Click += new System.EventHandler(this.buttonShowAll_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.Location = new System.Drawing.Point(150, 123);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(85, 34);
+            this.buttonSearch.TabIndex = 12;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // maskedTextBoxDateSearch
+            // 
+            this.maskedTextBoxDateSearch.BeepOnError = true;
+            this.maskedTextBoxDateSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxDateSearch.Location = new System.Drawing.Point(160, 71);
+            this.maskedTextBoxDateSearch.Mask = "00/00/0000";
+            this.maskedTextBoxDateSearch.Name = "maskedTextBoxDateSearch";
+            this.maskedTextBoxDateSearch.Size = new System.Drawing.Size(100, 27);
+            this.maskedTextBoxDateSearch.TabIndex = 11;
+            this.maskedTextBoxDateSearch.ValidatingType = typeof(System.DateTime);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(8, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(146, 20);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Search by name:";
+            // 
+            // textBoxNameSearch
+            // 
+            this.textBoxNameSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNameSearch.Location = new System.Drawing.Point(160, 17);
+            this.textBoxNameSearch.Name = "textBoxNameSearch";
+            this.textBoxNameSearch.Size = new System.Drawing.Size(222, 27);
+            this.textBoxNameSearch.TabIndex = 10;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(9, 77);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(138, 20);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "Search by date:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(155, 205);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(239, 34);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "Edit Med History";
+            // 
             // buttonChangeUD
             // 
             this.buttonChangeUD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -508,7 +594,7 @@ namespace Ergasia3_App
             this.buttonChangeUD.Location = new System.Drawing.Point(351, 492);
             this.buttonChangeUD.Name = "buttonChangeUD";
             this.buttonChangeUD.Size = new System.Drawing.Size(128, 36);
-            this.buttonChangeUD.TabIndex = 36;
+            this.buttonChangeUD.TabIndex = 15;
             this.buttonChangeUD.Text = "Save Changes";
             this.buttonChangeUD.UseVisualStyleBackColor = true;
             this.buttonChangeUD.Click += new System.EventHandler(this.buttonChangeUD_Click);
@@ -540,20 +626,10 @@ namespace Ergasia3_App
             this.buttonAddNewUD.Location = new System.Drawing.Point(453, 459);
             this.buttonAddNewUD.Name = "buttonAddNewUD";
             this.buttonAddNewUD.Size = new System.Drawing.Size(86, 27);
-            this.buttonAddNewUD.TabIndex = 34;
+            this.buttonAddNewUD.TabIndex = 14;
             this.buttonAddNewUD.Text = "Add New";
             this.buttonAddNewUD.UseVisualStyleBackColor = true;
             this.buttonAddNewUD.Click += new System.EventHandler(this.buttonAddNewUD_Click);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(155, 205);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(239, 34);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "Edit Med History";
             // 
             // listBoxEditUD
             // 
@@ -627,7 +703,7 @@ namespace Ergasia3_App
             this.textBoxEditName.Location = new System.Drawing.Point(7, 3);
             this.textBoxEditName.Name = "textBoxEditName";
             this.textBoxEditName.Size = new System.Drawing.Size(222, 27);
-            this.textBoxEditName.TabIndex = 17;
+            this.textBoxEditName.TabIndex = 16;
             // 
             // textBoxEditEmail
             // 
@@ -635,7 +711,7 @@ namespace Ergasia3_App
             this.textBoxEditEmail.Location = new System.Drawing.Point(7, 56);
             this.textBoxEditEmail.Name = "textBoxEditEmail";
             this.textBoxEditEmail.Size = new System.Drawing.Size(222, 27);
-            this.textBoxEditEmail.TabIndex = 18;
+            this.textBoxEditEmail.TabIndex = 17;
             // 
             // textBoxEditHome
             // 
@@ -643,7 +719,7 @@ namespace Ergasia3_App
             this.textBoxEditHome.Location = new System.Drawing.Point(8, 260);
             this.textBoxEditHome.Name = "textBoxEditHome";
             this.textBoxEditHome.Size = new System.Drawing.Size(222, 27);
-            this.textBoxEditHome.TabIndex = 22;
+            this.textBoxEditHome.TabIndex = 21;
             // 
             // textBoxEditNumber
             // 
@@ -652,7 +728,7 @@ namespace Ergasia3_App
             this.textBoxEditNumber.MaxLength = 10;
             this.textBoxEditNumber.Name = "textBoxEditNumber";
             this.textBoxEditNumber.Size = new System.Drawing.Size(222, 27);
-            this.textBoxEditNumber.TabIndex = 19;
+            this.textBoxEditNumber.TabIndex = 18;
             // 
             // maskedTextBoxEditTime
             // 
@@ -662,7 +738,7 @@ namespace Ergasia3_App
             this.maskedTextBoxEditTime.Mask = "00/00/0000 90:00";
             this.maskedTextBoxEditTime.Name = "maskedTextBoxEditTime";
             this.maskedTextBoxEditTime.Size = new System.Drawing.Size(158, 27);
-            this.maskedTextBoxEditTime.TabIndex = 23;
+            this.maskedTextBoxEditTime.TabIndex = 22;
             this.maskedTextBoxEditTime.ValidatingType = typeof(System.DateTime);
             // 
             // comboBoxEditGender
@@ -675,7 +751,7 @@ namespace Ergasia3_App
             this.comboBoxEditGender.Location = new System.Drawing.Point(10, 165);
             this.comboBoxEditGender.Name = "comboBoxEditGender";
             this.comboBoxEditGender.Size = new System.Drawing.Size(70, 21);
-            this.comboBoxEditGender.TabIndex = 20;
+            this.comboBoxEditGender.TabIndex = 19;
             // 
             // maskedTextBoxEditBirth
             // 
@@ -685,7 +761,7 @@ namespace Ergasia3_App
             this.maskedTextBoxEditBirth.Mask = "00/00/0000";
             this.maskedTextBoxEditBirth.Name = "maskedTextBoxEditBirth";
             this.maskedTextBoxEditBirth.Size = new System.Drawing.Size(100, 27);
-            this.maskedTextBoxEditBirth.TabIndex = 21;
+            this.maskedTextBoxEditBirth.TabIndex = 20;
             this.maskedTextBoxEditBirth.ValidatingType = typeof(System.DateTime);
             // 
             // label17
@@ -756,7 +832,7 @@ namespace Ergasia3_App
             this.buttonEdit.Location = new System.Drawing.Point(183, 394);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(104, 49);
-            this.buttonEdit.TabIndex = 11;
+            this.buttonEdit.TabIndex = 23;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
@@ -769,7 +845,7 @@ namespace Ergasia3_App
             this.buttonDelete.Location = new System.Drawing.Point(378, 457);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(91, 24);
-            this.buttonDelete.TabIndex = 10;
+            this.buttonDelete.TabIndex = 24;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
@@ -795,67 +871,6 @@ namespace Ergasia3_App
             this.label15.TabIndex = 27;
             this.label15.Text = "Results";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(225, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 34);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Search";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(9, 77);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(138, 20);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "Search by date:";
-            // 
-            // textBoxNameSearch
-            // 
-            this.textBoxNameSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameSearch.Location = new System.Drawing.Point(160, 17);
-            this.textBoxNameSearch.Name = "textBoxNameSearch";
-            this.textBoxNameSearch.Size = new System.Drawing.Size(222, 27);
-            this.textBoxNameSearch.TabIndex = 24;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(8, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(146, 20);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "Search by name:";
-            // 
-            // maskedTextBoxDateSearch
-            // 
-            this.maskedTextBoxDateSearch.BeepOnError = true;
-            this.maskedTextBoxDateSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxDateSearch.Location = new System.Drawing.Point(160, 71);
-            this.maskedTextBoxDateSearch.Mask = "00/00/0000";
-            this.maskedTextBoxDateSearch.Name = "maskedTextBoxDateSearch";
-            this.maskedTextBoxDateSearch.Size = new System.Drawing.Size(100, 27);
-            this.maskedTextBoxDateSearch.TabIndex = 4;
-            this.maskedTextBoxDateSearch.ValidatingType = typeof(System.DateTime);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(150, 123);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(85, 34);
-            this.buttonSearch.TabIndex = 9;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
             // contextMenuStripEdit
             // 
             this.contextMenuStripEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -870,33 +885,43 @@ namespace Ergasia3_App
             this.toolStripMenuItemEDITdelete.Text = "DeleteSelectedDiseace";
             this.toolStripMenuItemEDITdelete.Click += new System.EventHandler(this.toolStripMenuItemEDITdelete_Click);
             // 
-            // buttonShowAll
+            // panelForm
             // 
-            this.buttonShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShowAll.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonShowAll.Location = new System.Drawing.Point(312, 134);
-            this.buttonShowAll.Name = "buttonShowAll";
-            this.buttonShowAll.Size = new System.Drawing.Size(76, 24);
-            this.buttonShowAll.TabIndex = 37;
-            this.buttonShowAll.Text = "Show All";
-            this.buttonShowAll.UseVisualStyleBackColor = true;
-            this.buttonShowAll.Click += new System.EventHandler(this.buttonShowAll_Click);
+            this.panelForm.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelForm.Controls.Add(this.textBoxName);
+            this.panelForm.Controls.Add(this.textBoxEmail);
+            this.panelForm.Controls.Add(this.textBoxAddress);
+            this.panelForm.Controls.Add(this.maskedTextBoxBirthday);
+            this.panelForm.Controls.Add(this.textBoxPhone);
+            this.panelForm.Controls.Add(this.comboBoxGender);
+            this.panelForm.Controls.Add(this.maskedTextBoxCaseTime);
+            this.panelForm.Controls.Add(this.label8);
+            this.panelForm.Controls.Add(this.label1);
+            this.panelForm.Controls.Add(this.label7);
+            this.panelForm.Controls.Add(this.label2);
+            this.panelForm.Controls.Add(this.label3);
+            this.panelForm.Controls.Add(this.label5);
+            this.panelForm.Controls.Add(this.label4);
+            this.panelForm.Location = new System.Drawing.Point(37, 74);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(410, 412);
+            this.panelForm.TabIndex = 37;
             // 
-            // panel3
+            // panel5
             // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.buttonShowAll);
-            this.panel3.Controls.Add(this.buttonSearch);
-            this.panel3.Controls.Add(this.maskedTextBoxDateSearch);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.textBoxNameSearch);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.label25);
-            this.panel3.Location = new System.Drawing.Point(83, 46);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(393, 163);
-            this.panel3.TabIndex = 38;
+            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.buttonAddD);
+            this.panel5.Controls.Add(this.listBoxUD);
+            this.panel5.Controls.Add(this.label27);
+            this.panel5.Controls.Add(this.textBoxUD);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Location = new System.Drawing.Point(539, 74);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(471, 412);
+            this.panel5.TabIndex = 38;
             // 
             // Main
             // 
@@ -904,9 +929,9 @@ namespace Ergasia3_App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1270, 681);
-            this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelAddNew);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelSearch);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -918,8 +943,8 @@ namespace Ergasia3_App
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelAddNew.ResumeLayout(false);
             this.panelAddNew.PerformLayout();
-            this.panelForm.ResumeLayout(false);
-            this.panelForm.PerformLayout();
+            this.panelAddNew2.ResumeLayout(false);
+            this.panelAddNew2.PerformLayout();
             this.contextMenuStripAdd.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -927,13 +952,17 @@ namespace Ergasia3_App
             this.panelSearch.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
             this.contextMenuStripEdit.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panelForm.ResumeLayout(false);
+            this.panelForm.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -941,7 +970,7 @@ namespace Ergasia3_App
         #endregion
 
         private System.Windows.Forms.Panel panelAddNew;
-        private System.Windows.Forms.Panel panelForm;
+        private System.Windows.Forms.Panel panelAddNew2;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.TextBox textBoxAddress;
@@ -1012,6 +1041,8 @@ namespace Ergasia3_App
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonShowAll;
+        private System.Windows.Forms.Panel panelForm;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 

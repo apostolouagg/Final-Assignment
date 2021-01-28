@@ -11,8 +11,11 @@ namespace Ergasia3_App
     public partial class Main : Form
     {
         private DbManager Context { get; set; }
-        private Case selectedCase;
-        private int selectedResultIndex;
+
+        private Case selectedCase; // Used in Search/Edit tab
+
+        private bool showAll;
+
         public Main()
         {
             InitializeComponent();
@@ -29,8 +32,8 @@ namespace Ergasia3_App
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            // Check textboxes if they are empty
-            if (panelForm.Controls.OfType<TextBox>().Where(check => check.Name != "textBoxUD").Any(x=> string.IsNullOrWhiteSpace(x.Text)))
+            // Check if any textBox is empty. Not including textBoxUD
+            if (panelForm.Controls.OfType<TextBox>().Any(x=> string.IsNullOrWhiteSpace(x.Text)))
             {
                 MessageBox.Show("All fields with * must be filled!","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -94,11 +97,14 @@ namespace Ergasia3_App
             foreach (var maskedTextBox in panelForm.Controls.OfType<MaskedTextBox>()) maskedTextBox.Clear();
             listBoxUD.Items.Clear();
             comboBoxGender.SelectedItem = null;
+
+            MessageBox.Show("Successfully added case!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            showAll = false;
             Search(true); // With info
         }
 
@@ -108,7 +114,7 @@ namespace Ergasia3_App
          */
         private void Search(bool info)
         {
-            List<Case> caseList = new List<Case>();
+            List<Case> caseList;
             listBoxResult.Items.Clear();
 
             // If search textBoxes are empty then don't search.
@@ -148,6 +154,15 @@ namespace Ergasia3_App
                 listBoxResult.Items.Add($"ID:{c.ID} | Name:{c.FullName}");
             }
         }
+        private void buttonShowAll_Click(object sender, EventArgs e)
+        {
+            showAll = true;
+            listBoxResult.Items.Clear();
+            foreach (var c in Context.Cases)
+            {
+                listBoxResult.Items.Add($"ID:{c.ID} | Name:{c.FullName}");
+            }
+        }
 
         /*
          * Disables and Clears the info panel.
@@ -172,10 +187,9 @@ namespace Ergasia3_App
          */
         private void listBoxResult_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedResultIndex = listBoxResult.SelectedIndex;
 
             // When we delete the last item of the listbox it returns -1 as an index 
-            if (selectedResultIndex == -1)
+            if (listBoxResult.SelectedIndex == -1)
             {
                 DisableInfo();
                 return;
@@ -188,8 +202,8 @@ namespace Ergasia3_App
              * Then we take the second part [1] -> xxxx which is the case's id we are looking for.
              */
             // Find case
-            var id = int.Parse(listBoxResult.SelectedItem.ToString().Split('|')[0].Split(':')[1]); // comment above
-            selectedCase = Context.Cases.First(x=> x.ID == id);
+            var caseid = int.Parse(listBoxResult.SelectedItem.ToString().Split('|')[0].Split(':')[1]); // comment above
+            selectedCase = Context.Cases.First(x=> x.ID == caseid);
 
             buttonDelete.Enabled = true;
             buttonEdit.Enabled = true;
@@ -304,7 +318,17 @@ namespace Ergasia3_App
                 MessageBox.Show("Edit successfull!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // We update the case listBox panel by doing a search again
-                Search(false); // false because we don't want any messages this time 
+                if (showAll)
+                {
+                    // Update the list by calling the buttonShowAll_Click.
+                    buttonShowAll_Click(null,null);
+                }
+                else
+                {
+                    //Redo the search to get the updated list
+                    Search(false);
+                }
+
                 if (listBoxResult.Items.Count == 0) // If no cases left then disable edit/info panel
                 {
                     DisableInfo();
@@ -455,15 +479,6 @@ namespace Ergasia3_App
             panelAddNew.Enabled = true;
             panelAddNew.Visible = true;
             panelAddNew.BringToFront();
-        }
-
-        private void buttonShowAll_Click(object sender, EventArgs e)
-        {
-            listBoxResult.Items.Clear();
-            foreach (var c in Context.Cases)
-            {
-                listBoxResult.Items.Add($"ID:{c.ID} | Name:{c.FullName}");
-            }
         }
     }
 }
