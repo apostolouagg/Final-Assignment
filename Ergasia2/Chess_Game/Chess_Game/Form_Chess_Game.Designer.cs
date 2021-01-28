@@ -150,7 +150,7 @@ namespace Chess_Game
             this.button_Restart.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button_Restart.ForeColor = System.Drawing.Color.Goldenrod;
             this.button_Restart.Location = new System.Drawing.Point(461, 13);
-            this.button_Restart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Restart.Margin = new System.Windows.Forms.Padding(2);
             this.button_Restart.Name = "button_Restart";
             this.button_Restart.Size = new System.Drawing.Size(95, 28);
             this.button_Restart.TabIndex = 7;
@@ -166,7 +166,7 @@ namespace Chess_Game
             this.button_ExitToMenu.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button_ExitToMenu.ForeColor = System.Drawing.Color.Red;
             this.button_ExitToMenu.Location = new System.Drawing.Point(562, 13);
-            this.button_ExitToMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_ExitToMenu.Margin = new System.Windows.Forms.Padding(2);
             this.button_ExitToMenu.Name = "button_ExitToMenu";
             this.button_ExitToMenu.Size = new System.Drawing.Size(95, 28);
             this.button_ExitToMenu.TabIndex = 8;
@@ -178,7 +178,7 @@ namespace Chess_Game
             // 
             this.pictureBox1.Image = global::Chess_Game.Properties.Resources.chess_menu2;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(744, 656);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,7 +190,7 @@ namespace Chess_Game
             this.pictureBox_ChessBoard.BackColor = System.Drawing.Color.SaddleBrown;
             this.pictureBox_ChessBoard.Image = global::Chess_Game.Properties.Resources.chessboard;
             this.pictureBox_ChessBoard.Location = new System.Drawing.Point(62, 124);
-            this.pictureBox_ChessBoard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox_ChessBoard.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_ChessBoard.Name = "pictureBox_ChessBoard";
             this.pictureBox_ChessBoard.Size = new System.Drawing.Size(595, 522);
             this.pictureBox_ChessBoard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -244,7 +244,7 @@ namespace Chess_Game
             this.Controls.Add(this.pictureBox_ChessBoard);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form_Chess_Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
