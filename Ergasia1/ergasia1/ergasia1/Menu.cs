@@ -130,6 +130,7 @@ namespace ergasia1
 
                 if (tempImages.Count >= 12)
                 {
+                    tempImages = Game.Randomize(tempImages); // xrisimopioume to randomize to Game gia na kanoume randomize
                     tempImages.RemoveRange(11, tempImages.Count - 12);
                     images = tempImages;
                     Console.WriteLine(tempImages.Count);

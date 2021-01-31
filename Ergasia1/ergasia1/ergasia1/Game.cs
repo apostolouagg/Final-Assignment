@@ -15,7 +15,7 @@ namespace ergasia1
 {
     public partial class Game : Form
     {
-        private Random random;
+        private static Random random;
 
         private Card first;
         private Card second;
@@ -38,8 +38,10 @@ namespace ergasia1
         }
 
         // Randomizes a list
-        private List<string> Randomize(List<string> images)
+        public static List<string> Randomize(List<string> images)
         {
+            random = new Random((int)DateTime.Now.Ticks);
+
             var randomizedImages = new List<string>();
             while (images.Count > 0)
             {
@@ -61,9 +63,6 @@ namespace ergasia1
             sameCards = 0;
             attemps = 0;
             started = false;
-
-            // Initialize Random
-            random = new Random((int)DateTime.Now.Ticks);
 
             images.AddRange(images); // add the same images to the image list so its 12 + 12
             images = Randomize(images); // randomize it

@@ -36,15 +36,16 @@ namespace ergasia1
             this.timerGame = new System.Windows.Forms.Timer(this.components);
             this.timerWelcome = new System.Windows.Forms.Timer(this.components);
             this.panelWelcome = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
+            this.buttonShowAttemps = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonOpenFolder = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label1Settings = new System.Windows.Forms.Label();
-            this.buttonShowAttemps = new System.Windows.Forms.Button();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
             this.panelSettings.SuspendLayout();
@@ -57,7 +58,7 @@ namespace ergasia1
             this.buttonPlay.Enabled = false;
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPlay.Location = new System.Drawing.Point(364, 288);
+            this.buttonPlay.Location = new System.Drawing.Point(359, 288);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(119, 38);
             this.buttonPlay.TabIndex = 0;
@@ -71,7 +72,7 @@ namespace ergasia1
             this.labelWelcome.BackColor = System.Drawing.Color.DodgerBlue;
             this.labelWelcome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelWelcome.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.Location = new System.Drawing.Point(227, 17);
+            this.labelWelcome.Location = new System.Drawing.Point(228, 17);
             this.labelWelcome.Name = "labelWelcome";
             this.labelWelcome.Size = new System.Drawing.Size(370, 92);
             this.labelWelcome.TabIndex = 1;
@@ -109,10 +110,20 @@ namespace ergasia1
             this.panelWelcome.Size = new System.Drawing.Size(627, 468);
             this.panelWelcome.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(376, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Username";
+            // 
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(297, 194);
+            this.textBoxName.Location = new System.Drawing.Point(292, 194);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(244, 26);
             this.textBoxName.TabIndex = 4;
@@ -129,6 +140,21 @@ namespace ergasia1
             this.pictureBoxSettings.TabIndex = 3;
             this.pictureBoxSettings.TabStop = false;
             this.pictureBoxSettings.Click += new System.EventHandler(this.pictureBoxSettings_Click);
+            // 
+            // buttonShowAttemps
+            // 
+            this.buttonShowAttemps.BackColor = System.Drawing.Color.LightGray;
+            this.buttonShowAttemps.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShowAttemps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShowAttemps.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowAttemps.Location = new System.Drawing.Point(352, 428);
+            this.buttonShowAttemps.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonShowAttemps.Name = "buttonShowAttemps";
+            this.buttonShowAttemps.Size = new System.Drawing.Size(137, 29);
+            this.buttonShowAttemps.TabIndex = 7;
+            this.buttonShowAttemps.Text = "Show Top 10 Attemps";
+            this.buttonShowAttemps.UseVisualStyleBackColor = false;
+            this.buttonShowAttemps.Click += new System.EventHandler(this.buttonShowLeaderboard_Click);
             // 
             // buttonBack
             // 
@@ -150,7 +176,7 @@ namespace ergasia1
             this.buttonOpenFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpenFolder.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOpenFolder.Location = new System.Drawing.Point(25, 80);
+            this.buttonOpenFolder.Location = new System.Drawing.Point(22, 76);
             this.buttonOpenFolder.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOpenFolder.Name = "buttonOpenFolder";
             this.buttonOpenFolder.Size = new System.Drawing.Size(142, 34);
@@ -169,23 +195,9 @@ namespace ergasia1
             this.label1Settings.TabIndex = 6;
             this.label1Settings.Text = "SETTINGS";
             // 
-            // buttonShowAttemps
-            // 
-            this.buttonShowAttemps.BackColor = System.Drawing.Color.LightGray;
-            this.buttonShowAttemps.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShowAttemps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowAttemps.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonShowAttemps.Location = new System.Drawing.Point(357, 428);
-            this.buttonShowAttemps.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonShowAttemps.Name = "buttonShowAttemps";
-            this.buttonShowAttemps.Size = new System.Drawing.Size(137, 29);
-            this.buttonShowAttemps.TabIndex = 7;
-            this.buttonShowAttemps.Text = "Show Top 10 Attemps";
-            this.buttonShowAttemps.UseVisualStyleBackColor = false;
-            this.buttonShowAttemps.Click += new System.EventHandler(this.buttonShowLeaderboard_Click);
-            // 
             // panelSettings
             // 
+            this.panelSettings.Controls.Add(this.label2);
             this.panelSettings.Controls.Add(this.buttonOpenFolder);
             this.panelSettings.Controls.Add(this.label1Settings);
             this.panelSettings.Location = new System.Drawing.Point(632, 72);
@@ -193,15 +205,14 @@ namespace ergasia1
             this.panelSettings.Size = new System.Drawing.Size(200, 284);
             this.panelSettings.TabIndex = 5;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(381, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 23);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Username";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 26);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "*12 random pictuers will be selected\r\n from the given folder.";
             // 
             // Menu
             // 
@@ -246,6 +257,7 @@ namespace ergasia1
         private System.Windows.Forms.Button buttonShowAttemps;
         private System.Windows.Forms.Panel panelSettings;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
