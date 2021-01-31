@@ -29,6 +29,7 @@ namespace Chess_Game
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Chess_Game));
             this.label1 = new System.Windows.Forms.Label();
             this.label_Player_1 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@ namespace Chess_Game
             this.label_Date = new System.Windows.Forms.Label();
             this.boardBack = new System.Windows.Forms.Panel();
             this.board = new System.Windows.Forms.Panel();
+            this.timerUpdateLabels = new System.Windows.Forms.Timer(this.components);
             this.boardBack.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@ namespace Chess_Game
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label1.ForeColor = System.Drawing.Color.PeachPuff;
-            this.label1.Location = new System.Drawing.Point(36, 53);
+            this.label1.Location = new System.Drawing.Point(576, 61);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 56);
@@ -64,7 +66,7 @@ namespace Chess_Game
             this.label_Player_1.BackColor = System.Drawing.Color.Transparent;
             this.label_Player_1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_Player_1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label_Player_1.Location = new System.Drawing.Point(151, 53);
+            this.label_Player_1.Location = new System.Drawing.Point(691, 61);
             this.label_Player_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Player_1.Name = "label_Player_1";
             this.label_Player_1.Size = new System.Drawing.Size(173, 28);
@@ -77,7 +79,7 @@ namespace Chess_Game
             this.label_Player_2.BackColor = System.Drawing.Color.Transparent;
             this.label_Player_2.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_Player_2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label_Player_2.Location = new System.Drawing.Point(151, 81);
+            this.label_Player_2.Location = new System.Drawing.Point(691, 89);
             this.label_Player_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Player_2.Name = "label_Player_2";
             this.label_Player_2.Size = new System.Drawing.Size(173, 28);
@@ -90,7 +92,7 @@ namespace Chess_Game
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label4.ForeColor = System.Drawing.Color.PeachPuff;
-            this.label4.Location = new System.Drawing.Point(445, 57);
+            this.label4.Location = new System.Drawing.Point(925, 61);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 56);
@@ -103,7 +105,7 @@ namespace Chess_Game
             this.label_Timer_1.BackColor = System.Drawing.Color.Transparent;
             this.label_Timer_1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_Timer_1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label_Timer_1.Location = new System.Drawing.Point(556, 57);
+            this.label_Timer_1.Location = new System.Drawing.Point(1036, 61);
             this.label_Timer_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Timer_1.Name = "label_Timer_1";
             this.label_Timer_1.Size = new System.Drawing.Size(169, 28);
@@ -116,7 +118,7 @@ namespace Chess_Game
             this.label_Timer_2.BackColor = System.Drawing.Color.Transparent;
             this.label_Timer_2.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_Timer_2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label_Timer_2.Location = new System.Drawing.Point(556, 85);
+            this.label_Timer_2.Location = new System.Drawing.Point(1033, 89);
             this.label_Timer_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Timer_2.Name = "label_Timer_2";
             this.label_Timer_2.Size = new System.Drawing.Size(169, 28);
@@ -130,7 +132,7 @@ namespace Chess_Game
             this.button_Restart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Restart.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button_Restart.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button_Restart.Location = new System.Drawing.Point(473, 13);
+            this.button_Restart.Location = new System.Drawing.Point(1006, 699);
             this.button_Restart.Margin = new System.Windows.Forms.Padding(2);
             this.button_Restart.Name = "button_Restart";
             this.button_Restart.Size = new System.Drawing.Size(95, 28);
@@ -146,7 +148,7 @@ namespace Chess_Game
             this.button_ExitToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ExitToMenu.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.button_ExitToMenu.ForeColor = System.Drawing.Color.Red;
-            this.button_ExitToMenu.Location = new System.Drawing.Point(574, 13);
+            this.button_ExitToMenu.Location = new System.Drawing.Point(1107, 699);
             this.button_ExitToMenu.Margin = new System.Windows.Forms.Padding(2);
             this.button_ExitToMenu.Name = "button_ExitToMenu";
             this.button_ExitToMenu.Size = new System.Drawing.Size(95, 28);
@@ -161,7 +163,7 @@ namespace Chess_Game
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label2.ForeColor = System.Drawing.Color.PeachPuff;
-            this.label2.Location = new System.Drawing.Point(36, 13);
+            this.label2.Location = new System.Drawing.Point(576, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 28);
@@ -174,7 +176,7 @@ namespace Chess_Game
             this.label_Date.BackColor = System.Drawing.Color.Transparent;
             this.label_Date.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label_Date.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label_Date.Location = new System.Drawing.Point(114, 13);
+            this.label_Date.Location = new System.Drawing.Point(654, 21);
             this.label_Date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Date.Name = "label_Date";
             this.label_Date.Size = new System.Drawing.Size(130, 28);
@@ -183,10 +185,10 @@ namespace Chess_Game
             // 
             // boardBack
             // 
-            this.boardBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boardBack.BackgroundImage")));
+            this.boardBack.BackgroundImage = global::Chess_Game.Properties.Resources.chessboard;
             this.boardBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.boardBack.Controls.Add(this.board);
-            this.boardBack.Location = new System.Drawing.Point(12, 116);
+            this.boardBack.Location = new System.Drawing.Point(12, 41);
             this.boardBack.Name = "boardBack";
             this.boardBack.Size = new System.Drawing.Size(540, 548);
             this.boardBack.TabIndex = 12;
@@ -194,10 +196,15 @@ namespace Chess_Game
             // board
             // 
             this.board.BackColor = System.Drawing.Color.Transparent;
-            this.board.Location = new System.Drawing.Point(33, 36);
+            this.board.Location = new System.Drawing.Point(31, 35);
             this.board.Name = "board";
             this.board.Size = new System.Drawing.Size(480, 480);
-            this.board.TabIndex = 13;
+            this.board.TabIndex = 15;
+            // 
+            // timerUpdateLabels
+            // 
+            this.timerUpdateLabels.Enabled = true;
+            this.timerUpdateLabels.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form_Chess_Game
             // 
@@ -206,7 +213,7 @@ namespace Chess_Game
             this.BackColor = System.Drawing.Color.Peru;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1264, 709);
+            this.ClientSize = new System.Drawing.Size(1208, 763);
             this.Controls.Add(this.boardBack);
             this.Controls.Add(this.label_Player_2);
             this.Controls.Add(this.label_Player_1);
@@ -243,6 +250,7 @@ namespace Chess_Game
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.Panel boardBack;
+        private System.Windows.Forms.Timer timerUpdateLabels;
         private System.Windows.Forms.Panel board;
     }
 }

@@ -9,20 +9,25 @@ namespace Chess_Game
     public class Player
     {
         public string Name { get; set; }
-        public int Time { get; private set; }
+        public float Time { get; private set; }
         private Timer PlayerTimer { get;}
 
         public Player(string name)
         {
             this.Name = name;
-            this.Time = 0;
+            this.Time = 120;
             PlayerTimer = new Timer();
             PlayerTimer.Tick += timer_tick;
-            PlayerTimer.Interval = 1000;
+            PlayerTimer.Interval = 100; // every 0.1 seconds
         }
         private void timer_tick(object sender, EventArgs e)
         {
-            Time += 1;
+            Time -= 0.10f;
+            if (Time <= 0.00f)
+            {
+                Time = 0f;
+                this.StopTimer();
+            }
         }
 
         public void StartTimer()
@@ -36,7 +41,7 @@ namespace Chess_Game
         public void RestartTimer()
         {
             PlayerTimer.Stop();
-            Time = 0;
+            Time = 120;
         }
     }
 }

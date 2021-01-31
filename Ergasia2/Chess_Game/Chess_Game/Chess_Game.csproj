@@ -77,6 +77,9 @@
     <Compile Include="Form_Chess_Game.Designer.cs">
       <DependentUpon>Form_Chess_Game.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pawn.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_chessboard.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
