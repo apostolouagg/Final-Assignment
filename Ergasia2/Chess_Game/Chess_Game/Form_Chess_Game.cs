@@ -19,24 +19,30 @@ namespace Chess_Game
         // 3. Gia na ginei to parapanw (to 2) prepei na doume prwta pws tha ftiaksoume to paixnidi etsi wste o timer na ksekina otan tha ginetai click
         // 4. Mporoume na xrhsimopoihsoume tis classes gia th leitourgia twn pioniwn
 
-        string player1;
-        string player2;
-        int timePlayer1;
-        int timePLayer2;
+        private Player player1;
+        private Player player2;
 
         String connectionString = "Data Source=c:DB1.db;Version=3;";
-        SQLiteConnection conn;
 
-        public Form_Chess_Game(string player1, string player2)
+        private readonly Image[,] pawns =
+        {
+            {Properties.Resources.b6, Properties.Resources.w6},
+            {Properties.Resources.b3, Properties.Resources.w3},
+            {Properties.Resources.b1, Properties.Resources.w1},
+            {Properties.Resources.b5, Properties.Resources.w5},
+            {Properties.Resources.b2, Properties.Resources.w2},
+            {Properties.Resources.b1, Properties.Resources.w1},
+            {Properties.Resources.b3, Properties.Resources.w3},
+            {Properties.Resources.b6, Properties.Resources.w6},
+        };
+
+        private int pawnSize = 60;
+
+        public Form_Chess_Game(Player player1, Player player2)
         {
             InitializeComponent();
             this.player1 = player1;
             this.player2 = player2;
-        }
-
-        private void label_Timer_1_Click(object sender, EventArgs e)
-        {
-
         }
 
         // Exit to menu
@@ -47,27 +53,87 @@ namespace Chess_Game
 
         private void Form_Chess_Game_Load(object sender, EventArgs e)
         {
-            label_Player_1.Text = player1;
-            label_Player_2.Text = player2;
-            label_Date.Text = DateTime.Now.ToString();
+            label_Player_1.Text = player1.Name;
+            label_Player_2.Text = player2.Name;
+            label_Date.Text = DateTime.Now.ToString("dd/MM/yyyy"); // ellinikh hmerominia
 
-            conn = new SQLiteConnection(connectionString);
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string insertQuery = $"Insert into PLayers(Player1, Player2, Date) values('{player1}','{player2}','{DateTime.Now}')";
+                SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
+                cmd.ExecuteNonQuery();
+            }
 
-            conn.Open();
-            string insertQuery = $"Insert into PLayers(Player1, Player2, Date) values('{player1}','{player2}','{DateTime.Now}')";
-            SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (i == 0)
+                    {
+                        board.Controls.Add(new PictureBox()
+                        {
+                            Image = pawns[j, 1],
+                            Location = new Point( j * pawnSize,  i * pawnSize),
+                            Name = $"White.{j * pawnSize}.{i * pawnSize}" // den ksero an tha xreiastei akoma afto
+                        });
+                    }
+                    else if (i == 1)
+                    {
+                        board.Controls.Add(new PictureBox()
+                        {
+                            Image = Properties.Resources.w4,
+                            Location = new Point(j  * pawnSize,  i * pawnSize),
+                            Name = $"White.{j * pawnSize}.{i * pawnSize}"
+                        });
+                    }
+                    else if (i == 6)
+                    {
+                        board.Controls.Add(new PictureBox()
+                        {
+                            Image = Properties.Resources.b4,
+                            Location = new Point(  j * pawnSize,  i * pawnSize),
+                            Name = $"Black.{j * pawnSize}.{i * pawnSize}"
+                        });
+                    }
+                    else if (i == 7)
+                    {
+                        board.Controls.Add(new PictureBox()
+                        {
+                            Image = pawns[j, 0],
+                            Location = new Point( j * pawnSize,  i * pawnSize),
+                            Name = $"Black.{j * pawnSize}.{i * pawnSize}"
+                        });
+                    }
+                }
+            }
+
+            foreach (PictureBox pictureBox in board.Controls.OfType<PictureBox>())
+            {
+                pictureBox.MouseDown += mouse_Down;
+                pictureBox.MouseMove += mouse_Move;
+                pictureBox.MouseUp += mouse_Up;
+
+                pictureBox.Cursor = Cursors.Hand;
+                pictureBox.BackColor = Color.Transparent;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.Size = new Size(pawnSize, pawnSize);
+            }
         }
 
-        private void timer_Player1_Tick(object sender, EventArgs e)
+        private void mouse_Down(object sender, MouseEventArgs e)
         {
-            timePlayer1++;
+
         }
 
-        private void timer_Player2_Tick(object sender, EventArgs e)
+        private void mouse_Move(object sender, MouseEventArgs e)
         {
-            timePLayer2++;
+
+        }
+
+        private void mouse_Up(object sender, MouseEventArgs e)
+        {
+
         }
 
         private void button_Restart_Click(object sender, EventArgs e)
@@ -77,8 +143,8 @@ namespace Chess_Game
             var answer = MessageBox.Show("Are you sure you want to restart?", "Restart", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (answer == DialogResult.Yes)
             {
-                timePlayer1 = 0;
-                timePLayer2 = 0;
+                player1.RestartTimer();
+                player2.RestartTimer();
             }
             else
             {
