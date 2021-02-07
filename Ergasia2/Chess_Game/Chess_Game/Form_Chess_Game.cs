@@ -22,21 +22,6 @@ namespace Chess_Game
         private Player player1;
         private Player player2;
 
-        private int pawnSize = 60;
-
-        // 2D Array with the images
-        private readonly Image[,] pawns =
-        {
-            {Properties.Resources.b6, Properties.Resources.w6},
-            {Properties.Resources.b3, Properties.Resources.w3},
-            {Properties.Resources.b1, Properties.Resources.w1},
-            {Properties.Resources.b5, Properties.Resources.w5},
-            {Properties.Resources.b2, Properties.Resources.w2},
-            {Properties.Resources.b1, Properties.Resources.w1},
-            {Properties.Resources.b3, Properties.Resources.w3},
-            {Properties.Resources.b6, Properties.Resources.w6},
-        };
-
         public Form_Chess_Game(Player player1, Player player2)
         {
             InitializeComponent();
@@ -55,50 +40,6 @@ namespace Chess_Game
             label_Player_1.Text = player1.Name;
             label_Player_2.Text = player2.Name;
             label_Date.Text = DateTime.Now.ToString("dd/MM/yyyy"); // ellinikh hmerominia
-
-            // Creates and places the pawns
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    if (i == 0)
-                    {
-                        new Pawn(board)
-                        {
-                            Image = pawns[j, 1],
-                            Location = new Point( j * pawnSize,  i * pawnSize),
-                            //Name = $"White.{j * pawnSize}.{i * pawnSize}" // den ksero an tha xreiastei akoma afto
-                        };
-                    }
-                    else if (i == 1)
-                    {
-                        new Pawn(board)
-                        {
-                            Image = Properties.Resources.w4,
-                            Location = new Point(j  * pawnSize,  i * pawnSize),
-                            //Name = $"White.{j * pawnSize}.{i * pawnSize}"
-                        };
-                    }
-                    else if (i == 6)
-                    {
-                        new Pawn(board)
-                        {
-                            Image = Properties.Resources.b4,
-                            Location = new Point(  j * pawnSize,  i * pawnSize),
-                            //Name = $"Black.{j * pawnSize}.{i * pawnSize}"
-                        };
-                    }
-                    else if (i == 7)
-                    {
-                        new Pawn(board)
-                        {
-                            Image = pawns[j, 0],
-                            Location = new Point( j * pawnSize,  i * pawnSize),
-                            //Name = $"Black.{j * pawnSize}.{i * pawnSize}"
-                        };
-                    }
-                }
-            }
         }
 
         private void button_Restart_Click(object sender, EventArgs e)

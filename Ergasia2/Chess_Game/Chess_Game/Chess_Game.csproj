@@ -65,6 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChessBoard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form_Chess_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
