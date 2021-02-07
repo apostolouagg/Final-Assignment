@@ -16,6 +16,7 @@ namespace Chess_Game
         {
             this.Name = name;
             this.Time = 120;
+
             PlayerTimer = new Timer();
             PlayerTimer.Tick += timer_tick;
             PlayerTimer.Interval = 100; // every 0.1 seconds

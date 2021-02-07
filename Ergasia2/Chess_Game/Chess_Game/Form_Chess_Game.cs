@@ -21,12 +21,22 @@ namespace Chess_Game
 
         private Player player1;
         private Player player2;
+        private ChessBoard board;
+        private bool Started = false; 
 
         public Form_Chess_Game(Player player1, Player player2)
         {
             InitializeComponent();
             this.player1 = player1;
             this.player2 = player2;
+
+            boardBack.Controls.Add(board = new ChessBoard()
+            {
+                Location = new Point(31, 35),
+                Size = new Size(480, 480),
+                BackColor = Color.Transparent
+            });
+            //board.Restart();
         }
 
         // Exit to menu
@@ -39,7 +49,7 @@ namespace Chess_Game
         {
             label_Player_1.Text = player1.Name;
             label_Player_2.Text = player2.Name;
-            label_Date.Text = DateTime.Now.ToString("dd/MM/yyyy"); // ellinikh hmerominia
+            label_Date.Text = DateTime.Now.ToString("dd/MM/yyyy"); // HELLAS HELLINON RISTIANON hmerominia
         }
 
         private void button_Restart_Click(object sender, EventArgs e)
@@ -50,6 +60,7 @@ namespace Chess_Game
             {
                 player1.RestartTimer();
                 player2.RestartTimer();
+                board.Restart();
             }
             else
             {
@@ -62,5 +73,48 @@ namespace Chess_Game
             label_Timer_1.Text = player1.Time.ToString("0.0");
             label_Timer_2.Text = player2.Time.ToString("0.0");
         }
+
+        private void TurnButton_Press(object sender, EventArgs e)
+        {
+            var pressed = (Button)sender;
+            if (!Started)
+            {
+                Started = true;
+                buttonBlack.Text = "End Turn";
+                buttonWhite.Text = "End Turn";
+                if (pressed.Name.Equals("buttonWhite"))
+                {
+                    buttonBlack.Enabled = false;
+
+                    player1.StartTimer();
+                }
+                else
+                {
+                    buttonWhite.Enabled = false;
+
+                    player2.StartTimer();
+                }
+            }
+            else
+            {
+                if (pressed.Name.Equals("buttonWhite"))
+                {
+                    buttonBlack.Enabled = true;
+
+                    buttonWhite.Enabled = false;
+
+                    player1.StopTimer();
+                    player2.StartTimer();
+                }
+                else
+                {
+                    buttonWhite.Enabled = true;
+                    buttonBlack.Enabled = false;
+                    player2.StopTimer();
+                    player1.StartTimer();
+                }
+            }
+        }
+
     }
 }

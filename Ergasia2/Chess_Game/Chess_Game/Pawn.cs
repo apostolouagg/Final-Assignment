@@ -10,16 +10,20 @@ namespace Chess_Game
 {
     public class Pawn : PictureBox
     {
-        private static int PawnSize { get; } = 60;
-        private static int Limit { get; } = 15;
+        private static int PawnSize { get;} = 60;
+        private static int Limit { get;} = 15;
+        private ChessBoard Board { get;}
         private bool Selected { get; set; }
 
-        public Pawn()
+        public Pawn(ChessBoard board)
         {
+            this.Board = board;
             this.Size = new Size(PawnSize,PawnSize);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.BackColor = Color.Transparent;
             this.Cursor = Cursors.Hand;
+
+            // Event handlers
             this.MouseDown += mouse_Down;
             this.MouseMove += mouse_Move;
             this.MouseUp += mouse_Up;
@@ -36,38 +40,66 @@ namespace Chess_Game
                 // Diagonal Movement ( Lower threshold so its easier to make that move )
                 if (e.Location.Y < 0 - Limit / 3 && e.Location.X < 0 - Limit / 3) // Top-Left
                 {
-                    this.Location = new Point(this.Location.X - PawnSize, this.Location.Y - PawnSize);
+                    MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y - PawnSize));
                 }
                 else if (e.Location.Y > 60 + Limit / 3 && e.Location.X > 60 + Limit / 3) // Bottom-Right
                 {
-                    this.Location = new Point(this.Location.X + PawnSize, this.Location.Y + PawnSize);
+                    MovePawn(new Point(this.Location.X + PawnSize, this.Location.Y + PawnSize));
                 }
                 else if (e.Location.Y < 0 - Limit / 3 && e.Location.X > 60 + Limit / 3) // Top-Right
                 {
-                    this.Location = new Point(this.Location.X + PawnSize, this.Location.Y - PawnSize);
+                    MovePawn(new Point(this.Location.X + PawnSize, this.Location.Y - PawnSize));
                 }
                 else if (e.Location.Y > 60 + Limit / 3 && e.Location.X < 0 - Limit / 3) // Bottom-Left
-                {
-                    this.Location = new Point(this.Location.X - PawnSize, this.Location.Y + PawnSize);
+                { 
+                    MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y + PawnSize));
                 }
 
                 // Normal Movement
                 if (e.Location.Y < 0 - Limit) // Forward.
                 {
-                    this.Location = new Point(this.Location.X, this.Location.Y - PawnSize);
+                    MovePawn(new Point(this.Location.X, this.Location.Y - PawnSize));
                 }
                 else if (e.Location.Y > 60 + Limit) // Backwards.
                 {
-                    this.Location = new Point(this.Location.X, this.Location.Y + PawnSize);
+                    MovePawn(new Point(this.Location.X, this.Location.Y + PawnSize));
                 }
                 else if (e.Location.X < 0 - Limit) // Left.
                 {
-                    this.Location = new Point(this.Location.X - PawnSize, this.Location.Y);
+                    MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y));
                 }
-                else if (e.Location.X > 60 + Limit) // Right.
+                else if (e.Location.X > 60) // Right.
                 {
-                    this.Location = new Point(this.Location.X + PawnSize, this.Location.Y);
+                    MovePawn(new Point(this.Location.X + PawnSize, this.Location.Y));
                 }
+            }
+        }
+
+        private void MovePawn(Point newLocation)
+        {
+            var targetLocation = new Rectangle(newLocation, this.Size);
+
+            foreach (var pawn in Board.Controls.OfType<Pawn>())
+            {
+                if (pawn == this) continue;
+
+                if (pawn.Bounds.IntersectsWith(targetLocation)) 
+                {
+                    if (this.Tag.Equals(pawn.Tag))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Board.Controls.Remove(pawn);
+                        pawn.Dispose();
+                    }
+                }
+            }
+
+            if (!(newLocation.X >= Board.Width || newLocation.X < 0 || newLocation.Y >= Board.Height || newLocation.Y < 0))
+            {
+                this.Location = newLocation;
             }
         }
 
