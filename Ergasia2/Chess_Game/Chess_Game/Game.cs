@@ -137,12 +137,13 @@ namespace Chess_Game
                     MessageBox.Show("White Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
- 
+
         }
         // Exit to menu
         private void button_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }
