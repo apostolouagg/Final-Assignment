@@ -41,7 +41,7 @@ namespace Chess_Game
 
                 // Start Game
                 this.Hide();
-                Form_Chess_Game game = new Form_Chess_Game(p1,p2);
+                Game game = new Game(p1,p2);
                 game.ShowDialog();
                 this.Show();
             }

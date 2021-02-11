@@ -41,7 +41,6 @@ C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\b
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\System.Data.SQLite.xml
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.csprojAssemblyReference.cache
-C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Form_Chess_Game.resources
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Form_Chess_Menu.resources
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Properties.Resources.resources
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.csproj.GenerateResource.cache
@@ -49,3 +48,4 @@ C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\o
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.csproj.CopyComplete
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.exe
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.pdb
+C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Game.resources

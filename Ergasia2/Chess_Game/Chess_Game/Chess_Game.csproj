@@ -74,11 +74,11 @@
     <Compile Include="Form_Chess_Menu.Designer.cs">
       <DependentUpon>Form_Chess_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Chess_Game.cs">
+    <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Chess_Game.Designer.cs">
-      <DependentUpon>Form_Chess_Game.cs</DependentUpon>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="Pawn.cs">
       <SubType>Component</SubType>
@@ -86,8 +86,8 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_Chess_Game.resx">
-      <DependentUpon>Form_Chess_Game.cs</DependentUpon>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Chess_Menu.resx">
       <DependentUpon>Form_Chess_Menu.cs</DependentUpon>

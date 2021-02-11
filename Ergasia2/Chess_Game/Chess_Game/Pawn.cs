@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,16 +11,22 @@ namespace Chess_Game
 {
     public class Pawn : PictureBox
     {
-        private static int PawnSize { get;} = 60;
-        private static int Limit { get;} = 15;
+        private static int PawnSize { get; set; }
+        private static int Limit { get; set; }
         private ChessBoard Board { get;}
         private bool Selected { get; set; }
+        public Point StartingPosition { get; set; }
+        public string Team { get; set; }
 
         public Pawn(ChessBoard board)
         {
+            PawnSize = 60;
+            Limit = 15;
+
             this.Board = board;
             this.Size = new Size(PawnSize,PawnSize);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.Margin = new Padding(0, 0, 0, 0);
             this.BackColor = Color.Transparent;
             this.Cursor = Cursors.Hand;
 
@@ -55,22 +62,26 @@ namespace Chess_Game
                     MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y + PawnSize));
                 }
 
-                // Normal Movement
+                // Normal Movement (allow jumping over pawns)
                 if (e.Location.Y < 0 - Limit) // Forward.
                 {
-                    MovePawn(new Point(this.Location.X, this.Location.Y - PawnSize));
+                    if (e.Location.Y < 0 - PawnSize - Limit) MovePawn(new Point(this.Location.X, this.Location.Y - PawnSize * 2));
+                    else MovePawn(new Point(this.Location.X, this.Location.Y - PawnSize));
                 }
-                else if (e.Location.Y > 60 + Limit) // Backwards.
+                else if (e.Location.Y > PawnSize + Limit) // Backwards.
                 {
-                    MovePawn(new Point(this.Location.X, this.Location.Y + PawnSize));
+                    if (e.Location.Y > PawnSize * 2 + Limit) MovePawn(new Point(this.Location.X, this.Location.Y + PawnSize * 2));
+                    else MovePawn(new Point(this.Location.X, this.Location.Y + PawnSize));
                 }
                 else if (e.Location.X < 0 - Limit) // Left.
                 {
-                    MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y));
+                    if (e.Location.X < 0 - PawnSize - Limit) MovePawn(new Point(this.Location.X - PawnSize * 2, this.Location.Y));
+                    else MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y));
                 }
-                else if (e.Location.X > 60) // Right.
+                else if (e.Location.X > PawnSize) // Right.
                 {
-                    MovePawn(new Point(this.Location.X + PawnSize, this.Location.Y));
+                    if (e.Location.X > PawnSize * 2) MovePawn(new Point(this.Location.X + PawnSize * 2, this.Location.Y));
+                    else MovePawn(new Point(this.Location.X + PawnSize, this.Location.Y));
                 }
             }
         }
@@ -85,14 +96,13 @@ namespace Chess_Game
 
                 if (pawn.Bounds.IntersectsWith(targetLocation)) 
                 {
-                    if (this.Tag.Equals(pawn.Tag))
+                    if (this.Team.Equals(pawn.Team))
                     {
                         return;
                     }
                     else
                     {
-                        Board.Controls.Remove(pawn);
-                        pawn.Dispose();
+                        Board.Capture(pawn);
                     }
                 }
             }
