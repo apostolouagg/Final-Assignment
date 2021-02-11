@@ -16,7 +16,7 @@ namespace Chess_Game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Chess_Menu());
+            Application.Run(new Menu());
         }
     }
 }

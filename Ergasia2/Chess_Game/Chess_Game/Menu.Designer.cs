@@ -1,7 +1,7 @@
 ﻿
 namespace Chess_Game
 {
-    partial class Form_Chess_Menu
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -130,7 +130,7 @@ namespace Chess_Game
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // Form_Chess_Menu
+            // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +148,7 @@ namespace Chess_Game
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "Form_Chess_Menu";
+            this.Name = "Menu";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Chess_Menu";

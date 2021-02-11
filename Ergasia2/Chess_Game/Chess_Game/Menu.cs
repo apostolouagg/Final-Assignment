@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Chess_Game
 {
-    public partial class Form_Chess_Menu : Form
+    public partial class Menu : Form
     {
         private String connectionString = "Data Source=c:DB1.db;Version=3;";
-        public Form_Chess_Menu()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -23,7 +23,11 @@ namespace Chess_Game
         {
             if (string.IsNullOrWhiteSpace(textBox_Player1.Text) || string.IsNullOrWhiteSpace(textBox_Player2.Text))
             {
-                MessageBox.Show("You need to write Player 1 & Player 2 name!");
+                MessageBox.Show("You need to write Player 1 & Player 2 name!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (textBox_Player1.Text.Equals(textBox_Player2.Text))
+            {
+                MessageBox.Show("Players cant have the same name!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

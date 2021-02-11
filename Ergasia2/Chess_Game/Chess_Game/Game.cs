@@ -54,6 +54,14 @@ namespace Chess_Game
             {
                 playerWhite.RestartTimer();
                 playerBlack.RestartTimer();
+                Started = false;
+                Finished = false;
+                buttonBlack.Enabled = true;
+                buttonWhite.Enabled = true;
+                buttonBlack.Text = "Start Game";
+                buttonWhite.Text = "Start Game";
+
+                this.board.Enabled = false;
                 Task.Run(board.Restart);
             }
 
@@ -105,35 +113,32 @@ namespace Chess_Game
                 label_Timer_1.Text = playerWhite.Time.ToString("0.0");
                 label_Timer_2.Text = playerBlack.Time.ToString("0.0");
 
+                // If a player's time goes to 0
                 if (playerWhite.Time == 0f)
                 {
-                    Console.WriteLine("Black Wins!!");
                     Finished = true;
+                    MessageBox.Show("Black Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if (playerBlack.Time == 0f)
                 {
-                    Console.WriteLine("White Wins!!");
                     Finished = true;
+                    MessageBox.Show("White Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
 
-                // Checks if a player has won the game
+                // If someones pawns are gone
                 if (!board.Controls.OfType<Pawn>().Any(x => x.Team.Equals("White")))
                 {
-                    Console.WriteLine("Black Wins!!");
                     Finished = true;
+                    MessageBox.Show("Black Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else if (!board.Controls.OfType<Pawn>().Any(x => x.Team.Equals("Black")))
                 {
-                    Console.WriteLine("White Wins!!");
                     Finished = true;
+                    MessageBox.Show("White Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
-            else
-            {
-
-            }
+ 
         }
-
         // Exit to menu
         private void button_Exit_Click(object sender, EventArgs e)
         {
