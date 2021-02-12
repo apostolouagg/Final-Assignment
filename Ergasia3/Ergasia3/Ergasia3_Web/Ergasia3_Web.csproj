@@ -70,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\2021-01-30.jpg" />
+    <Content Include="Content\man.png" />
+    <Content Include="Content\menoumeAsfalis.png" />
+    <Content Include="Content\menoumeSpiti.png" />
+    <Content Include="Content\people.jpg" />
+    <Content Include="Content\woman.png" />
     <Content Include="Main.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -99,6 +105,7 @@
       <Name>Ergasia3_Database</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

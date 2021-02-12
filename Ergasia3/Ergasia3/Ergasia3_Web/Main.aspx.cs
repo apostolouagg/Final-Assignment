@@ -20,6 +20,7 @@ namespace Ergasia3_Web
         {
             // Connect to dataBase
             ContextDb = new DbManager(@"Data Source=|DataDirectory|\Database.db;Version=3;");
+            ContextDb = new DbManager(@"Data Source=|DataDirectory|\Database.db;Version=3;");
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
