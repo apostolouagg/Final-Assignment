@@ -348,6 +348,7 @@ namespace Ergasia3_App
                     Context.DeleteCase(selectedCase); // Delete case
 
                     listBoxResult.Items.Remove(listBoxResult.SelectedItem); // Delete from listbox
+                    listBoxEditUD.Items.Clear();
 
                     // Clear textboxes
                     DisableInfo();
