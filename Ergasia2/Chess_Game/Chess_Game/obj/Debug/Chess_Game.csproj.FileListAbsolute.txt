@@ -7,8 +7,6 @@ C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\ob
 C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.exe
 C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.pdb
-C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Form_Chess_Menu.resources
-C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Form_Chess_Game.resources
 C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\Chess_Game.exe.config
 C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\Chess_Game.exe
 C:\Users\aapos\Έγγραφα\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\Chess_Game.pdb
@@ -49,3 +47,14 @@ C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\o
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.pdb
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Game.resources
 C:\Users\anton\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Menu.resources
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\System.Data.SQLite.dll
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\bin\Debug\System.Data.SQLite.xml
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Game.resources
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.Menu.resources
+C:\Users\User\Documents\GitHub\TelikiErgasiaCS\Ergasia2\Chess_Game\Chess_Game\obj\Debug\Chess_Game.csproj.CopyComplete
