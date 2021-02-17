@@ -169,6 +169,8 @@ namespace Chess_Game
                     }
                 }
             }
+
+            Invoke(new Action(() => { Game.Restarting = false; }));
         }
     }
 }

@@ -34,29 +34,31 @@ namespace Ergasia3_App
             this.panelAddNew = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panelAddNew2 = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxUD = new System.Windows.Forms.TextBox();
-            this.listBoxUD = new System.Windows.Forms.ListBox();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonAddD = new System.Windows.Forms.Button();
+            this.listBoxUD = new System.Windows.Forms.ListBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBoxUD = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.panelForm = new System.Windows.Forms.Panel();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.maskedTextBoxBirthday = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.comboBoxGender = new System.Windows.Forms.ComboBox();
+            this.maskedTextBoxCaseTime = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonAddD = new System.Windows.Forms.Button();
-            this.maskedTextBoxCaseTime = new System.Windows.Forms.MaskedTextBox();
-            this.comboBoxGender = new System.Windows.Forms.ComboBox();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.maskedTextBoxBirthday = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.labelError = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.contextMenuStripAdd = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,10 +105,10 @@ namespace Ergasia3_App
             this.label15 = new System.Windows.Forms.Label();
             this.contextMenuStripEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemEDITdelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelForm = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panelAddNew.SuspendLayout();
             this.panelAddNew2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panelForm.SuspendLayout();
             this.contextMenuStripAdd.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelSearch.SuspendLayout();
@@ -115,8 +117,6 @@ namespace Ergasia3_App
             this.panel2.SuspendLayout();
             this.panelEdit.SuspendLayout();
             this.contextMenuStripEdit.SuspendLayout();
-            this.panelForm.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddNew
@@ -155,54 +155,44 @@ namespace Ergasia3_App
             this.panelAddNew2.Size = new System.Drawing.Size(1044, 547);
             this.panelAddNew2.TabIndex = 0;
             // 
-            // label27
+            // panel5
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(25, 366);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(236, 13);
-            this.label27.TabIndex = 36;
-            this.label27.Text = "*Right click on an underlying disease to delete it.";
+            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.buttonAddD);
+            this.panel5.Controls.Add(this.listBoxUD);
+            this.panel5.Controls.Add(this.label27);
+            this.panel5.Controls.Add(this.textBoxUD);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Location = new System.Drawing.Point(539, 74);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(471, 412);
+            this.panel5.TabIndex = 38;
             // 
-            // labelError
+            // label6
             // 
-            this.labelError.AutoSize = true;
-            this.labelError.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(34, 492);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(178, 15);
-            this.labelError.TabIndex = 22;
-            this.labelError.Text = "All fields with * must be filled.";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(13, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(220, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Add Underlying Diseases:";
             // 
-            // label13
+            // buttonAddD
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(139, 50);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(176, 20);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Underlying Diseases";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(651, 32);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(221, 34);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Medical History";
-            // 
-            // textBoxUD
-            // 
-            this.textBoxUD.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUD.Location = new System.Drawing.Point(241, 14);
-            this.textBoxUD.Name = "textBoxUD";
-            this.textBoxUD.Size = new System.Drawing.Size(152, 27);
-            this.textBoxUD.TabIndex = 7;
-            this.textBoxUD.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.buttonAddD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAddD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddD.Enabled = false;
+            this.buttonAddD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddD.Location = new System.Drawing.Point(399, 14);
+            this.buttonAddD.Name = "buttonAddD";
+            this.buttonAddD.Size = new System.Drawing.Size(51, 27);
+            this.buttonAddD.TabIndex = 8;
+            this.buttonAddD.Text = "Add";
+            this.buttonAddD.UseVisualStyleBackColor = true;
+            this.buttonAddD.Click += new System.EventHandler(this.buttonAddD_Click);
             // 
             // listBoxUD
             // 
@@ -219,6 +209,34 @@ namespace Ergasia3_App
             this.listBoxUD.UseTabStops = false;
             this.listBoxUD.SelectedValueChanged += new System.EventHandler(this.listBox_SelectedValueChanged);
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(25, 366);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(236, 13);
+            this.label27.TabIndex = 36;
+            this.label27.Text = "*Right click on an underlying disease to delete it.";
+            // 
+            // textBoxUD
+            // 
+            this.textBoxUD.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUD.Location = new System.Drawing.Point(241, 14);
+            this.textBoxUD.Name = "textBoxUD";
+            this.textBoxUD.Size = new System.Drawing.Size(152, 27);
+            this.textBoxUD.TabIndex = 7;
+            this.textBoxUD.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(139, 50);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(176, 20);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Underlying Diseases";
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
@@ -228,6 +246,96 @@ namespace Ergasia3_App
             this.labelTitle.Size = new System.Drawing.Size(268, 34);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Case Personal Info";
+            // 
+            // panelForm
+            // 
+            this.panelForm.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelForm.Controls.Add(this.textBoxName);
+            this.panelForm.Controls.Add(this.textBoxEmail);
+            this.panelForm.Controls.Add(this.textBoxAddress);
+            this.panelForm.Controls.Add(this.maskedTextBoxBirthday);
+            this.panelForm.Controls.Add(this.textBoxPhone);
+            this.panelForm.Controls.Add(this.comboBoxGender);
+            this.panelForm.Controls.Add(this.maskedTextBoxCaseTime);
+            this.panelForm.Controls.Add(this.label8);
+            this.panelForm.Controls.Add(this.label1);
+            this.panelForm.Controls.Add(this.label7);
+            this.panelForm.Controls.Add(this.label2);
+            this.panelForm.Controls.Add(this.label3);
+            this.panelForm.Controls.Add(this.label5);
+            this.panelForm.Controls.Add(this.label4);
+            this.panelForm.Location = new System.Drawing.Point(37, 74);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(410, 412);
+            this.panelForm.TabIndex = 37;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.Location = new System.Drawing.Point(168, 14);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(222, 27);
+            this.textBoxName.TabIndex = 0;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(168, 68);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(222, 27);
+            this.textBoxEmail.TabIndex = 1;
+            // 
+            // textBoxAddress
+            // 
+            this.textBoxAddress.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAddress.Location = new System.Drawing.Point(169, 275);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(222, 27);
+            this.textBoxAddress.TabIndex = 5;
+            // 
+            // maskedTextBoxBirthday
+            // 
+            this.maskedTextBoxBirthday.BeepOnError = true;
+            this.maskedTextBoxBirthday.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxBirthday.Location = new System.Drawing.Point(168, 221);
+            this.maskedTextBoxBirthday.Mask = "00/00/0000";
+            this.maskedTextBoxBirthday.Name = "maskedTextBoxBirthday";
+            this.maskedTextBoxBirthday.Size = new System.Drawing.Size(100, 27);
+            this.maskedTextBoxBirthday.TabIndex = 4;
+            this.maskedTextBoxBirthday.ValidatingType = typeof(System.DateTime);
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPhone.Location = new System.Drawing.Point(168, 121);
+            this.textBoxPhone.MaxLength = 10;
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(222, 27);
+            this.textBoxPhone.TabIndex = 2;
+            // 
+            // comboBoxGender
+            // 
+            this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGender.FormattingEnabled = true;
+            this.comboBoxGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.comboBoxGender.Location = new System.Drawing.Point(169, 176);
+            this.comboBoxGender.Name = "comboBoxGender";
+            this.comboBoxGender.Size = new System.Drawing.Size(70, 21);
+            this.comboBoxGender.TabIndex = 3;
+            // 
+            // maskedTextBoxCaseTime
+            // 
+            this.maskedTextBoxCaseTime.BeepOnError = true;
+            this.maskedTextBoxCaseTime.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxCaseTime.Location = new System.Drawing.Point(232, 328);
+            this.maskedTextBoxCaseTime.Mask = "00/00/0000 90:00";
+            this.maskedTextBoxCaseTime.Name = "maskedTextBoxCaseTime";
+            this.maskedTextBoxCaseTime.Size = new System.Drawing.Size(158, 27);
+            this.maskedTextBoxCaseTime.TabIndex = 6;
+            this.maskedTextBoxCaseTime.ValidatingType = typeof(System.DateTime);
             // 
             // label8
             // 
@@ -239,6 +347,16 @@ namespace Ergasia3_App
             this.label8.TabIndex = 16;
             this.label8.Text = "Time Of Reported Case:*";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Full Name:*";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -249,15 +367,25 @@ namespace Ergasia3_App
             this.label7.TabIndex = 15;
             this.label7.Text = "Home Adress:*";
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(220, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Add Underlying Diseases:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Email Address:*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Phone Number:*";
             // 
             // label5
             // 
@@ -279,116 +407,26 @@ namespace Ergasia3_App
             this.label4.TabIndex = 12;
             this.label4.Text = "Gender:*";
             // 
-            // label3
+            // labelError
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Phone Number:*";
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(34, 492);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(178, 15);
+            this.labelError.TabIndex = 22;
+            this.labelError.Text = "All fields with * must be filled.";
             // 
-            // label2
+            // label12
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Email Address:*";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Full Name:*";
-            // 
-            // buttonAddD
-            // 
-            this.buttonAddD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonAddD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddD.Enabled = false;
-            this.buttonAddD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddD.Location = new System.Drawing.Point(399, 14);
-            this.buttonAddD.Name = "buttonAddD";
-            this.buttonAddD.Size = new System.Drawing.Size(51, 27);
-            this.buttonAddD.TabIndex = 8;
-            this.buttonAddD.Text = "Add";
-            this.buttonAddD.UseVisualStyleBackColor = true;
-            this.buttonAddD.Click += new System.EventHandler(this.buttonAddD_Click);
-            // 
-            // maskedTextBoxCaseTime
-            // 
-            this.maskedTextBoxCaseTime.BeepOnError = true;
-            this.maskedTextBoxCaseTime.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxCaseTime.Location = new System.Drawing.Point(232, 328);
-            this.maskedTextBoxCaseTime.Mask = "00/00/0000 90:00";
-            this.maskedTextBoxCaseTime.Name = "maskedTextBoxCaseTime";
-            this.maskedTextBoxCaseTime.Size = new System.Drawing.Size(158, 27);
-            this.maskedTextBoxCaseTime.TabIndex = 6;
-            this.maskedTextBoxCaseTime.ValidatingType = typeof(System.DateTime);
-            // 
-            // comboBoxGender
-            // 
-            this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGender.FormattingEnabled = true;
-            this.comboBoxGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.comboBoxGender.Location = new System.Drawing.Point(169, 176);
-            this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(70, 21);
-            this.comboBoxGender.TabIndex = 3;
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(168, 121);
-            this.textBoxPhone.MaxLength = 10;
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(222, 27);
-            this.textBoxPhone.TabIndex = 2;
-            // 
-            // maskedTextBoxBirthday
-            // 
-            this.maskedTextBoxBirthday.BeepOnError = true;
-            this.maskedTextBoxBirthday.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxBirthday.Location = new System.Drawing.Point(168, 221);
-            this.maskedTextBoxBirthday.Mask = "00/00/0000";
-            this.maskedTextBoxBirthday.Name = "maskedTextBoxBirthday";
-            this.maskedTextBoxBirthday.Size = new System.Drawing.Size(100, 27);
-            this.maskedTextBoxBirthday.TabIndex = 4;
-            this.maskedTextBoxBirthday.ValidatingType = typeof(System.DateTime);
-            // 
-            // textBoxAddress
-            // 
-            this.textBoxAddress.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(169, 275);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(222, 27);
-            this.textBoxAddress.TabIndex = 5;
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(168, 68);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(222, 27);
-            this.textBoxEmail.TabIndex = 1;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(168, 14);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(222, 27);
-            this.textBoxName.TabIndex = 0;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("MS Reference Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(651, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(221, 34);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Medical History";
             // 
             // buttonSubmit
             // 
@@ -885,44 +923,6 @@ namespace Ergasia3_App
             this.toolStripMenuItemEDITdelete.Text = "DeleteSelectedDiseace";
             this.toolStripMenuItemEDITdelete.Click += new System.EventHandler(this.toolStripMenuItemEDITdelete_Click);
             // 
-            // panelForm
-            // 
-            this.panelForm.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelForm.Controls.Add(this.textBoxName);
-            this.panelForm.Controls.Add(this.textBoxEmail);
-            this.panelForm.Controls.Add(this.textBoxAddress);
-            this.panelForm.Controls.Add(this.maskedTextBoxBirthday);
-            this.panelForm.Controls.Add(this.textBoxPhone);
-            this.panelForm.Controls.Add(this.comboBoxGender);
-            this.panelForm.Controls.Add(this.maskedTextBoxCaseTime);
-            this.panelForm.Controls.Add(this.label8);
-            this.panelForm.Controls.Add(this.label1);
-            this.panelForm.Controls.Add(this.label7);
-            this.panelForm.Controls.Add(this.label2);
-            this.panelForm.Controls.Add(this.label3);
-            this.panelForm.Controls.Add(this.label5);
-            this.panelForm.Controls.Add(this.label4);
-            this.panelForm.Location = new System.Drawing.Point(37, 74);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(410, 412);
-            this.panelForm.TabIndex = 37;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.buttonAddD);
-            this.panel5.Controls.Add(this.listBoxUD);
-            this.panel5.Controls.Add(this.label27);
-            this.panel5.Controls.Add(this.textBoxUD);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Location = new System.Drawing.Point(539, 74);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(471, 412);
-            this.panel5.TabIndex = 38;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -930,8 +930,8 @@ namespace Ergasia3_App
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1270, 681);
             this.Controls.Add(this.panelAddNew);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelSearch);
+            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -945,6 +945,10 @@ namespace Ergasia3_App
             this.panelAddNew.PerformLayout();
             this.panelAddNew2.ResumeLayout(false);
             this.panelAddNew2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panelForm.ResumeLayout(false);
+            this.panelForm.PerformLayout();
             this.contextMenuStripAdd.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -959,10 +963,6 @@ namespace Ergasia3_App
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
             this.contextMenuStripEdit.ResumeLayout(false);
-            this.panelForm.ResumeLayout(false);
-            this.panelForm.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

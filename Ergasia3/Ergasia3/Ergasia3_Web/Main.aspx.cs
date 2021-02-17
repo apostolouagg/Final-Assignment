@@ -20,7 +20,6 @@ namespace Ergasia3_Web
         {
             // Connect to dataBase
             ContextDb = new DbManager(@"Data Source=|DataDirectory|\Database.db;Version=3;");
-            ContextDb = new DbManager(@"Data Source=|DataDirectory|\Database.db;Version=3;");
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
@@ -33,8 +32,8 @@ namespace Ergasia3_Web
             List<int> ageList = new List<int>();
             foreach (var var in birthdayList)
             {
-                var x = DateTime.Today - DateTime.ParseExact(var, "dd/MM/yyyy", new DateTimeFormatInfo());
-                ageList.Add(((int)x.TotalDays) / 365);
+                var timeSpan = DateTime.Today - DateTime.ParseExact(var, "dd/MM/yyyy", new DateTimeFormatInfo());
+                ageList.Add(((int)timeSpan.TotalDays) / 365);
             }
             LabelAge.Text = $"Average Age: {ageList.Sum() / ageList.Count}";
 

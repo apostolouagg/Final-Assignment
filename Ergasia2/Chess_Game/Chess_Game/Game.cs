@@ -13,17 +13,12 @@ namespace Chess_Game
 {
     public partial class Game : Form
     {
-        // To do list
-        // 1. Na kanei start to timer tou paikth pou epaikse teleutaios otan pataei "Restart" kai meta "No"
-        // 2. Na kanei start ton taimer tou paixth pou paizei otan ksekinaei to paixnidi
-        // 3. Gia na ginei to parapanw (to 2) prepei na doume prwta pws tha ftiaksoume to paixnidi etsi wste o timer na ksekina otan tha ginetai click
-
         private Player playerWhite;
         private Player playerBlack;
         private ChessBoard board;
         private bool Started = false;
         private bool Finished = false;
-
+        public bool Restarting = false;
         public Game(Player playerWhite, Player playerBlack)
         {
             InitializeComponent();
@@ -61,10 +56,9 @@ namespace Chess_Game
                 buttonBlack.Text = "Start Game";
                 buttonWhite.Text = "Start Game";
 
-                this.board.Enabled = false;
+                Restarting = true;
                 Task.Run(board.Restart);
             }
-
         }
 
         private void TurnButton_Press(object sender, EventArgs e)
@@ -108,7 +102,7 @@ namespace Chess_Game
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!Finished)
+            if (!Finished && Restarting == false)
             {
                 label_Timer_1.Text = playerWhite.Time.ToString("0.0");
                 label_Timer_2.Text = playerBlack.Time.ToString("0.0");
@@ -118,11 +112,13 @@ namespace Chess_Game
                 {
                     Finished = true;
                     MessageBox.Show("Black Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    board.Enabled = false;
                 }
                 else if (playerBlack.Time == 0f)
                 {
                     Finished = true;
                     MessageBox.Show("White Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    board.Enabled = false;
                 }
 
                 // If someones pawns are gone
@@ -130,11 +126,13 @@ namespace Chess_Game
                 {
                     Finished = true;
                     MessageBox.Show("Black Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    board.Enabled = false;
                 }
                 else if (!board.Controls.OfType<Pawn>().Any(x => x.Team.Equals("Black")))
                 {
                     Finished = true;
                     MessageBox.Show("White Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    board.Enabled = false;
                 }
             }
 
@@ -144,6 +142,5 @@ namespace Chess_Game
         {
             this.Close();
         }
-
     }
 }
