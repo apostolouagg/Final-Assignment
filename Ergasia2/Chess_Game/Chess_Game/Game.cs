@@ -13,10 +13,9 @@ namespace Chess_Game
 {
     public partial class Game : Form
     {
-        private Player playerWhite;
-        private Player playerBlack;
+        public Player playerWhite;
+        public Player playerBlack;
         private ChessBoard board;
-        private bool Started = false;
         private bool Finished = false;
         public bool Restarting = false;
         public Game(Player playerWhite, Player playerBlack)
@@ -30,15 +29,14 @@ namespace Chess_Game
                 Size = new Size(480, 480),
                 BackColor = Color.Transparent
             });
-
-            board.Enabled = false;
         }
 
         private void Form_Chess_Game_Load(object sender, EventArgs e)
         {
             label_Player_1.Text = playerWhite.Name;
             label_Player_2.Text = playerBlack.Name;
-            label_Date.Text = DateTime.Now.ToString("dd/MM/yyyy"); 
+            label_Date.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            playerWhite.StartTimer();
         }
 
         private void button_Restart_Click(object sender, EventArgs e)
@@ -49,56 +47,13 @@ namespace Chess_Game
             {
                 playerWhite.RestartTimer();
                 playerBlack.RestartTimer();
-                Started = false;
                 Finished = false;
-                buttonBlack.Enabled = true;
-                buttonWhite.Enabled = true;
-                buttonBlack.Text = "Start Game";
-                buttonWhite.Text = "Start Game";
 
                 Restarting = true;
                 Task.Run(board.Restart);
             }
         }
 
-        private void TurnButton_Press(object sender, EventArgs e)
-        {
-            var pressed = (Button)sender;
-            if (!Started)
-            {
-                board.Enabled = true;
-                Started = true;
-                buttonBlack.Text = "End Turn";
-                buttonWhite.Text = "End Turn";
-                if (pressed.Name.Equals("buttonWhite"))
-                {
-                    buttonBlack.Enabled = false;
-                    playerWhite.StartTimer();
-                }
-                else
-                {
-                    buttonWhite.Enabled = false;
-                    playerBlack.StartTimer();
-                }
-            }
-            else
-            {
-                if (pressed.Name.Equals("buttonWhite"))
-                {
-                    buttonBlack.Enabled = true;
-                    buttonWhite.Enabled = false;
-                    playerWhite.StopTimer();
-                    playerBlack.StartTimer();
-                }
-                else
-                {
-                    buttonWhite.Enabled = true;
-                    buttonBlack.Enabled = false;
-                    playerBlack.StopTimer();
-                    playerWhite.StartTimer();
-                }
-            }
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -121,14 +76,14 @@ namespace Chess_Game
                     board.Enabled = false;
                 }
 
-                // If someones pawns are gone
-                if (!board.Controls.OfType<Pawn>().Any(x => x.Team.Equals("White")))
+                // Check if a king is captured
+                if (!board.Controls.OfType<Pawn>().Any(x => x.Name == "King" && x.Team == "White"))
                 {
                     Finished = true;
                     MessageBox.Show("Black Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     board.Enabled = false;
                 }
-                else if (!board.Controls.OfType<Pawn>().Any(x => x.Team.Equals("Black")))
+                else if(!board.Controls.OfType<Pawn>().Any(x => x.Name == "King" && x.Team == "Black"))
                 {
                     Finished = true;
                     MessageBox.Show("White Wins!!", "Game Finished", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

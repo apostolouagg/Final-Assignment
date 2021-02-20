@@ -14,7 +14,7 @@ namespace Chess_Game
     public class ChessBoard : Panel
     {
         private int pawnSize = 60;
-        private Game Game;
+        public Game Game;
 
         // 2D Array with the images
         private readonly Image[,] pawns =
@@ -41,13 +41,28 @@ namespace Chess_Game
                 {
                     if (i == 0)
                     {
-                        this.Controls.Add(new Pawn(this)
+
+                        if (j == 4)
                         {
-                            Image = pawns[j, 1],
-                            Location = new Point(j * pawnSize, i * pawnSize),
-                            Team = "White",
-                            StartingPosition = new Point(j * pawnSize, i * pawnSize)
-                        });
+                            this.Controls.Add(new Pawn(this)
+                            {
+                                Image = pawns[j, 1],
+                                Location = new Point(j * pawnSize, i * pawnSize),
+                                Team = "White",
+                                Name = "King",
+                                StartingPosition = new Point(j * pawnSize, i * pawnSize)
+                            });
+                        }
+                        else
+                        {
+                            this.Controls.Add(new Pawn(this)
+                            {
+                                Image = pawns[j, 1],
+                                Location = new Point(j * pawnSize, i * pawnSize),
+                                Team = "White",
+                                StartingPosition = new Point(j * pawnSize, i * pawnSize)
+                            });
+                        }
                     }
                     else if (i == 1)
                     {
@@ -71,13 +86,28 @@ namespace Chess_Game
                     }
                     else if (i == 7)
                     {
-                        this.Controls.Add(new Pawn(this)
+                        if(j == 4)
                         {
-                            Image = pawns[j, 0],
-                            Location = new Point(j * pawnSize, i * pawnSize),
-                            Team = "Black",
-                            StartingPosition = new Point(j * pawnSize, i * pawnSize)
-                        });
+                            this.Controls.Add(new Pawn(this)
+                            {
+                                Image = pawns[j, 0],
+                                Location = new Point(j * pawnSize, i * pawnSize),
+                                Team = "Black",
+                                Name = "King",
+                                StartingPosition = new Point(j * pawnSize, i * pawnSize)
+                            });
+                        }
+                        else
+                        {
+                            this.Controls.Add(new Pawn(this)
+                            {
+                                Image = pawns[j, 0],
+                                Location = new Point(j * pawnSize, i * pawnSize),
+                                Team = "Black",
+                                StartingPosition = new Point(j * pawnSize, i * pawnSize)
+                            });
+                        }
+                       
                     }
                 }
             }
@@ -170,7 +200,11 @@ namespace Chess_Game
                 }
             }
 
-            Invoke(new Action(() => { Game.Restarting = false; }));
+            Invoke(new Action(() => {
+                Game.Restarting = false;
+                this.Enabled = true;
+                Game.playerWhite.StartTimer();
+            }));
         }
     }
 }

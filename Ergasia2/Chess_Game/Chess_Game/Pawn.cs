@@ -116,6 +116,16 @@ namespace Chess_Game
         private void mouse_Up(object sender, MouseEventArgs e)
         {
             Selected = false;
+            if(this.Team == "White")
+            {
+                Board.Game.playerWhite.StopTimer();
+                Board.Game.playerBlack.StartTimer();
+            }
+            else
+            {
+                Board.Game.playerBlack.StopTimer();
+                Board.Game.playerWhite.StartTimer();
+            }
         }
     }
 }
