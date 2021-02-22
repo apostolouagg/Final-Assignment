@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,7 +24,7 @@ namespace ergasia1
         private int attemps;
         private bool started;
 
-        String connectionString = "Data Source=c:DB1.db;Version=3;";
+        String connectionString = "Data Source=DB1.db;Version=3;";
 
         public Game(List<string> imageList, string user)
         {
@@ -40,7 +36,7 @@ namespace ergasia1
         // Randomizes a list
         public static List<string> Randomize(List<string> images)
         {
-            random = new Random((int)DateTime.Now.Ticks);
+            random = new Random((int) DateTime.Now.Ticks);
 
             var randomizedImages = new List<string>();
             while (images.Count > 0)
@@ -220,7 +216,6 @@ namespace ergasia1
                 Thread.Sleep(500);
                 ShowAllCards();
             });
-
         }
 
         // Shows all cards for 4s
@@ -250,7 +245,10 @@ namespace ergasia1
                     }));
 
                     // Enable panel
-                    Invoke(new Action(() => { flowLayoutPanelCards.Enabled = true; }));
+                    Invoke(new Action(() =>
+                    {
+                        flowLayoutPanelCards.Enabled = true;
+                    }));
                 }
                 catch (Exception)
                 {
@@ -258,7 +256,6 @@ namespace ergasia1
                 }
 
             });
-            
         }
 
         // Quit button

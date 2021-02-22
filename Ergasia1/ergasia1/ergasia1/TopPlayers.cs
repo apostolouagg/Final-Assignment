@@ -13,7 +13,7 @@ namespace ergasia1
 {
     public partial class TopPlayers : Form
     {
-        private string connectionstring = "Data Source=c:DB1.db;Version=3;";
+        private string connectionstring = "Data Source=DB1.db;Version=3;";
         private List<Player> playerList;
 
         public TopPlayers()
@@ -31,12 +31,11 @@ namespace ergasia1
                 SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn);
                 SQLiteDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read()) // episis aggeliki edo vazeis While oxi If
+                while (reader.Read())
                 {
                     if (playerList.Any(x=>x.Name == reader.GetString(0))) // if user exist in the list then we just add its attempt
                     {
                         playerList.Find(x=>x.Name == reader.GetString(0)).Attempts.Add(new Attempt(reader.GetInt16(1), reader.GetInt16(2)));
-                        Console.WriteLine(playerList.Find(x => x.Name == reader.GetString(0)).Name);
                     }
                     else // if user doesn't exist we add him to the list with its attempt
                     {

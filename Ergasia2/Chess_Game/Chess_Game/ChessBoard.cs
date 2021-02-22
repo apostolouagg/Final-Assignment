@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chess_Game
@@ -41,7 +36,6 @@ namespace Chess_Game
                 {
                     if (i == 0)
                     {
-
                         if (j == 4)
                         {
                             this.Controls.Add(new Pawn(this)
@@ -166,7 +160,7 @@ namespace Chess_Game
                     }
 
                     // If the pawn we are about to move doesn't have the same location as its starting location OR
-                    // its location is the same as its starting location BUT its not in the Board THEN move it (that happens sometimes. boro na sas eksigiso kapia stigmh giati an thelete)
+                    // its location is the same as its starting location BUT its not in the Board THEN move it
                     if (pawnMove.Location != new Point(pawnSize * j, pawnSize * i) ||
                         (!this.Controls.Contains(pawnMove) &&
                          pawnMove.Location == new Point(pawnSize * j, pawnSize * i)))
@@ -180,9 +174,9 @@ namespace Chess_Game
                                 this.Controls.Add(pawnMove);
                             }
 
-                            pawnMove.Location = new Point(pawnSize * j, pawnSize * i);
+                            pawnMove.Location = pawnMove.StartingPosition;
 
-                            // Checks if there is a pawn in the way so pawns dont overlap while restarting
+                            // Checks if there is a pawn in the way so pawns don't overlap while restarting
                             foreach (var pawn in this.Controls.OfType<Pawn>())
                             {
                                 if (pawnMove == pawn) continue;

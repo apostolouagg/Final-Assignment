@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ergasia1
@@ -16,7 +9,7 @@ namespace ergasia1
     public partial class Results : Form
     {
         string username;
-        private String connectionString = "Data Source=c:DB1.db;Version=3;";
+        private String connectionString = "Data Source=DB1.db;Version=3;";
 
         public Results(string username)
         {

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +18,7 @@ namespace Chess_Game
             InitializeComponent();
             this.playerWhite = playerWhite;
             this.playerBlack = playerBlack;
+
             boardBack.Controls.Add(board = new ChessBoard(this)
             {
                 Location = new Point(31, 35),
@@ -54,10 +50,9 @@ namespace Chess_Game
             }
         }
 
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!Finished && Restarting == false)
+            if (!Finished && !Restarting)
             {
                 label_Timer_1.Text = playerWhite.Time.ToString("0.0");
                 label_Timer_2.Text = playerBlack.Time.ToString("0.0");
@@ -90,7 +85,6 @@ namespace Chess_Game
                     board.Enabled = false;
                 }
             }
-
         }
         // Exit to menu
         private void button_Exit_Click(object sender, EventArgs e)

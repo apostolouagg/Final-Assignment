@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ergasia1
@@ -15,7 +11,7 @@ namespace ergasia1
     public partial class Menu : Form
     {
         private List<string> images;
-        private String connectionString = "Data Source=c:DB1.db;Version=3;";
+        private String connectionString = "Data Source=DB1.db;Version=3;";
 
         public Menu()
         {
@@ -25,11 +21,11 @@ namespace ergasia1
         private void Menu_Load(object sender, EventArgs e)
         {
             timerWelcome.Start(); // xrhsimopoieitai gia ta labels pou allazoun xrwmata
-            buttonBack.Hide();
 
+            buttonBack.Hide();
             panelSettings.Hide();
 
-            // Get images from a folder
+            // Get images from default folder
             images = Directory.GetFiles(@"Cards\Default", "*jpg").ToList(); 
             images.AddRange(Directory.GetFiles(@"Cards\Default", "*png").ToList()); 
             images.AddRange(Directory.GetFiles(@"Cards\Default", "*bmp").ToList());
@@ -62,7 +58,6 @@ namespace ergasia1
             buttonExit.Hide();
             
             buttonBack.Show();
-
             panelSettings.Show();
             panelSettings.Location = new Point(330, panelSettings.Location.Y);
         }
@@ -73,7 +68,6 @@ namespace ergasia1
             buttonExit.Show();
 
             buttonBack.Hide();
-            
             panelSettings.Hide();
         }
 
@@ -102,17 +96,16 @@ namespace ergasia1
                 string selectQuery = "Select Name FROM Users WHERE Name = @name;";
                 SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn);
                 cmd.Parameters.AddWithValue("@name", playerName); // safe way
-
                 SQLiteDataReader reader = cmd.ExecuteReader();
 
+                // Tsekarei an iparxoun egrafes me afto to onoma
                 if (reader.HasRows)
                 {
-                    MessageBox.Show("This username already exists!");
+                    MessageBox.Show("This username already exists!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
 
                 Game game = new Game(new List<string>(images), textBoxName.Text);
-
                 this.Hide();
                 game.ShowDialog();
                 this.Show();
@@ -133,22 +126,19 @@ namespace ergasia1
                     tempImages = Game.Randomize(tempImages); // xrisimopioume to randomize to Game gia na kanoume randomize
                     tempImages.RemoveRange(11, tempImages.Count - 12);
                     images = tempImages;
-                    Console.WriteLine(tempImages.Count);
-                    MessageBox.Show("Images selected succsessfully!");
+                    MessageBox.Show("Images selected succsessfully!","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Error! The images in your folder must be 12 or above.");
+                    MessageBox.Show("The images in your folder must be 12 or above.","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
-
         }
 
         // Show Attemps
         private void buttonShowLeaderboard_Click(object sender, EventArgs e)
         {
             TopPlayers topPlayers = new TopPlayers();
-
             this.Hide();
             topPlayers.ShowDialog();
             this.Show();

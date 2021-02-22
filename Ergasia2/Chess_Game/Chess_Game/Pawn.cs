@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chess_Game
@@ -23,6 +18,7 @@ namespace Chess_Game
             PawnSize = 60;
             Limit = 15;
 
+            // initialize pictureBox
             this.Board = board;
             this.Size = new Size(PawnSize,PawnSize);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -62,6 +58,7 @@ namespace Chess_Game
                     MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y + PawnSize));
                 }
 
+
                 // Normal Movement (allow jumping over pawns)
                 if (e.Location.Y < 0 - Limit) // Forward.
                 {
@@ -78,7 +75,7 @@ namespace Chess_Game
                     if (e.Location.X < 0 - PawnSize - Limit) MovePawn(new Point(this.Location.X - PawnSize * 2, this.Location.Y));
                     else MovePawn(new Point(this.Location.X - PawnSize, this.Location.Y));
                 }
-                else if (e.Location.X > PawnSize) // Right.
+                else if (e.Location.X > PawnSize + Limit) // Right.
                 {
                     if (e.Location.X > PawnSize * 2) MovePawn(new Point(this.Location.X + PawnSize * 2, this.Location.Y));
                     else MovePawn(new Point(this.Location.X + PawnSize, this.Location.Y));

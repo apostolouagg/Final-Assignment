@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ergasia1
 {
-    public class Card : PictureBox //klironomei apo to PictureBox
+    public class Card : PictureBox // klironomei apo to PictureBox
     {
         private Image Img { set; get;}  // Edo tha apothikevoume thn eikona tou meso tou constractora.
 
@@ -19,11 +19,11 @@ namespace ergasia1
 
         public Card(string imagePath)
         {
-            Img = Image.FromFile(imagePath);
-            ImagePathLocation = imagePath;
+            // Kalo thn sinartisi pou allazei thn eikona ths kartas
+            this.ChangeImage(imagePath);
 
             // flip it
-            Hidden = true;
+            this.Hidden = true;
             this.Image = Properties.Resources.back;
         }
 
@@ -35,15 +35,16 @@ namespace ergasia1
             if (Hidden) // an h karta dixnei thn krimenh plevra
             {
                 this.Image = Img; // Show image
-                Hidden = false;
+                this.Hidden = false;
             }
             else
             {
                 this.Image = Properties.Resources.back; // Hide image
-                Hidden = true;
+                this.Hidden = true;
             }
         }
 
+        // Allazei thn eikona ths kartas
         public void ChangeImage(string imagePath)
         {
             Img = Image.FromFile(imagePath);

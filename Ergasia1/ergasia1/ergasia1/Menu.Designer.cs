@@ -124,6 +124,7 @@ namespace ergasia1
             // 
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.Location = new System.Drawing.Point(292, 194);
+            this.textBoxName.MaxLength = 12;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(244, 26);
             this.textBoxName.TabIndex = 4;
